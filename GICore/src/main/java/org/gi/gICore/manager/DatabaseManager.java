@@ -33,12 +33,8 @@ public class DatabaseManager {
 
     public static DatabaseManager getInstance() {
         if (instance == null) {
-            instance = new DatabaseManager();
+            instance = new DatabaseManager(ConfigManager.getConfig("database.yml"));
         }
         return instance;
-    }
-
-    private DatabaseManager() {
-
     }
 }
