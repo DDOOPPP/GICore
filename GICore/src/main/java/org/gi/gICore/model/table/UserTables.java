@@ -2,8 +2,8 @@ package org.gi.gICore.model.table;
 
 public class UserTables {
     public static final String USERS_TABLE = "user_table";
-    private static final String USER_WALLTES = "user_wallets";
-    private static final String USER_MAILBOXS = "user_mailbox";
+    public static final String USER_WALLTES = "user_wallets";
+    public static final String USER_MAILBOXS = "user_mailbox";
 
     public static final String CREATE_USER_TABLE = "CREATE TABLE IF NOT EXISTS " + USERS_TABLE + " (" +
             "player_id VARCHAR(36) UNIQUE NOT NULL," +

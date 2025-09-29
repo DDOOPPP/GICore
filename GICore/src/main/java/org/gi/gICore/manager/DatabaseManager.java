@@ -2,6 +2,7 @@ package org.gi.gICore.manager;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import org.checkerframework.checker.units.qual.C;
 import org.gi.gICore.GICore;
 import org.gi.gICore.config.ConfigCore;
 import org.gi.gICore.config.DataBaseSetting;
@@ -41,6 +42,18 @@ public class DatabaseManager {
             instance = new DatabaseManager(ConfigManager.getConfig("database.yml"));
         }
         return instance;
+    }
+
+    public static void close() {
+        dataSource.close();
+    }
+
+    public static void close(Connection connection) throws SQLException {
+        connection.close();
+    }
+
+    public static void rollback(Connection connection) throws SQLException {
+        connection.rollback();
     }
 
     private static void createTable(){
