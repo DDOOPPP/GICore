@@ -1,8 +1,13 @@
 package org.gi.gICore.model.log;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 import java.math.BigDecimal;
 import java.util.UUID;
 
+@AllArgsConstructor
+@Getter
 public class TransactionLog {
     private UUID playerId;
     private TransactionType type;

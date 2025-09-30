@@ -33,7 +33,7 @@ public class DatabaseManager {
         createTable();
     }
 
-    public static Connection getconnection() throws Exception {
+    public static Connection getconnection() throws SQLException {
         return dataSource.getConnection();
     }
 
@@ -56,10 +56,28 @@ public class DatabaseManager {
         connection.rollback();
     }
 
+    public static <T> T transactionHelper(SQLFunction<Connection, T> work) {
+        try (Connection conn = DatabaseManager.getconnection()) {
+            conn.setAutoCommit(false);
+            try {
+                T out = work.apply(conn);
+                conn.commit();
+                return out;
+            } catch (Exception e) {
+                try { conn.rollback(); } catch (SQLException ignored) {}
+                throw new RuntimeException(e);
+            } finally {
+                try { conn.setAutoCommit(true); } catch (SQLException ignored) {}
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("DB connection error", e);
+        }
+    }
+
     private static void createTable(){
         try(Connection connection = getconnection();
         Statement statement = connection.createStatement()) {
-            statement.execute(UserTables.USERS_TABLE);
+            statement.execute(UserTables.CREATE_USER_TABLE);
             statement.execute(UserTables.CREATE_WALLET);
 
             statement.execute(LogTables.CREATE_TRANSACTION_LOG);
@@ -69,5 +87,9 @@ public class DatabaseManager {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+    @FunctionalInterface
+    public interface SQLFunction<C, R> {
+        R apply(C conn) throws Exception;
     }
 }
