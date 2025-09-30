@@ -69,8 +69,8 @@ public class UserRepository {
         }
     }
 
-    public Result updateLevel(UUID player_id, int level, Connection connection,String type) {
-        String query = queryBuilder.update().set(type).where("player_id").build();
+    public Result updateLevel(UUID player_id, int level, Connection connection, Userdata.LevelType type) {
+        String query = queryBuilder.update().set(type.getName()).where("player_id").build();
         logger.info(query);
 
         try(PreparedStatement statement = connection.prepareStatement(query)){

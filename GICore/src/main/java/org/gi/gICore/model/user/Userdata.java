@@ -34,4 +34,22 @@ public class Userdata {
         this.fishLevel = 1;
         this.tutorial = false;
     }
+
+    public void setTutorial(boolean tutorial){
+        this.tutorial = tutorial;
+    }
+
+    public enum LevelType {
+        MAIN("level"),FARM("farm_level"), MINE("mine_level"), FISH("fishing_level");
+
+        private String name;
+
+        LevelType(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+    }
 }
