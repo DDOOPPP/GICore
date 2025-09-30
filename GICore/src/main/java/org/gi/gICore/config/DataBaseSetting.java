@@ -15,6 +15,7 @@ public class DataBaseSetting {
     private final int maxLifetime;
     private final int connectionTimeout;
     private final int idleTimeout;
+    private final int minimumIdle;
     private final int leakDetectionThreshold;
     private final int maxPoolSize;
 
@@ -28,6 +29,7 @@ public class DataBaseSetting {
         this.maxLifetime = config.getInt("database.maxLifetime");
         this.connectionTimeout = config.getInt("database.connectionTimeout");
         this.idleTimeout = config.getInt("database.idleTimeout");
+        this.minimumIdle = config.getInt("database.minimumIdle");
         this.leakDetectionThreshold = config.getInt("database.leakDetectionThreshold");
     }
 
@@ -44,6 +46,7 @@ public class DataBaseSetting {
         config.setMaxLifetime(maxLifetime);
         config.setConnectionTimeout(connectionTimeout);
         config.setIdleTimeout(idleTimeout);
+        config.setMinimumIdle(minimumIdle);
         config.setLeakDetectionThreshold(leakDetectionThreshold);
         return config;
     }

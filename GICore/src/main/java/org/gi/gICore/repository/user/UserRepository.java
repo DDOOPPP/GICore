@@ -110,7 +110,7 @@ public class UserRepository {
     }
 
     public Userdata getUser(UUID player_id, Connection connection) {
-        String query = queryBuilder.selectAll().where("player_id").build();
+        String query = queryBuilder.selectAll().where("player_id = ?").build();
         Userdata userdata = null;
         logger.info(query);
 

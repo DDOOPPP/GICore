@@ -90,7 +90,7 @@ public class ModuleLogger {
         }
 
         // 파일 로깅 (비동기)
-        if (Level.SEVERE.equals(bukkitLevel)) {
+        if (Level.WARNING.equals(bukkitLevel) || Level.SEVERE.equals(bukkitLevel)) {
             CompletableFuture.runAsync(() -> writeToFile(level, message, throwable));
         }
     }
@@ -105,7 +105,7 @@ public class ModuleLogger {
 
             try (FileWriter writer = new FileWriter(logFile, true)) {
                 String timestamp = TimeUtil.format(LocalDateTime.now());
-                String logLine = String.format("[%s] [%s] %s%n", timestamp, level, message);
+                String logLine = String.format("[%s] [%s] [%s] %s%n", timestamp, level, Thread.currentThread().getName(),message);
                 writer.write(logLine);
 
                 if (throwable != null) {
@@ -114,7 +114,6 @@ public class ModuleLogger {
                         writer.write("  at " + element.toString() + "\n");
                     }
                 }
-                writer.write("\n");
             }
         } catch (IOException e) {
             logger.severe("Failed to write to log file: " + e.getMessage());

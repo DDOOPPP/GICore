@@ -16,20 +16,22 @@ import java.sql.Statement;
 
 public class DatabaseManager {
     private static DatabaseManager instance;
-    private ConfigCore config;
+    private static ConfigCore config;
     private static HikariDataSource dataSource;
-    private ModuleLogger logger;
+    private static ModuleLogger logger;
     public DatabaseManager(ConfigCore config) {
-        this.config = config;
-        this.logger = new ModuleLogger(GICore.getInstance(), "DatabaseManager");
-        DataBaseSetting setting = new DataBaseSetting(config);
 
-        initialize(setting);
     }
 
-    public static void initialize(DataBaseSetting setting){
-        HikariConfig config = setting.toHikariConfig();
-        dataSource = new HikariDataSource(config);
+    public static void initialize(ConfigCore config){
+        logger = new ModuleLogger(GICore.getInstance(), "DatabaseManager");
+        DataBaseSetting setting = new DataBaseSetting(config);
+
+        HikariConfig hikariConfig = setting.toHikariConfig();
+        dataSource = new HikariDataSource(hikariConfig);
+        if (dataSource.isRunning()){
+            logger.info("Database is running");
+        }
         createTable();
     }
 

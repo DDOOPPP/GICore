@@ -30,7 +30,6 @@ public class WalletRepository {
         try(PreparedStatement statement = connection.prepareStatement(query)){
             statement.setString(1,wallet.getPlayerId().toString());
             statement.setBigDecimal(2, wallet.getBalance());
-            statement.setBigDecimal(3, wallet.getBalance());
 
 
             return statement.executeUpdate() > 0 ? Result.SUCCESS : Result.ERROR("User Wallet Insert Failed");
@@ -53,7 +52,7 @@ public class WalletRepository {
     }
 
     public BigDecimal getBalance(UUID player_id, Connection connection) {
-        String query = builder.select().where("player_id").build();
+        String query = builder.selectAll().where("player_id = ?").build();
         BigDecimal balance = BigDecimal.ZERO;
         logger.info(query);
         try(PreparedStatement statement = connection.prepareStatement(query)){
