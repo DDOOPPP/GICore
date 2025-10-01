@@ -2,6 +2,8 @@ package org.gi.gICore.util;
 
 import lombok.Getter;
 
+import java.util.Objects;
+
 @Getter
 public class Result {
     private int code;
@@ -29,6 +31,28 @@ public class Result {
     }
 
     public boolean isSuccess() {
-        return this.equals(SUCCESS);
+        return this.code == 0;
+    }
+
+    public boolean isError() {
+        return this.code != 0;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Result result = (Result) o;
+        return code == result.code;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(code);
+    }
+
+    @Override
+    public String toString() {
+        return "Result{code=" + code + ", message='" + message + "'}";
     }
 }

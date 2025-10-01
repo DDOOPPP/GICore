@@ -24,9 +24,6 @@ import java.util.function.Supplier;
  * 3) 비동기 → 메인 반영은 thenSync로
  */
 public class TaskUtil {
-    // NOTE: instance 필드는 사용하지 않으므로 제거해도 됨.
-    private static TaskUtil instance;
-
     /** Bukkit 스케줄러에 넘길 플러그인 참조 */
     private static JavaPlugin plugin;
 

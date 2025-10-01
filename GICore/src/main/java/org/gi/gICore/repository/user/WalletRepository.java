@@ -25,7 +25,7 @@ public class WalletRepository {
     }
 
     public Result insert(UserWallet wallet, Connection connection) {
-        String query = builder.insert(List.of("player_id","balance"),List.of("balance"),true);
+        String query = builder.insert("player_id","balance");
         logger.info(query);
         try(PreparedStatement statement = connection.prepareStatement(query)){
             statement.setString(1,wallet.getPlayerId().toString());
@@ -47,6 +47,21 @@ public class WalletRepository {
 
             return statement.executeUpdate() > 0 ? Result.SUCCESS : Result.ERROR("User Wallet Delete Failed");
         } catch (SQLException e) {
+            return Result.EXCEPTION(e);
+        }
+    }
+
+    public Result update(UUID player_id, BigDecimal balance, Connection connection) {
+        String query = builder.update().set("balance").where("player_id = ?").build();
+        logger.info(query);
+
+        try(PreparedStatement statement = connection.prepareStatement(query)){
+            statement.setBigDecimal(1, balance);
+            statement.setString(2,player_id.toString());
+
+            return statement.executeUpdate() > 0 ? Result.SUCCESS : Result.ERROR("User Wallet Update Failed");
+        } catch (SQLException e) {
+            logger.error("Failed to update balance", e);
             return Result.EXCEPTION(e);
         }
     }

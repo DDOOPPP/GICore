@@ -88,18 +88,6 @@ public class EconomyCommand {
 
                 giPlayer.sendMessage(player,message,data);
 
-                BigDecimal amountB = BigDecimal.valueOf(deposit.amount);
-                BigDecimal currentBalance = BigDecimal.valueOf(deposit.balance);
-
-                TransactionLog transactionLog = new TransactionLog(
-                        target.getUniqueId(),
-                        TransactionLog.TransactionType.DEPOSIT,
-                        amountB,
-                        oldBalance,
-                        currentBalance
-                );
-
-                logManager.logInsert(transactionLog, LOG_TAG.TRANSACTION);
                 return true;
             } else {
                 message = MessagePack.getMessage(local, MessageName.DEPOSIT_ADMIN_FAIL);
@@ -129,7 +117,6 @@ public class EconomyCommand {
                 player.sendMessage(MessagePack.getMessage(local, MessageName.NUMBER_ERROR));
                 return true;
             }
-            BigDecimal oldBalance = userManager.getUserWallet(player.getUniqueId());
             var withdraw = economyManager.withdrawPlayer(player, amount);
 
             if (withdraw.transactionSuccess()) {
@@ -139,19 +126,6 @@ public class EconomyCommand {
                 var data = DataService.getEconomyData(withdraw);
 
                 giPlayer.sendMessage(player,message,data);
-
-                BigDecimal amountB = BigDecimal.valueOf(withdraw.amount);
-                BigDecimal currentBalance = BigDecimal.valueOf(withdraw.balance);
-
-                TransactionLog transactionLog = new TransactionLog(
-                        player.getUniqueId(),
-                        TransactionLog.TransactionType.WITHDRAW,
-                        amountB,
-                        oldBalance,
-                        currentBalance
-                );
-
-                logManager.logInsert(transactionLog, LOG_TAG.TRANSACTION);
 
                 return true;
             } else {
@@ -168,7 +142,6 @@ public class EconomyCommand {
                 player.sendMessage(MessagePack.getMessage(local, MessageName.NUMBER_ERROR));
                 return true;
             }
-            BigDecimal oldBalance = userManager.getUserWallet(target.getUniqueId());
             var withdraw = economyManager.withdrawPlayer(target, amount);
 
             if (withdraw.transactionSuccess()) {
@@ -184,18 +157,6 @@ public class EconomyCommand {
 
                 giPlayer.sendMessage(player,message,data);
 
-                BigDecimal amountB = BigDecimal.valueOf(withdraw.amount);
-                BigDecimal currentBalance = BigDecimal.valueOf(withdraw.balance);
-
-                TransactionLog transactionLog = new TransactionLog(
-                        target.getUniqueId(),
-                        TransactionLog.TransactionType.WITHDRAW,
-                        amountB,
-                        oldBalance,
-                        currentBalance
-                );
-
-                logManager.logInsert(transactionLog, LOG_TAG.TRANSACTION);
                 return true;
             } else {
                 message = MessagePack.getMessage(local, MessageName.WITHDRAW_ADMIN_FAIL);

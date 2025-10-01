@@ -1,12 +1,16 @@
 package org.gi.gICore.manager;
 
 
+import io.lumine.mythic.bukkit.utils.lib.jooq.Log;
 import net.Indyuce.mmocore.api.player.PlayerData;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.gi.gICore.GICore;
+import org.gi.gICore.model.log.LOG_TAG;
+import org.gi.gICore.model.log.TransactionLog;
 import org.gi.gICore.model.user.UserWallet;
 import org.gi.gICore.model.user.Userdata;
+import org.gi.gICore.repository.log.Transaction;
 import org.gi.gICore.repository.user.UserRepository;
 import org.gi.gICore.repository.user.WalletRepository;
 import org.gi.gICore.util.ModuleLogger;
@@ -23,11 +27,12 @@ public class UserManager {
     private UserRepository userRepository;
     private WalletRepository walletRepository;
     private ModuleLogger logger;
-
+    private Transaction transaction;
 
     public UserManager() {
         this.userRepository = new UserRepository();
         this.walletRepository = new WalletRepository();
+        this.transaction = new Transaction();
         this.logger = new ModuleLogger(GICore.getInstance(),"User Manager");
     }
 
@@ -54,6 +59,20 @@ public class UserManager {
                         logger.error(player.getName(),wallet.getMessage());
 
                         return Result.ERROR(wallet.getMessage());
+                    }
+                    TransactionLog log = new TransactionLog(
+                            player.getUniqueId(),
+                            TransactionLog.TransactionType.NEW,
+                            balance,
+                            BigDecimal.ZERO,
+                            balance
+                    );
+                    Result logResult = transaction.insert(log,connection);
+                    if (!logResult.isSuccess()){
+                        DatabaseManager.rollback(connection);
+                        logger.error(player.getName(),logResult.getMessage());
+
+                        return Result.ERROR(logResult.getMessage());
                     }
                 }catch (SQLException e){
                     DatabaseManager.rollback(connection);
@@ -177,7 +196,7 @@ public class UserManager {
         }
     }
 
-    public Result updateUserWallet(UUID uuid, BigDecimal balance){
+    public Result insertUserWallet(UUID uuid, BigDecimal balance){
         try(Connection connection = DatabaseManager.getconnection()) {
             connection.setAutoCommit(false);
 
@@ -201,6 +220,32 @@ public class UserManager {
                 return Result.EXCEPTION(e);
             }
 
+        } catch (SQLException e) {
+            logger.error("Connection acquisition failed", e);
+            return Result.EXCEPTION(e);
+        }
+    }
+
+    public Result updateUserWallet(UUID uuid, BigDecimal balance){
+        try(Connection connection = DatabaseManager.getconnection()) {
+            connection.setAutoCommit(false);
+
+            try{
+                Result result = walletRepository.update(uuid,balance,connection);
+                if (!result.isSuccess()){
+                    DatabaseManager.rollback(connection);
+                    OfflinePlayer player = Bukkit.getPlayer(uuid);
+                    logger.error(player.getName(),result.getMessage());
+                    return Result.ERROR(result.getMessage());
+                }
+
+                connection.commit();
+
+                return Result.SUCCESS;
+            }catch (SQLException e){
+                DatabaseManager.rollback(connection);
+                return Result.EXCEPTION(e);
+            }
         } catch (SQLException e) {
             logger.error("Connection acquisition failed", e);
             return Result.EXCEPTION(e);

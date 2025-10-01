@@ -6,7 +6,11 @@ import org.bukkit.OfflinePlayer;
 import org.gi.gICore.GICore;
 import org.gi.gICore.config.ConfigCore;
 import org.gi.gICore.manager.ConfigManager;
+import org.gi.gICore.manager.LogManager;
 import org.gi.gICore.manager.UserManager;
+import org.gi.gICore.model.log.LOG_TAG;
+import org.gi.gICore.model.log.TransactionLog;
+import org.gi.gICore.repository.log.Transaction;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.util.Result;
 import org.gi.gICore.value.MessageName;
@@ -19,6 +23,7 @@ public class GIEconomy implements Economy {
     private UserManager userManager;
     private double start;
     private final String unit;
+    private final LogManager logManager;
     private ModuleLogger logger;
     public GIEconomy(){
         this.config = ConfigManager.getConfig("config.yml");
@@ -26,6 +31,7 @@ public class GIEconomy implements Economy {
         this.unit = config.getString("economy.unit");
         logger = new ModuleLogger(GICore.getInstance(),"Economy");
         userManager = new UserManager();
+        logManager = new LogManager();
     }
 
     @Override
@@ -100,13 +106,21 @@ public class GIEconomy implements Economy {
 
     @Override
     public double getBalance(OfflinePlayer player, String world) {
-        double balance = userManager.getUserWallet(player.getUniqueId()).doubleValue();
-        if (balance < 0) {
-            logger.error("Get Balance Error: " + player.getName() + " has negative balance");
-            return balance;
+        BigDecimal balance = userManager.getUserWallet(player.getUniqueId());
+
+        // null = 계정 없음
+        if (balance == null) {
+            logger.error("Wallet not found for: " + player.getName());
+            return 0.0;
         }
 
-        return balance;
+        // 음수 = 데이터 무결성 오류 (절대 발생하면 안됨!)
+        if (balance.compareTo(BigDecimal.ZERO) < 0) {
+            logger.error("CRITICAL: Negative balance for " + player.getName() + ": " + balance);
+            return balance.doubleValue(); // 음수 그대로 반환하여 상위에서 감지
+        }
+
+        return balance.doubleValue();
     }
 
     @Override
@@ -162,6 +176,15 @@ public class GIEconomy implements Economy {
 
         Result result = userManager.updateUserWallet(player.getUniqueId(),new_balance);
         if (result.isSuccess()){
+            TransactionLog transactionLog = new TransactionLog(
+                    player.getUniqueId(),
+                    TransactionLog.TransactionType.WITHDRAW,
+                    BigDecimal.valueOf(amount),
+                    old_balance,
+                    new_balance
+            );
+
+            logManager.logInsert(transactionLog, LOG_TAG.TRANSACTION);
             return new EconomyResponse(amount,new_balance.doubleValue(),EconomyResponse.ResponseType.SUCCESS,MessageName.WITHDRAW_SUCCESS);
         }
         return new EconomyResponse(amount,old_balance.doubleValue(),EconomyResponse.ResponseType.FAILURE,MessageName.WITHDRAW_FAIL);
@@ -195,6 +218,15 @@ public class GIEconomy implements Economy {
 
         Result result = userManager.updateUserWallet(player.getUniqueId(),new_balance);
         if (result.isSuccess()){
+            TransactionLog transactionLog = new TransactionLog(
+                    player.getUniqueId(),
+                    TransactionLog.TransactionType.DEPOSIT,
+                    BigDecimal.valueOf(amount),
+                    old_balance,
+                    new_balance
+            );
+
+            logManager.logInsert(transactionLog, LOG_TAG.TRANSACTION);
             return new EconomyResponse(amount,new_balance.doubleValue(),EconomyResponse.ResponseType.SUCCESS,MessageName.DEPOSIT_SUCCESS);
         }
         return new EconomyResponse(amount,old_balance.doubleValue(),EconomyResponse.ResponseType.FAILURE,MessageName.DEPOSIT_FAIL);
