@@ -14,6 +14,10 @@ public class CommandCore implements CommandExecutor {
                 return true;
             case "조회":
                 return EconomyCommand.infoCommand(sender,args);
+            case "입금":
+                return EconomyCommand.depositCommand(sender,args);
+            case "출금":
+                return EconomyCommand.withdrawCommand(sender,args);
         }
         return false;
     }

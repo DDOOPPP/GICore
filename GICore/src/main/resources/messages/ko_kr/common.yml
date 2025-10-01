@@ -1,0 +1,4 @@
+small_then_zero: "&c0보다 커야 합니다."
+# 예측 불가능한 오류 발생 시
+call_manager: "&e오류가 발생했습니다. 관리자에게 문의해주세요."
+number_error: "&e숫자를 입력해주세요."

@@ -2,6 +2,7 @@ package org.gi.gICore.manager;
 
 import net.kyori.adventure.text.Component;
 import net.milkbowl.vault.economy.Economy;
+import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.OfflinePlayer;
 import org.gi.gICore.loader.VaultLoader;
 
@@ -31,11 +32,12 @@ public class EconomyManager {
         return economy.getBalance(player);
     }
 
-    public boolean withdrawPlayer(OfflinePlayer player, double amount){
-        return economy.withdrawPlayer(player, amount).transactionSuccess();
+    public EconomyResponse withdrawPlayer(OfflinePlayer player, double amount){
+        return economy.withdrawPlayer(player, amount);
     }
-    public boolean depositPlayer(OfflinePlayer player, double amount){
-        return economy.depositPlayer(player, amount).transactionSuccess();
+
+    public EconomyResponse depositPlayer(OfflinePlayer player, double amount){
+        return economy.depositPlayer(player, amount);
     }
 
     public boolean has(OfflinePlayer player, double amount){

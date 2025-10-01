@@ -9,6 +9,7 @@ import org.gi.gICore.manager.ConfigManager;
 import org.gi.gICore.manager.UserManager;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.util.Result;
+import org.gi.gICore.value.MessageName;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -150,10 +151,10 @@ public class GIEconomy implements Economy {
 
     @Override
     public EconomyResponse withdrawPlayer(OfflinePlayer player, String worldName, double amount) {
-        if (amount < 0) return new EconomyResponse(0,0, EconomyResponse.ResponseType.FAILURE,"small_then_zero");
+        if (amount < 0) return new EconomyResponse(0,0, EconomyResponse.ResponseType.FAILURE, MessageName.SMALL_THEN_ZERO);
 
         if (!has(player,worldName,amount)) {
-            return new EconomyResponse(0,0, EconomyResponse.ResponseType.FAILURE,"not_enough_money");
+            return new EconomyResponse(0,0, EconomyResponse.ResponseType.FAILURE,MessageName.NOT_ENOUGH_MONEY);
         }
 
         BigDecimal old_balance = BigDecimal.valueOf(getBalance(player,worldName));
@@ -161,9 +162,9 @@ public class GIEconomy implements Economy {
 
         Result result = userManager.updateUserWallet(player.getUniqueId(),new_balance);
         if (result.isSuccess()){
-            return new EconomyResponse(amount,new_balance.doubleValue(),EconomyResponse.ResponseType.SUCCESS,"withdraw_success");
+            return new EconomyResponse(amount,new_balance.doubleValue(),EconomyResponse.ResponseType.SUCCESS,MessageName.WITHDRAW_SUCCESS);
         }
-        return new EconomyResponse(amount,old_balance.doubleValue(),EconomyResponse.ResponseType.FAILURE,"withdraw_fail");
+        return new EconomyResponse(amount,old_balance.doubleValue(),EconomyResponse.ResponseType.FAILURE,MessageName.WITHDRAW_FAIL);
     }
 
     @Override
@@ -183,20 +184,20 @@ public class GIEconomy implements Economy {
 
     @Override
     public EconomyResponse depositPlayer(OfflinePlayer player, String worldName, double amount) {
-        if (amount < 0) return new EconomyResponse(0,0, EconomyResponse.ResponseType.FAILURE,"small_then_zero");
+        if (amount < 0) return new EconomyResponse(0,0, EconomyResponse.ResponseType.FAILURE,MessageName.SMALL_THEN_ZERO);
 
         BigDecimal old_balance = BigDecimal.valueOf(getBalance(player,worldName));
         if (old_balance.doubleValue() < 0) {
-            return new EconomyResponse(0,0, EconomyResponse.ResponseType.FAILURE,"call_manager");
+            return new EconomyResponse(0,0, EconomyResponse.ResponseType.FAILURE,MessageName.CALL_MANAGER);
         }
 
         BigDecimal new_balance = old_balance.add(BigDecimal.valueOf(amount));
 
         Result result = userManager.updateUserWallet(player.getUniqueId(),new_balance);
         if (result.isSuccess()){
-            return new EconomyResponse(amount,new_balance.doubleValue(),EconomyResponse.ResponseType.SUCCESS,"deposit_success");
+            return new EconomyResponse(amount,new_balance.doubleValue(),EconomyResponse.ResponseType.SUCCESS,MessageName.DEPOSIT_SUCCESS);
         }
-        return new EconomyResponse(amount,old_balance.doubleValue(),EconomyResponse.ResponseType.FAILURE,"deposit_fail");
+        return new EconomyResponse(amount,old_balance.doubleValue(),EconomyResponse.ResponseType.FAILURE,MessageName.DEPOSIT_FAIL);
     }
 
     @Override
