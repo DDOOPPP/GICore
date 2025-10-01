@@ -10,23 +10,18 @@ import org.gi.gICore.component.adapter.GIPlayer;
 import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.manager.DataService;
 import org.gi.gICore.manager.EconomyManager;
-import org.gi.gICore.manager.LogManager;
 import org.gi.gICore.manager.UserManager;
-import org.gi.gICore.model.log.LOG_TAG;
-import org.gi.gICore.model.log.TransactionLog;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.value.MessageName;
-
 import java.math.BigDecimal;
 import java.util.Map;
-import java.util.TreeMap;
 
 public class EconomyCommand {
     private static EconomyManager economyManager = new EconomyManager();
     private static UserManager userManager = new UserManager();
-    private static LogManager logManager = new LogManager();
     private static ModuleLogger logger = new ModuleLogger(GICore.getInstance(),"Command");
     private static GIPlayer giPlayer = new GIPlayer();
+
     public static boolean infoCommand(CommandSender sender, String[] args){
         if (!(sender instanceof Player player)){
             return false;
