@@ -11,6 +11,7 @@ import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.manager.DataService;
 import org.gi.gICore.manager.EconomyManager;
 import org.gi.gICore.manager.UserManager;
+import org.gi.gICore.util.MessageUtil;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.value.MessageName;
 import java.math.BigDecimal;
@@ -72,22 +73,22 @@ public class EconomyCommand {
             var deposit = economyManager.depositPlayer(target, amount);
             if (deposit.transactionSuccess()) {
                 message = MessagePack.getMessage(local, deposit.errorMessage);
-                message = PlaceholderAPI.setPlaceholders(target, message);
-
                 Map<String ,String > data = DataService.getEconomyData(deposit);
 
-                giPlayer.sendMessage(target,message,data);
+                message = MessageUtil.parse(message,target,data);
+
+                giPlayer.sendMessage(target,message);
 
                 message = MessagePack.getMessage(local, MessageName.DEPOSIT_ADMIN_SUCCESS);
-                message = PlaceholderAPI.setPlaceholders(target, message);
+                message = MessageUtil.parse(message,target,data);
 
-                giPlayer.sendMessage(player,message,data);
+                giPlayer.sendMessage(player,message);
 
                 return true;
             } else {
                 message = MessagePack.getMessage(local, MessageName.DEPOSIT_ADMIN_FAIL);
                 message = PlaceholderAPI.setPlaceholders(target, message);
-                giPlayer.sendMessage(player,message,null);
+                giPlayer.sendMessage(player,message);
                 return false;
             }
 
@@ -116,17 +117,16 @@ public class EconomyCommand {
 
             if (withdraw.transactionSuccess()) {
                 message = MessagePack.getMessage(local, withdraw.errorMessage);
-                message = PlaceholderAPI.setPlaceholders(player, message);
-
                 var data = DataService.getEconomyData(withdraw);
+                message = MessageUtil.parse(message,player,data);
 
-                giPlayer.sendMessage(player,message,data);
+                giPlayer.sendMessage(player,message);
 
                 return true;
             } else {
                 message = MessagePack.getMessage(local, withdraw.errorMessage);
 
-                giPlayer.sendMessage(player,message,null);
+                giPlayer.sendMessage(player,message);
                 return false;
             }
         } else if (args.length == 2 && player.hasPermission("gicore.admin")) {
@@ -141,22 +141,22 @@ public class EconomyCommand {
 
             if (withdraw.transactionSuccess()) {
                 message = MessagePack.getMessage(local, withdraw.errorMessage);
-                message = PlaceholderAPI.setPlaceholders(target, message);
-
                 Map<String ,String > data = DataService.getEconomyData(withdraw);
 
-                giPlayer.sendMessage(target,message,data);
+                message = MessageUtil.parse(message,target,data);
+
+                giPlayer.sendMessage(target,message);
 
                 message = MessagePack.getMessage(local, MessageName.WITHDRAW_ADMIN_SUCCESS);
-                message = PlaceholderAPI.setPlaceholders(target, message);
+                message = MessageUtil.parse(message,target,data);
 
-                giPlayer.sendMessage(player,message,data);
+                giPlayer.sendMessage(player,message);
 
                 return true;
             } else {
                 message = MessagePack.getMessage(local, MessageName.WITHDRAW_ADMIN_FAIL);
-                message = PlaceholderAPI.setPlaceholders(target, message);
-                giPlayer.sendMessage(player,message,null);
+                message = MessageUtil.parse(message,target,null);
+                giPlayer.sendMessage(player,message);
                 return false;
             }
         }

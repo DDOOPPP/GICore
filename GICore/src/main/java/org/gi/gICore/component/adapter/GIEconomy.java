@@ -22,6 +22,7 @@ public class GIEconomy implements Economy {
     private ConfigCore config;
     private UserManager userManager;
     private double start;
+    private final String lorekey;
     private final String unit;
     private final LogManager logManager;
     private ModuleLogger logger;
@@ -29,6 +30,7 @@ public class GIEconomy implements Economy {
         this.config = ConfigManager.getConfig("config.yml");
         this.start = config.getDouble("economy.start");
         this.unit = config.getString("economy.unit");
+        this.lorekey = config.getString("economy.lore");
         logger = new ModuleLogger(GICore.getInstance(),"Economy");
         userManager = new UserManager();
         logManager = new LogManager();
@@ -61,7 +63,7 @@ public class GIEconomy implements Economy {
 
     @Override
     public String currencyNamePlural() {
-        return unit;
+        return lorekey;
     }
 
     @Override

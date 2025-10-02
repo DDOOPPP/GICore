@@ -19,4 +19,6 @@ public class MessageName {
     public static final String SMALL_THEN_ZERO = "small_then_zero";
     public static final String CALL_MANAGER = "call_manager";
     public static final String NUMBER_ERROR = "number_error";
+    public static final String PLAYER_IS_OFFLINE = "player_is_offline";
+    public static final String ITEM_SEND_OK = "item_send_ok";
 }
