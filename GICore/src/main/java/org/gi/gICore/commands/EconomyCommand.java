@@ -1,15 +1,18 @@
 package org.gi.gICore.commands;
 
+import io.r2dbc.spi.Result;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.gi.gICore.GICore;
 import org.gi.gICore.component.adapter.GIPlayer;
 import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.manager.DataService;
 import org.gi.gICore.manager.EconomyManager;
+import org.gi.gICore.manager.ItemBuilder;
 import org.gi.gICore.manager.UserManager;
 import org.gi.gICore.util.MessageUtil;
 import org.gi.gICore.util.ModuleLogger;
@@ -121,6 +124,11 @@ public class EconomyCommand {
                 message = MessageUtil.parse(message,player,data);
 
                 giPlayer.sendMessage(player,message);
+
+                ItemStack money = new ItemBuilder().buildMoney(BigDecimal.valueOf(amount));
+                if (money == null) giPlayer.sendMessage(player,MessagePack.getMessage(local, MessageName.CALL_MANAGER));
+
+                giPlayer.sendItem(player,money);
 
                 return true;
             } else {
