@@ -4,7 +4,7 @@ import org.gi.gICore.GICore;
 import org.gi.gICore.model.log.TransactionLog;
 import org.gi.gICore.model.table.LogTables;
 import org.gi.gICore.util.ModuleLogger;
-import org.gi.gICore.util.QueryBuilder;
+import org.gi.gICore.builder.QueryBuilder;
 import org.gi.gICore.util.Result;
 
 import java.sql.Connection;

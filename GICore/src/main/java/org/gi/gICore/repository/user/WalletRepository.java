@@ -4,7 +4,7 @@ import org.gi.gICore.GICore;
 import org.gi.gICore.model.table.UserTables;
 import org.gi.gICore.model.user.UserWallet;
 import org.gi.gICore.util.ModuleLogger;
-import org.gi.gICore.util.QueryBuilder;
+import org.gi.gICore.builder.QueryBuilder;
 import org.gi.gICore.util.Result;
 
 import java.math.BigDecimal;
@@ -12,7 +12,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.UUID;
 
 public class WalletRepository {

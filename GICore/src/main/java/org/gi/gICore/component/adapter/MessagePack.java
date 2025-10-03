@@ -11,8 +11,6 @@ import java.util.*;
 
 public class MessagePack {
     public static final List<String> SUPPORTED_LANGS = List.of("en_us", "ko_kr", "ja_jp");
-    public static final List<String> DEFAULT_FILES = List.of("common.yml", "economy.yml");
-
     // ✅ 나중에 초기화
     private static ModuleLogger logger;
 
@@ -26,63 +24,29 @@ public class MessagePack {
         }
 
         logger.info("Loading Message Pack");
-        File langDir = new File(plugin.getDataFolder(), "messages");
-
-        if (!langDir.exists()) {
-            langDir.mkdirs();
-        }
+        GICore.getInstance().copyResourceFolder("messages");
+        String path = "messages/%s";
 
         for (String lang : SUPPORTED_LANGS) {
-            logger.info("Loading Language: " + lang);
-            File langFile = new File(langDir, lang);
-
-            if (!langFile.exists()) {
-                logger.info("Language directory not found, creating: " + lang);
-                langFile.mkdirs();
-            }
-
-            // 언어별 맵 초기화
-            messagePacks.putIfAbsent(lang, new HashMap<>());
-
-            // 기본 파일 로드
-            for (String file : DEFAULT_FILES) {
-                File defaultFile = new File(langFile, file);
-
-                if (!defaultFile.exists()) {
-                    plugin.saveResource("messages/" + lang + "/" + file, false);
-                }
-
-                loadMessages(lang, file);
-            }
-
-            // ✅ 커스텀 파일 로드 (NPE 안전 처리)
-            loadCustomFiles(langFile, lang);
-        }
-
-        logger.info("Message Pack Loading Complete - Total Languages: " + messagePacks.size());
-    }
-
-    // ✅ 커스텀 파일 로딩 분리
-    private static void loadCustomFiles(File langDir, String lang) {
-        File[] files = langDir.listFiles();
-
-        if (files == null || files.length == 0) {
-            return;
-        }
-
-        for (File file : files) {
-            // 기본 파일은 이미 로드했으므로 제외
-            if (DEFAULT_FILES.contains(file.getName())) {
+            File langDir = new File(plugin.getDataFolder(), String.format(path, lang));
+            if (!langDir.exists()) {
+                logger.error("Language directory not found: " + langDir.getAbsolutePath());
                 continue;
             }
 
-            // yml 파일만 처리
-            if (file.isFile() && file.getName().endsWith(".yml")) {
-                logger.info("Loading custom message file: " + lang + "/" + file.getName());
+            for (File file : Objects.requireNonNull(langDir.listFiles())) {
+                if (file.isDirectory()) {
+                    continue;
+                }
+                if (!file.getName().endsWith(".yml")) {
+                    continue;
+                }
+                messagePacks.putIfAbsent(lang, new HashMap<>());
                 loadMessages(lang, file.getName());
             }
         }
     }
+
 
     // 메시지 로딩 로직
     private static void loadMessages(String lang, String file) {

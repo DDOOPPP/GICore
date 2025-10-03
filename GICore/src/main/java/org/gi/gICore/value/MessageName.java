@@ -21,4 +21,12 @@ public class MessageName {
     public static final String NUMBER_ERROR = "number_error";
     public static final String PLAYER_IS_OFFLINE = "player_is_offline";
     public static final String ITEM_SEND_OK = "item_send_ok";
+
+    public static final String RELOAD_START = "reload_start";
+    public static final String RELOAD_END = "reload_end";
+
+    public static final String BALANCE_SET_OK = "balance_set_ok";
+    public static final String BALANCE_SET_FAIL = "balance_set_fail";
+    public static final String SET_BALANCE = "set_balance";
+
 }

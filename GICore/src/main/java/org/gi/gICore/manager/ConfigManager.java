@@ -13,4 +13,13 @@ public class ConfigManager {
         }
         return new ConfigCore(file);
     }
+
+    public static File getLangugeFile(){
+        String path = "messages/output/assets/minecraft/lang/ko_kr.json";
+        File file = new File(GICore.getInstance().getDataFolder(),path);
+        if(!file.exists()){
+            GICore.getInstance().saveResource(path,false);
+        }
+        return file;
+    }
 }

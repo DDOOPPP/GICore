@@ -24,7 +24,7 @@ public class TransactionLog  extends LOG {
     }
 
     public enum TransactionType {
-        NEW("신규 생성"), DEPOSIT("입금"), WITHDRAW("출금");
+        NEW("신규 생성"), DEPOSIT("입금"), WITHDRAW("출금"),SET("설정");
 
         private String display;
 

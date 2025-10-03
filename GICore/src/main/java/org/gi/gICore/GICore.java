@@ -9,9 +9,15 @@ import org.gi.gICore.loader.PlaceHolderLoader;
 import org.gi.gICore.loader.VaultLoader;
 import org.gi.gICore.manager.ConfigManager;
 import org.gi.gICore.manager.DatabaseManager;
-import org.gi.gICore.util.QueryBuilder;
 import org.gi.gICore.util.TaskUtil;
-import org.gi.gICore.util.ValidationUtil;
+
+import java.io.File;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.util.Enumeration;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 
 public final class GICore extends JavaPlugin {
     private static GICore instance;
@@ -33,11 +39,46 @@ public final class GICore extends JavaPlugin {
             this.getServer().getPluginManager().disablePlugin(this);
             return;
         }
+
         MessagePack.loadPack(this);
         EventLoader.loadEvent(this);
         CommandLoader.loadCommand(this);
+
     }
 
+    public static void copyResourceFolder(String folderName) {
+        GICore core = GICore.getInstance();
+
+        File folder = new File(instance.getDataFolder(), folderName);
+        folder.mkdirs();
+
+        try {
+            // JAR 파일에서 폴더 내용 추출
+            JarFile jar = new JarFile(instance.getFile());
+            Enumeration<JarEntry> entries = jar.entries();
+
+            while (entries.hasMoreElements()) {
+                JarEntry entry = entries.nextElement();
+                String name = entry.getName();
+
+                // 해당 폴더의 파일인지 확인
+                if (name.startsWith(folderName + "/") && !entry.isDirectory()) {
+                    String fileName = name.substring(folderName.length() + 1);
+
+                    try (InputStream input = jar.getInputStream(entry)) {
+                        File outFile = new File(folder, fileName);
+                        outFile.getParentFile().mkdirs();
+                        Files.copy(input, outFile.toPath(),
+                                StandardCopyOption.REPLACE_EXISTING);
+                    }
+                }
+            }
+            instance.getLogger().info("Copied resource folder: " + folderName);
+            jar.close();
+        } catch (Exception e) {
+            instance.getLogger().severe("Failed to copy resource folder: " + folderName);
+        }
+    }
     @Override
     public void onDisable() {
         instance = null;

@@ -1,11 +1,10 @@
 package org.gi.gICore.repository.user;
 
-import io.lumine.mythic.bukkit.utils.lib.jooq.User;
 import org.gi.gICore.GICore;
 import org.gi.gICore.model.table.UserTables;
 import org.gi.gICore.model.user.Userdata;
 import org.gi.gICore.util.ModuleLogger;
-import org.gi.gICore.util.QueryBuilder;
+import org.gi.gICore.builder.QueryBuilder;
 import org.gi.gICore.util.Result;
 
 import java.sql.Connection;

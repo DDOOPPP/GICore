@@ -1,6 +1,5 @@
 package org.gi.gICore.commands;
 
-import io.r2dbc.spi.Result;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -12,12 +11,13 @@ import org.gi.gICore.component.adapter.GIPlayer;
 import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.manager.DataService;
 import org.gi.gICore.manager.EconomyManager;
-import org.gi.gICore.manager.ItemBuilder;
+import org.gi.gICore.builder.ItemBuilder;
 import org.gi.gICore.manager.UserManager;
 import org.gi.gICore.util.MessageUtil;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.value.MessageName;
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Map;
 
 public class EconomyCommand {
@@ -92,7 +92,7 @@ public class EconomyCommand {
                 message = MessagePack.getMessage(local, MessageName.DEPOSIT_ADMIN_FAIL);
                 message = PlaceholderAPI.setPlaceholders(target, message);
                 giPlayer.sendMessage(player,message);
-                return false;
+                return true;
             }
 
         }
@@ -121,6 +121,8 @@ public class EconomyCommand {
             if (withdraw.transactionSuccess()) {
                 message = MessagePack.getMessage(local, withdraw.errorMessage);
                 var data = DataService.getEconomyData(withdraw);
+
+
                 message = MessageUtil.parse(message,player,data);
 
                 giPlayer.sendMessage(player,message);
@@ -135,7 +137,7 @@ public class EconomyCommand {
                 message = MessagePack.getMessage(local, withdraw.errorMessage);
 
                 giPlayer.sendMessage(player,message);
-                return false;
+                return true;
             }
         } else if (args.length == 2 && player.hasPermission("gicore.admin")) {
             OfflinePlayer target = Bukkit.getOfflinePlayer(args[0]);
@@ -165,9 +167,56 @@ public class EconomyCommand {
                 message = MessagePack.getMessage(local, MessageName.WITHDRAW_ADMIN_FAIL);
                 message = MessageUtil.parse(message,target,null);
                 giPlayer.sendMessage(player,message);
-                return false;
+                return true;
             }
         }
         return false;
+    }
+
+    public static List<String> infoTab(CommandSender sender, String[] args){
+        if (!(sender instanceof Player player)){
+            return List.of();
+        }
+
+        if (!player.isOp() && !player.hasPermission("gicore.admin")){
+            return List.of();
+        }
+        if (args.length == 1){
+            return giPlayer.getPlayers();
+        }
+        return List.of();
+    }
+
+    public static List<String> depositTab(CommandSender sender, String[] args){
+        if (!(sender instanceof Player player)){
+            return List.of();
+        }
+
+        if (!player.isOp() && !player.hasPermission("gicore.admin")){
+            return List.of();
+        }
+        if (args.length == 1){
+            return giPlayer.getPlayers();
+        }
+        if (args.length == 2){
+            return List.of("1000","10000","50000");
+        }
+        return List.of();
+    }
+
+    public static List<String> withdrawTab(CommandSender sender, String[] args){
+        if (!(sender instanceof Player player)){
+            return List.of();
+        }
+        if (!player.isOp() && !player.hasPermission("gicore.admin")){
+            return List.of("1000","10000","50000");
+        }
+        if (args.length == 1  && player.hasPermission("gicore.admin")){
+            return giPlayer.getPlayers();
+        }
+        if (args.length == 2 && player.hasPermission("gicore.admin")) {
+            return List.of("1000","10000","50000");
+        }
+        return List.of();
     }
 }

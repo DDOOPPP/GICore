@@ -1,4 +1,7 @@
-package org.gi.gICore.util;
+package org.gi.gICore.builder;
+
+import org.gi.gICore.util.StringUtil;
+import org.gi.gICore.util.ValidationUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
