@@ -16,10 +16,15 @@ import org.gi.gICore.util.MessageUtil;
 import org.gi.gICore.value.ValueName;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ItemBuilder {
+    private ComponentBuilder componentBuilder;
 
+    public ItemBuilder() {
+        componentBuilder = new ComponentBuilder();
+    }
     public ItemStack buildItem(String itemName) {
         if (itemName == null) return null;
 
@@ -84,9 +89,10 @@ public class ItemBuilder {
         String unit = EconomyManager.getUnit();
         String loreKey = EconomyManager.getLoreKey();
 
-        Component display = new EconomyManager().format(amount.doubleValue());
+        Component display = componentBuilder.style(unit).with(amount.doubleValue()).gold().build();
+        List<Component> lore = new ArrayList<>();
 
-        List<Component> lore = MessageUtil.list(loreKey);
+        lore.add(componentBuilder.style(loreKey).with(amount.doubleValue()).build());
 
         item = ItemUtil.parseItem(item,display,lore);
 

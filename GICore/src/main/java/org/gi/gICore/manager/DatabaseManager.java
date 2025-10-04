@@ -15,13 +15,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DatabaseManager {
-    private static DatabaseManager instance;
-    private static ConfigCore config;
     private static HikariDataSource dataSource;
     private static ModuleLogger logger;
-    public DatabaseManager(ConfigCore config) {
-
-    }
 
     public static void initialize(ConfigCore config){
         logger = new ModuleLogger(GICore.getInstance(), "DatabaseManager");
@@ -37,13 +32,6 @@ public class DatabaseManager {
 
     public static Connection getconnection() throws SQLException {
         return dataSource.getConnection();
-    }
-
-    public static DatabaseManager getInstance() {
-        if (instance == null) {
-            instance = new DatabaseManager(ConfigManager.getConfig("database.yml"));
-        }
-        return instance;
     }
 
     public static void close() {
@@ -90,6 +78,7 @@ public class DatabaseManager {
             throw new RuntimeException(e);
         }
     }
+
     @FunctionalInterface
     public interface SQLFunction<C, R> {
         R apply(C conn) throws Exception;

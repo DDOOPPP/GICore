@@ -1,36 +1,79 @@
 package org.gi.gICore.component.adapter;
 
-import io.lumine.mythic.bukkit.utils.lib.jooq.BindingGetSQLInputContext;
-import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.configuration.ConfigurationSection;
 import org.gi.gICore.GICore;
+import org.gi.gICore.config.ConfigCore;
+import org.gi.gICore.util.ModuleLogger;
 
 import java.io.File;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.jar.JarEntry;
-import java.util.jar.JarFile;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ItemPack {
-    private static GICore plugin;
-
-    public static void initialize(){
-        plugin = GICore.getInstance();
-
-
-    }
-
-//    public List<File> getFiles(){
-//        File file = new File(plugin.getDataFolder(),"item");
+//    private static final Map<String, Item> ITEM_MAP = new HashMap<>();
+//    private static ModuleLogger logger;
 //
-//        if (!file.exists()){
-//            file.mkdirs();
+//    public static void initializer(){
+//        if (logger == null){
+//            logger = new ModuleLogger(GICore.getInstance(),"ItemPack");
+//        }
+//        register();
+//    }
 //
+//    private static void register(){
+//        File base = new File(GICore.getInstance().getDataFolder(),"item");
 //
+//        if (!base.exists()){
+//            base.mkdirs();
+//            logger.info("Item folder not found. Create folder.");
+//
+//            GICore.getInstance().copyResourceFolder("item");
+//        }
+//
+//        for (File f : base.listFiles()){
+//            if (f.isDirectory()){
+//                continue;
+//            }
+//            if (!f.getName().endsWith(".yml")){
+//                continue;
+//            }
+//
+//            ConfigCore config = new ConfigCore(f);
+//
+//            if (config == null){
+//                logger.error("Failed to load config: " + f.getName());
+//                continue;
+//            }
+//            int i = 0;
+//            for (String key : config.getKeys()){
+//                if (key == null || key.isEmpty()){
+//                    logger.error("Invalid key: " + key);
+//                    continue;
+//                }
+//
+//                ConfigurationSection section = config.getSection(key);
+//                if (section == null){
+//                    logger.error("Invalid section: " + key);
+//                    continue;
+//                }
+//
+//                ITEM_MAP.put(key, new Item(section));
+//                i ++;
+//            }
+//            logger.info("Loaded %d items from %s".formatted(i,f.getName()));
 //        }
 //    }
-
-
+//
+//    public static Item getItem(String key){
+//        return ITEM_MAP.getOrDefault(key,null);
+//    }
+//
+//    public static boolean hasKey(String key){
+//        return ITEM_MAP.containsKey(key);
+//    }
+//
+//    public static void reload(){
+//        ITEM_MAP.clear();
+//        register();
+//    }
 }

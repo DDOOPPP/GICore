@@ -1,0 +1,3 @@
+money:
+  display: 'gi.item.money.unit'
+  lore: 'gi.item.money.lore'

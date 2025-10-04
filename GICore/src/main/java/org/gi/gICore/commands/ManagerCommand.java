@@ -1,12 +1,10 @@
 package org.gi.gICore.commands;
 
-import jdk.dynalink.NamedOperation;
 import me.clip.placeholderapi.PlaceholderAPI;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.gi.gICore.GICore;
@@ -71,8 +69,8 @@ public class ManagerCommand {
         JavaPlugin plugin = GICore.getInstance();
 
         VaultLoader.loadVault(plugin);
-        componentManager.reload();
         MessagePack.reload(plugin);
+        componentManager.reload();
         LocalDateTime end = TimeUtil.now();
 
         Duration duration = Duration.between(start,end);

@@ -43,18 +43,13 @@ public final class GICore extends JavaPlugin {
         MessagePack.loadPack(this);
         EventLoader.loadEvent(this);
         CommandLoader.loadCommand(this);
-
     }
 
     public static void copyResourceFolder(String folderName) {
-        GICore core = GICore.getInstance();
-
         File folder = new File(instance.getDataFolder(), folderName);
         folder.mkdirs();
 
-        try {
-            // JAR 파일에서 폴더 내용 추출
-            JarFile jar = new JarFile(instance.getFile());
+        try(JarFile jar = new JarFile(instance.getFile())) {
             Enumeration<JarEntry> entries = jar.entries();
 
             while (entries.hasMoreElements()) {
@@ -74,7 +69,6 @@ public final class GICore extends JavaPlugin {
                 }
             }
             instance.getLogger().info("Copied resource folder: " + folderName);
-            jar.close();
         } catch (Exception e) {
             instance.getLogger().severe("Failed to copy resource folder: " + folderName);
         }

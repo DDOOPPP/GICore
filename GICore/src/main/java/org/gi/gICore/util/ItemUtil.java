@@ -96,9 +96,6 @@ public class ItemUtil {
     }
 
     public static ItemStack getCustomItem(String namespace_id) {
-        if (!CustomStack.isInRegistry(namespace_id)) {
-            return new ItemStack(Material.BEDROCK);
-        }
         return CustomStack.getInstance(namespace_id).getItemStack();
     }
 

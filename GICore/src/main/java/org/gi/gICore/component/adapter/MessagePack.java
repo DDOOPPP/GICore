@@ -47,7 +47,6 @@ public class MessagePack {
         }
     }
 
-
     // 메시지 로딩 로직
     private static void loadMessages(String lang, String file) {
         try {

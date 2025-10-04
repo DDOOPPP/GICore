@@ -168,7 +168,12 @@ public class ComponentBuilder {
         }
 
         public Component build(){
-            Component component = parent.translate(key,args.toArray());
+            Component component;
+            if (args.isEmpty()){
+                component = parent.translate(key);
+            }
+
+            component = parent.translate(key,args.toArray());
 
             if (color != null){
                 component = component.color(color);
