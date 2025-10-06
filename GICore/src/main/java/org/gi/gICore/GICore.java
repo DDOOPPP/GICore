@@ -1,6 +1,7 @@
 package org.gi.gICore;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import org.gi.gICore.component.adapter.ItemPack;
 import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.config.ConfigCore;
 import org.gi.gICore.loader.CommandLoader;
@@ -9,6 +10,7 @@ import org.gi.gICore.loader.PlaceHolderLoader;
 import org.gi.gICore.loader.VaultLoader;
 import org.gi.gICore.manager.ConfigManager;
 import org.gi.gICore.manager.DatabaseManager;
+import org.gi.gICore.manager.ResourcePackManager;
 import org.gi.gICore.util.TaskUtil;
 
 import java.io.File;
@@ -43,6 +45,8 @@ public final class GICore extends JavaPlugin {
         MessagePack.loadPack(this);
         EventLoader.loadEvent(this);
         CommandLoader.loadCommand(this);
+        ItemPack.initializer();
+        ResourcePackManager.initialize();
     }
 
     public static void copyResourceFolder(String folderName) {

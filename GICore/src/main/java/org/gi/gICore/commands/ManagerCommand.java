@@ -11,10 +11,7 @@ import org.gi.gICore.GICore;
 import org.gi.gICore.component.adapter.GIPlayer;
 import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.loader.VaultLoader;
-import org.gi.gICore.manager.ComponentManager;
-import org.gi.gICore.manager.DatabaseManager;
-import org.gi.gICore.manager.EconomyManager;
-import org.gi.gICore.manager.UserManager;
+import org.gi.gICore.manager.*;
 import org.gi.gICore.model.log.TransactionLog;
 import org.gi.gICore.repository.log.Transaction;
 import org.gi.gICore.util.ModuleLogger;
@@ -72,6 +69,8 @@ public class ManagerCommand {
         MessagePack.reload(plugin);
         componentManager.reload();
         LocalDateTime end = TimeUtil.now();
+        ResourcePackManager.reloadResourcePack();
+
 
         Duration duration = Duration.between(start,end);
         Map<String,String> data = Map.of(ValueName.TACK_TIME,String.valueOf(duration.toMillis()));

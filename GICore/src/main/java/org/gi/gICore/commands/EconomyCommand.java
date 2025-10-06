@@ -8,11 +8,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.gi.gICore.GICore;
 import org.gi.gICore.component.adapter.GIPlayer;
+import org.gi.gICore.component.adapter.ItemPack;
 import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.manager.DataService;
 import org.gi.gICore.manager.EconomyManager;
 import org.gi.gICore.builder.ItemBuilder;
 import org.gi.gICore.manager.UserManager;
+import org.gi.gICore.model.item.MoneyItem;
 import org.gi.gICore.util.MessageUtil;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.value.MessageName;
@@ -127,7 +129,10 @@ public class EconomyCommand {
 
                 giPlayer.sendMessage(player,message);
 
-                ItemStack money = new ItemBuilder().buildMoney(BigDecimal.valueOf(amount));
+                MoneyItem item = (MoneyItem) ItemPack.getItem("money");
+
+                ItemStack money = item.buildItem(amount);
+
                 if (money == null) giPlayer.sendMessage(player,MessagePack.getMessage(local, MessageName.CALL_MANAGER));
 
                 giPlayer.sendItem(player,money);

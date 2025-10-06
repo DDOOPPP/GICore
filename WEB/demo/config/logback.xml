@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="1 seconds">
+
+    <property name="CONSOLE_PATTERN" value="%green(%d{yyyy-MM-dd HH:mm:ss.SSS}) %magenta([%thread]) %highlight([%-5level]) %cyan(%logger{5}) - %msg%n" />
+    <property name="ROLLING_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n" />
+  
+    <appender name="CONSOLEAPPENDER" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>${CONSOLE_PATTERN}</Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ROLLINGAPPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <Pattern>${ROLLING_PATTERN}</Pattern>
+        </encoder>
+        
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>./log/main/%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>180</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!-- Error > Warn > Info > Debug > Trace -->
+    <root level="Info">
+        <appender-ref ref="CONSOLEAPPENDER"/>
+        <appender-ref ref="ROLLINGAPPENDER"/>
+    </root>
+
+</configuration>

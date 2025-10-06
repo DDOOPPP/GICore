@@ -1,0 +1,47 @@
+2025-10-07 02:43:18.297 [main] INFO  c.d.d.DemoApplication - Starting DemoApplication using Java 21.0.8 with PID 25796 (C:\Project\git\WEB\demo\build\classes\java\main started by khona in C:\Project\git\WEB\demo)
+2025-10-07 02:43:18.300 [main] INFO  c.d.d.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-07 02:43:18.820 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-07 02:43:18.836 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2025-10-07 02:43:19.144 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-10-07 02:43:19.154 [main] INFO  o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-07 02:43:19.155 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
+2025-10-07 02:43:19.156 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-07 02:43:19.198 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+2025-10-07 02:43:19.198 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 863 ms
+2025-10-07 02:43:19.324 [main] INFO  o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-07 02:43:19.377 [main] INFO  o.h.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-07 02:43:19.411 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-10-07 02:43:19.661 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-07 02:43:19.688 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2025-10-07 02:43:19.898 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/dev user=SA
+2025-10-07 02:43:19.900 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-07 02:43:19.926 [main] WARN  o.h.o.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-07 02:43:19.946 [main] INFO  o.h.o.c.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-07 02:43:20.273 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-07 02:43:20.278 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-07 02:43:20.315 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-07 02:43:20.583 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/dev'
+2025-10-07 02:43:20.643 [main] INFO  o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-10-07 02:43:20.659 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-10-07 02:43:20.665 [main] INFO  c.d.d.DemoApplication - Started DemoApplication in 2.892 seconds (process running for 3.392)
+2025-10-07 02:45:08.133 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-07 02:45:08.134 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-07 02:45:08.137 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 2 ms
+2025-10-07 02:45:08.260 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-07 02:45:08.260 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - SHA1: 188965e5f0907762b1ac954c34f675caf66c5b10
+2025-10-07 02:45:08.260 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-07 02:49:15.920 [http-nio-8080-exec-4] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-07 02:49:15.920 [http-nio-8080-exec-4] INFO  c.d.d.c.ResourcePackController - SHA1: 188965e5f0907762b1ac954c34f675caf66c5b10
+2025-10-07 02:49:15.920 [http-nio-8080-exec-4] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-07 02:51:50.104 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.t.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-07 02:51:50.110 [tomcat-shutdown] INFO  o.s.b.w.e.t.GracefulShutdown - Graceful shutdown complete
+2025-10-07 02:51:50.114 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-07 02:51:50.116 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-07 02:51:50.133 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.

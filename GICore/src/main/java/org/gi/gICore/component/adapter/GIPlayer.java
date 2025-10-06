@@ -49,4 +49,23 @@ public class GIPlayer {
                 .map(Player::getName)
                 .collect(Collectors.toList());
     }
+
+    public Result removeItem(OfflinePlayer player, ItemStack target) {
+        if (!player.isOnline()) {
+            return Result.FAILURE;
+        }
+        Inventory inventory = player.getPlayer().getInventory();
+
+        //두 아이템이 같을까?
+        for (ItemStack item: inventory.getContents()){
+            if (target.isSimilar(item)) {
+                int i =  item.getAmount();
+                player.getPlayer().sendMessage(String.valueOf(i));
+                item.setAmount(item.getAmount()-i);
+                //단순 TEST용도로 개발함
+                break;
+            }
+        }
+        return Result.SUCCESS;
+    }
 }
