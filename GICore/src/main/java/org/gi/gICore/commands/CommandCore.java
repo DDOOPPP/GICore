@@ -23,6 +23,8 @@ public class CommandCore implements CommandExecutor, TabExecutor {
                 return EconomyCommand.depositCommand(sender,args);
             case "출금":
                 return EconomyCommand.withdrawCommand(sender,args);
+            case "menu":
+                return GUICommand.onCommand(sender);
         }
         return false;
     }

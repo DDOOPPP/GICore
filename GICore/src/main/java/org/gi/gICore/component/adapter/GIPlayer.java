@@ -61,8 +61,8 @@ public class GIPlayer {
             if (target.isSimilar(item)) {
                 int i =  item.getAmount();
                 player.getPlayer().sendMessage(String.valueOf(i));
-                item.setAmount(item.getAmount()-i);
-                //단순 TEST용도로 개발함
+                item.setAmount(item.getAmount()-1);
+
                 break;
             }
         }

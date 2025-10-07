@@ -46,6 +46,7 @@ public final class GICore extends JavaPlugin {
         EventLoader.loadEvent(this);
         CommandLoader.loadCommand(this);
         ItemPack.initializer();
+        ConfigManager.loadGUIConfig();
         ResourcePackManager.initialize();
     }
 

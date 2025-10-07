@@ -12,7 +12,6 @@ import org.gi.gICore.component.adapter.ItemPack;
 import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.manager.DataService;
 import org.gi.gICore.manager.EconomyManager;
-import org.gi.gICore.builder.ItemBuilder;
 import org.gi.gICore.manager.UserManager;
 import org.gi.gICore.model.item.MoneyItem;
 import org.gi.gICore.util.MessageUtil;
@@ -131,7 +130,7 @@ public class EconomyCommand {
 
                 MoneyItem item = (MoneyItem) ItemPack.getItem("money");
 
-                ItemStack money = item.buildItem(amount);
+                ItemStack money = item.buildItem(null,amount);
 
                 if (money == null) giPlayer.sendMessage(player,MessagePack.getMessage(local, MessageName.CALL_MANAGER));
 

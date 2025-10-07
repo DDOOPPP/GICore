@@ -6,12 +6,12 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataType;
+import org.checkerframework.checker.units.qual.C;
 import org.gi.gICore.builder.ComponentBuilder;
 import org.gi.gICore.component.adapter.GIPlayer;
 import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.manager.DataService;
 import org.gi.gICore.manager.EconomyManager;
-import org.gi.gICore.manager.ResourcePackManager;
 import org.gi.gICore.util.ItemUtil;
 import org.gi.gICore.util.MessageUtil;
 import org.gi.gICore.util.Result;
@@ -23,25 +23,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class MoneyItem extends Item{
-    private EconomyManager economyManager;
-    private ComponentBuilder componentBuilder;
-    private GIPlayer giPlayer;
+public class MoneyItem extends CustomItem {
+    private static final EconomyManager economyManager = new EconomyManager();
+    private static final ComponentBuilder componentBuilder = new ComponentBuilder();
+    private static final GIPlayer giPlayer = new GIPlayer();
 
     public MoneyItem(ConfigurationSection section) {
         super(section);
-        this.economyManager = new EconomyManager();
-        this.componentBuilder = new ComponentBuilder();
-        giPlayer = new GIPlayer();
     }
 
     @Override
     public ItemStack buildItem(OfflinePlayer player, Object... arg) {
-        return null;
-    }
-
-    @Override
-    public ItemStack buildItem(Object... arg) {
         BigDecimal amount = BigDecimal.valueOf(Double.parseDouble(arg[0].toString()));
 
         ItemStack icon = getItem();
@@ -65,9 +57,9 @@ public class MoneyItem extends Item{
     }
 
     @Override
-    public void action(Player player, ItemStack item) {
+    public boolean action(Player player, ItemStack item) {
         if (!ItemUtil.hasKey(item, ValueName.MONEY, PersistentDataType.BOOLEAN)){
-            return;
+             return false;
         }
         double amount = ItemUtil.getValue(item, ValueName.AMOUNT, PersistentDataType.DOUBLE);
         String message = "";
@@ -77,19 +69,13 @@ public class MoneyItem extends Item{
         if (!result.transactionSuccess()){
             message = MessagePack.getMessage(local,result.errorMessage);
             player.sendMessage(message);
-            return;
+            return false;
         }
         message = MessagePack.getMessage(local, MessageName.DEPOSIT_SUCCESS);
 
         Map<String ,String > data = DataService.getEconomyData(result);
         message = MessageUtil.parse(message,player,data);
         player.sendMessage(message);
-
-        Result isRemoved = destroyItem(player, item);
-        if (isRemoved.isSuccess()){
-            //메세지 새로 뽑을것
-            return;
-        }
-        return;
+        return true;
     }
 }

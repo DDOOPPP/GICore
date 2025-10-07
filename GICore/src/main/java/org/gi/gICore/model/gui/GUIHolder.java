@@ -5,6 +5,7 @@ import io.lumine.mythic.lib.listener.option.GameIndicators;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
@@ -20,25 +21,27 @@ import java.util.UUID;
 
 public abstract class GUIHolder implements InventoryHolder {
     private Inventory inventory;
-    private UUID player_id;
     private Map<String, Object> data = new HashMap<>();
     private ModuleLogger logger;
 
-    public GUIHolder(ConfigCore configCore, UUID player_id) {
+    public GUIHolder(ConfigCore configCore) {
         logger = new ModuleLogger(GICore.getInstance(),"GUIHolder");
         Component title = Component.translatable(configCore.getString("title"));
         int size = configCore.getInt("size");
+        String typeS = configCore.getString("type");
         if (size <= 0){
-            InventoryType type = InventoryType.valueOf(configCore.getString("type").toUpperCase());
+            InventoryType type = InventoryType.valueOf(typeS.toUpperCase());
+            if (type == null){
+               type = InventoryType.CHEST;
+            }
             inventory = Bukkit.createInventory(this, type, title);
         }else {
-            if (!(size / 9 == 0)){
+            if (!(size % 9 == 0)){
                 logger.error("Config is Not Valid: %s",size);
                 size = 9;
             }
             this.inventory = Bukkit.createInventory(this,size,title);
         }
-        this.player_id = player_id;
 
     }
 
@@ -55,8 +58,10 @@ public abstract class GUIHolder implements InventoryHolder {
 
     public abstract Inventory load(Inventory inventory,Player player);
 
+    public abstract void onClick(Player player, int slot, ItemStack clickedItem, ClickType clickType);
+
     @Override
     public @NotNull Inventory getInventory() {
-        return null;
+        return inventory;
     }
 }

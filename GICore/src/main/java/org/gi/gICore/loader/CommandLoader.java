@@ -20,11 +20,13 @@ public class CommandLoader {
         plugin.getCommand("조회").setExecutor(new CommandCore());
         plugin.getCommand("출금").setExecutor(new CommandCore());
         plugin.getCommand("입금").setExecutor(new CommandCore());
+        plugin.getCommand("menu").setExecutor(new CommandCore());
 
         plugin.getCommand("관리").setTabCompleter(new CommandCore());
         plugin.getCommand("조회").setTabCompleter(new CommandCore());
         plugin.getCommand("출금").setTabCompleter(new CommandCore());
         plugin.getCommand("입금").setTabCompleter(new CommandCore());
+
 
         logger.info("Command registered");
     }

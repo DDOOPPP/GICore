@@ -6,4 +6,5 @@ public class ValueName {
     public static final String MONEY = "money";
 
     public static final String TACK_TIME = "tack_time";
+    public static final String ACTION = "action";
 }

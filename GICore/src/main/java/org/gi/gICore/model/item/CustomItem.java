@@ -12,14 +12,14 @@ import org.gi.gICore.util.Result;
 
 
 @Getter
-public abstract class Item {
+public abstract class CustomItem {
     private String display;
     private String lore;
     private String namespace;
     private Material material;
 
 
-    public Item(ConfigurationSection section) {
+    public CustomItem(ConfigurationSection section) {
         this.display = section.getString("display");
         this.lore = section.getString("lore");
         this.namespace = section.getString("namespace");
@@ -36,9 +36,7 @@ public abstract class Item {
 
     public abstract ItemStack buildItem(OfflinePlayer player,Object... arg);
 
-    public abstract ItemStack buildItem(Object... arg);
-
     public abstract Result destroyItem(Player player, ItemStack itemStack);
 
-    public abstract void action(Player player, ItemStack item);
+    public abstract boolean action(Player player, ItemStack item);
 }

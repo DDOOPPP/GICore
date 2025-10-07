@@ -3,7 +3,8 @@ package org.gi.gICore.component.adapter;
 import org.bukkit.configuration.ConfigurationSection;
 import org.gi.gICore.GICore;
 import org.gi.gICore.config.ConfigCore;
-import org.gi.gICore.model.item.Item;
+import org.gi.gICore.model.item.CustomItem;
+import org.gi.gICore.model.item.GUIITem;
 import org.gi.gICore.model.item.MoneyItem;
 import org.gi.gICore.util.ModuleLogger;
 
@@ -12,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ItemPack {
-    private static final Map<String, Item> ITEM_MAP = new HashMap<>();
+    private static final Map<String, CustomItem> ITEM_MAP = new HashMap<>();
     private static ModuleLogger logger;
 
     public static void initializer(){
@@ -63,8 +64,9 @@ public class ItemPack {
                     logger.error("Invalid action: " + key);
                     continue;
                 }
-                Item item = switch (action){
+                CustomItem item = switch (action){
                     case "MONEY" -> new MoneyItem(section);
+                    case "NONE" -> new GUIITem(section);
                     default -> null;
                 };
 
@@ -75,7 +77,7 @@ public class ItemPack {
         }
     }
 
-    public static Item getItem(String key){
+    public static CustomItem getItem(String key){
         return ITEM_MAP.getOrDefault(key,null);
     }
 

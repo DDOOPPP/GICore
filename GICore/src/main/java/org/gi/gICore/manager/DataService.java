@@ -15,10 +15,7 @@ public class DataService {
 
     public static Map<String,String> getEconomyData(EconomyResponse economyResponse) {
         Map<String,String> data = new HashMap<>();
-        Component amount = economyManager.format(economyResponse.amount);
-        String text = PlainTextComponentSerializer.plainText().serialize(amount);
-
-        data.put(ValueName.AMOUNT, text);
+        data.put(ValueName.AMOUNT, String.valueOf(economyResponse.amount));
         return data;
     }
 }

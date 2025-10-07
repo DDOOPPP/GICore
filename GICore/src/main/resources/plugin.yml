@@ -27,6 +27,10 @@ commands:
     description: '관리자 권한 커맨드'
     permission: gicore.admin
     permission-message: '해당권한이 없습니다'
+  menu:
+    aliases:
+      - menu
+    description: '메인메뉴로 이동합니다.'
 permissions:
   gicore.admin:
     description: "관리자 권한"

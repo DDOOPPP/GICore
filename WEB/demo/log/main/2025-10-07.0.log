@@ -45,3 +45,93 @@
 2025-10-07 02:51:50.114 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-10-07 02:51:50.116 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-10-07 02:51:50.133 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-07 02:59:10.868 [main] INFO  c.d.d.DemoApplication - Starting DemoApplication using Java 21.0.7 with PID 18936 (D:\project\MC_PR\WEB\demo\build\classes\java\main started by khona in D:\project\MC_PR\WEB\demo)
+2025-10-07 02:59:10.869 [main] INFO  c.d.d.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-07 02:59:11.269 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-07 02:59:11.283 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2025-10-07 02:59:11.550 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-10-07 02:59:11.557 [main] INFO  o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-07 02:59:11.558 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
+2025-10-07 02:59:11.558 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-07 02:59:11.591 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+2025-10-07 02:59:11.591 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 694 ms
+2025-10-07 02:59:11.703 [main] INFO  o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-07 02:59:11.734 [main] INFO  o.h.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-07 02:59:11.755 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-10-07 02:59:11.939 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-07 02:59:11.956 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2025-10-07 02:59:12.061 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/dev user=SA
+2025-10-07 02:59:12.062 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-07 02:59:12.077 [main] WARN  o.h.o.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-07 02:59:12.089 [main] INFO  o.h.o.c.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-07 02:59:12.268 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-07 02:59:12.271 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-07 02:59:12.293 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-07 02:59:12.472 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/dev'
+2025-10-07 02:59:12.508 [main] INFO  o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-10-07 02:59:12.527 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-10-07 02:59:12.531 [main] INFO  c.d.d.DemoApplication - Started DemoApplication in 1.991 seconds (process running for 2.185)
+2025-10-07 03:01:44.839 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-07 03:01:44.839 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-07 03:01:44.840 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
+2025-10-07 03:01:44.885 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-07 03:01:44.885 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - SHA1: 188965e5f0907762b1ac954c34f675caf66c5b10
+2025-10-07 03:01:44.885 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-07 03:02:16.935 [http-nio-8080-exec-4] INFO  c.d.d.c.ResourcePackController - Received resource pack download request
+2025-10-07 03:02:16.940 [http-nio-8080-exec-4] INFO  c.d.d.c.ResourcePackController - Resource pack file downloaded successfully
+2025-10-07 03:02:16.941 [http-nio-8080-exec-4] INFO  c.d.d.c.ResourcePackController - Size: 1072 bytes
+2025-10-07 03:08:51.542 [http-nio-8080-exec-2] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-07 03:08:51.543 [http-nio-8080-exec-2] INFO  c.d.d.c.ResourcePackController - SHA1: 188965e5f0907762b1ac954c34f675caf66c5b10
+2025-10-07 03:08:51.543 [http-nio-8080-exec-2] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-07 06:21:32.069 [main] INFO  c.d.d.DemoApplication - Starting DemoApplication using Java 21.0.7 with PID 4512 (D:\project\MC_PR\WEB\demo\build\classes\java\main started by khona in D:\project\MC_PR\WEB\demo)
+2025-10-07 06:21:32.077 [main] INFO  c.d.d.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-07 06:21:32.505 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-07 06:21:32.518 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2025-10-07 06:21:32.817 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-10-07 06:21:32.826 [main] INFO  o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-07 06:21:32.827 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
+2025-10-07 06:21:32.827 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-07 06:21:32.870 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+2025-10-07 06:21:32.870 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 764 ms
+2025-10-07 06:21:32.991 [main] INFO  o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-07 06:21:33.038 [main] INFO  o.h.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-07 06:21:33.066 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-10-07 06:21:33.262 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-07 06:21:33.283 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2025-10-07 06:21:33.428 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/dev user=SA
+2025-10-07 06:21:33.430 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-07 06:21:33.444 [main] WARN  o.h.o.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-07 06:21:33.457 [main] INFO  o.h.o.c.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-07 06:21:33.637 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-07 06:21:33.640 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-07 06:21:33.669 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-07 06:21:33.896 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/dev'
+2025-10-07 06:21:33.937 [main] INFO  o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-10-07 06:21:33.956 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-10-07 06:21:33.961 [main] INFO  c.d.d.DemoApplication - Started DemoApplication in 2.277 seconds (process running for 2.554)
+2025-10-07 06:22:07.882 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-07 06:22:07.883 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-07 06:22:07.884 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
+2025-10-07 06:22:07.940 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-07 06:22:07.940 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - SHA1: 188965e5f0907762b1ac954c34f675caf66c5b10
+2025-10-07 06:22:07.940 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-07 06:25:50.854 [http-nio-8080-exec-2] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-07 06:25:50.854 [http-nio-8080-exec-2] INFO  c.d.d.c.ResourcePackController - SHA1: 188965e5f0907762b1ac954c34f675caf66c5b10
+2025-10-07 06:25:50.854 [http-nio-8080-exec-2] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-07 06:29:28.008 [http-nio-8080-exec-6] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-07 06:29:28.009 [http-nio-8080-exec-6] INFO  c.d.d.c.ResourcePackController - SHA1: 188965e5f0907762b1ac954c34f675caf66c5b10
+2025-10-07 06:29:28.009 [http-nio-8080-exec-6] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip

@@ -4,3 +4,10 @@ money:
   namespace: ''
   material: 'PAPER'
   action: 'MONEY'
+status:
+  display: 'gi.item.main.status.name'
+  lore: 'gi.item.main.status.name'
+  namespace: ''
+  material: 'BOOK'
+  action: 'NONE'
+  type: 'STATUS'

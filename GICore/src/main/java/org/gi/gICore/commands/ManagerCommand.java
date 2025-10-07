@@ -68,9 +68,11 @@ public class ManagerCommand {
         VaultLoader.loadVault(plugin);
         MessagePack.reload(plugin);
         componentManager.reload();
-        LocalDateTime end = TimeUtil.now();
+        ConfigManager.loadGUIConfig();
         ResourcePackManager.reloadResourcePack();
 
+
+        LocalDateTime end = TimeUtil.now();
 
         Duration duration = Duration.between(start,end);
         Map<String,String> data = Map.of(ValueName.TACK_TIME,String.valueOf(duration.toMillis()));
