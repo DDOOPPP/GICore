@@ -6,8 +6,13 @@ import net.kyori.adventure.text.Component;
 
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import net.milkbowl.vault.economy.EconomyResponse;
+import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.gi.gICore.GICore;
 import org.gi.gICore.builder.ComponentBuilder;
+import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.value.ValueName;
 
 import java.util.HashMap;
@@ -16,6 +21,8 @@ import java.util.Map;
 public class DataService {
     private static EconomyManager economyManager = new EconomyManager();
     private static ComponentBuilder builder = new ComponentBuilder();
+    private static ModuleLogger logger = new ModuleLogger(GICore.getInstance(),"DataService");
+
     public static Map<String,String> getEconomyData(EconomyResponse economyResponse) {
         Map<String,String> data = new HashMap<>();
         data.put(ValueName.AMOUNT, String.valueOf(economyResponse.amount));
@@ -31,8 +38,11 @@ public class DataService {
         data.put(ValueName.EXP,playerData.getExperience());
 
         String professKey = playerData.getProfess().getName();
-        Component component = builder.style(professKey).gold().build();
-        data.put(ValueName.PROFESS,PlainTextComponentSerializer.plainText().serialize(component));
+        logger.warn(professKey);
+        ComponentManager componentManager = ComponentManager.getInstance();
+        String professName = componentManager.getText(professKey);
+        logger.warn(professName);
+        data.put(ValueName.PROFESS,professName);
 
         Component balance = economyManager.format(economyManager.getBalance(player));
         data.put(ValueName.BALANCE,PlainTextComponentSerializer.plainText().serialize(balance));
@@ -47,8 +57,9 @@ public class DataService {
         data.put(ValueName.NEXT_EXP,playerData.getLevelUpExperience());
 
         String manaKey = playerData.getProfess().getManaDisplay().getName();
-        Component manaNameComp = builder.style(manaKey).red().build();
-        data.put(ValueName.MANA_NAME,PlainTextComponentSerializer.plainText().serialize(manaNameComp));
+        logger.warn(manaKey);
+        String manaName = componentManager.getText(manaKey);
+        data.put(ValueName.MANA_NAME,manaName);
         return data;
     }
 
@@ -75,5 +86,20 @@ public class DataService {
             return null;
         }
         return parameterInfo.getDisplay(player.getSkillLevel(skill.getSkill()));
+    }
+
+    public static Map<String,ItemStack> getEquipmentData(OfflinePlayer player) {
+        Map<String,ItemStack> data = new HashMap<>();
+
+        if (!player.isOnline()){
+            return data;
+        }
+        Player online = player.getPlayer();
+        data.put(ValueName.HELMET,online.getEquipment().getHelmet() != null ? online.getEquipment().getHelmet() : null);
+        data.put(ValueName.CHESTPLATE,online.getEquipment().getChestplate() != null ? online.getEquipment().getChestplate() : null);
+        data.put(ValueName.LEGGINGS,online.getEquipment().getLeggings() != null ? online.getEquipment().getLeggings() : null);
+        data.put(ValueName.BOOTS,online.getEquipment().getBoots() != null ? online.getEquipment().getBoots() : null);
+
+        return data;
     }
 }

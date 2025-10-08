@@ -5,6 +5,7 @@ import net.Indyuce.mmocore.api.player.PlayerData;
 import net.Indyuce.mmocore.manager.SkillManager;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
+import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -33,6 +34,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ManagerCommand {
     private static ModuleLogger logger = new ModuleLogger(GICore.getInstance(),"Command");
@@ -87,6 +89,12 @@ public class ManagerCommand {
         message = StringUtil.replacePlaceholders(message,data);
         player.sendMessage(message);
         logger.info("Reload Complete: %s",duration.toMillis());
+
+        List<Player> onlinePlayers = Bukkit.getOnlinePlayers().stream().map(temp -> temp.isOnline() ? temp : null).collect(Collectors.toList());
+
+        for (Player onlinePlayer : onlinePlayers){
+            ResourcePackManager.downloadResourcePack(onlinePlayer);
+        }
         return true;
     }
 

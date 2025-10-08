@@ -68,4 +68,8 @@ public class ValueName {
     public static final String MAX_HEALTH = "MAX_HEALTH";
     public static final String MAX_MANA = "MAX_MANA";
     public static final String HEALTH = "health";
+    public static final String HELMET = "helmet";
+    public static final String LEGGINGS = "leggings";
+    public static final String CHESTPLATE = "chestplate";
+    public static final String BOOTS = "boots";
 }

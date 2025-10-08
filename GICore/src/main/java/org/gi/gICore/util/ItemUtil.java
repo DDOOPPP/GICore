@@ -18,6 +18,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.persistence.PersistentDataType;
 
+import javax.naming.Name;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -136,6 +137,15 @@ public class ItemUtil {
         });
     }
 
+    public static void deleteKey(ItemStack itemStack, String key){
+        NamespacedKey namespacedKey = getNamespacedKey(key);
+
+        itemStack.editMeta(meta ->{
+            meta.getPersistentDataContainer().remove(namespacedKey);
+        });
+        return;
+    }
+
     public static <P,C> C getValue(ItemStack itemStack, String key, PersistentDataType<P,C> type) {
         if (itemStack == null || !itemStack.hasItemMeta()) return null;
 
@@ -177,6 +187,7 @@ public class ItemUtil {
     public static void setString(ItemStack item, String key, String value) {
         edit(item, key, PersistentDataType.STRING, value);
     }
+
     public static void setInteger(ItemStack item, String key, int value) {
         edit(item, key, PersistentDataType.INTEGER, value);
     }

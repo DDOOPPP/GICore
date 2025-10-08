@@ -1,5 +1,6 @@
 package org.gi.gICore.events;
 
+import net.Indyuce.mmocore.api.event.PlayerChangeClassEvent;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -136,5 +137,11 @@ public class PlayerEvents implements Listener {
             GUIManager.getMainMenu().open(player);
             return;
         }
+    }
+
+    @EventHandler
+    public void onChangeProfess(PlayerChangeClassEvent event){
+        event.setCancelled(true);
+        return;
     }
 }

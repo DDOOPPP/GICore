@@ -39,6 +39,8 @@ public class GUIITem extends CustomItem{
             case "INFO":
                 icon = playerData(icon,player);
                 break;
+            case "ARMOR_SLOT":
+                break;
             default:
                 icon = defaultData(icon);
                 break;
@@ -49,7 +51,6 @@ public class GUIITem extends CustomItem{
     }
 
     private ItemStack playerData(ItemStack icon, OfflinePlayer player){
-
         List<Component> lore = new ArrayList<>();
         Map<String ,Object > data = DataService.getPlayerData(player);
         Component display = componentBuilder.translateNamed(getDisplay(),data);

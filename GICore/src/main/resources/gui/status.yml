@@ -5,3 +5,6 @@ items:
   info:
     key: 'info'
     slots: [ 0 ]
+  helmet_slot:
+    key: 'armor_slot'
+    slots: [ 1 ]

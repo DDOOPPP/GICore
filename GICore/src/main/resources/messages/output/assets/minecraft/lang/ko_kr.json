@@ -6,7 +6,7 @@
   "gi.profess.newbie.name": "모험가",
   "gi.profess.mage.name": "마법사",
   "gi.profess.warrior.name": "전사",
-  "gi.data.mana.spell": "주문력",
+  "gi.data.mana.spell": "마나",
   "gi.data.mana.rage": "투지",
   "gi.item.status.info.name": "<gold><bold>{name}의 스테이터스</bold></gold>",
   "gi.item.status.info.lore1": "직업: {profess}",
@@ -14,5 +14,13 @@
   "gi.item.status.info.lore3": "경험치: {exp}/{next_exp}",
   "gi.item.status.info.lore4": "체력:  {health}/{MAX_HEALTH}",
   "gi.item.status.info.lore5": "{mana_name}: {mana}/{MAX_MANA}",
-  "gi.item.status.info.lore6": "소지금액: {balance}"
+  "gi.item.status.info.lore6": "소지금액: {balance}",
+  "gi.item.main.armor_slot.name": "<white><bold>{type}슬롯: {equipment}</bold></white>",
+  "gi.item.main.armor_slot.lore1": "현재 장착된 {type}: {equipment}",
+  "gi.item.main.armor_slot.lore2": "좌클릭으로 방어구를 착용할수있습니다.",
+  "gi.item.main.armor_slot.lore3": "우클릭으로 방어구를 해제할수있습니다.",
+  "gi.data.armor.type.helmet": "투구",
+  "gi.data.armor.type.chestplate": "갑옷",
+  "gi.data.armor.type.leggings": "바지",
+  "gi.data.armor.type.boots": "신발"
 }

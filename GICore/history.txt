@@ -1,4 +1,62 @@
 2025-10-08
- 직업 스킬 데이터 생성 어케하노? ㅅㅂ
- 초기에는 Base? 만약 클래스에 따라서 감소한 부분에 대해서는?
+ 디자인 관련한 부분은 완성된 이후 작업해도 늦지않음 제발 신경쓰지말고 작업하기
+ 유저 직업선택시 메세지 변경 필요 -> 아마 이벤트가 있을듯
+ -> 해당 이벤트가 존재하는 경우 직업변경 후 DB에 업데이트해야함
 
+   "gi.item.main.armor_slot.name": "<white><bold>{type}슬롯: {equipment}</bold></white>",
+     "gi.item.main.armor_slot.lore1": "좌클릭으로 방어구를 착용할수있습니다.",
+     "gi.item.main.armor_slot.lore2": "우클릭으로 방어구를 해제할수있습니다.",
+     "gi.data.armor.type.helmet": "투구",
+     "gi.data.armor.type.chestplate": "갑옷",
+     "gi.data.armor.type.leggings": "바지",
+     "gi.data.armor.type.boots": "신발"
+
+     이러한 형태로 갑옷슬롯을 번역한다고 가정을 하자
+
+     어떤식으로 동작을 시킬건지
+     현재 item.yml에 사전에 등록한 armor_slot을 키로 만든 아이템 정의
+    armor_slot:
+      display: 'gi.item.main.armor_slot.name'
+      lore:
+        - 'gi.item.main.armor_slot.lore1'
+        - 'gi.item.main.armor_slot.lore2'
+      namespace: ''
+      material: 'BLACK_STAINED_GLASS'
+      action: 'NONE'
+      type: 'ARMOR_SLOT'
+      그리고 DataService에서 유저의 Equipment를 가져오는로직이 존재
+      Map<String, ItemStack>의 구조로 저장을한다
+      여기서 String -> 부위를 키값으로 ItemStack을 저장하되 만약 착용을 하고 있지않다면
+      Null을 저장하는 중이다
+
+      -> Null인 경우 현재 Item의 material인 검은색 판유리를 생성하여 기본 데이터를 집어넣는다.
+      기본 데이터의 경우 {type}에는 해당 부위 {equipment}에는 없음이 기본적으로 들어갈 예정
+
+    그렇다면 Type의 경우 어떻게 집어넣을생각인건지?
+
+    ItemPack을 리딩할때 item.yml을 리딩하고 gui의 경우 해당 gui의 yml파일 읽고 items섹션안에
+    키 그리고 item.yml에 지정된 key와 slot으로 정의를 해둠
+    -> GUI.yml에 적혀있는 Key가 무슨 슬롯인지를 알려줄것 -> 해당 슬롯을 기반으로 Component를 통해서 타입을 변환
+
+    Equipment의 경우 어떻게 분리를 할것인지? -> MMOItems의 방어구와 바닐라 방어구를?
+
+    ItemUtil 클래스에 isMMO라는 메서드가 존재함 -> 이게 먹힐지는 모름
+    해당 클래스로 걸러진다면 걸러서 진행
+    바닐라의 경우 item.translationKey()를 사용해서 이름만 컨버팅해서 넣음
+    MMOItem인 경우 어차피 생성한 시점에서 언어팩을 키값으로 만들어진채로 나오기에 상관없음
+    -> Meta데이터로 getDisplay를 하고 이게 Component의 키값인지 확인 필요!!
+    -> 만약 번역된 내용 그대로면 그대로 사용 아니면 Component로 다시 번역해서 사용
+
+    착용과 해제 로직
+
+    ItemUtil.isArmor()라는 메서드로 방어구인지 먼저 체크 => MMOItem도 기반은 바닐라 아이템 Type 활용할꺼기에 무관
+    이걸 통과한 아이템에 한해서 방어구로 인정
+
+    클릭 타입을 보고 좌,우 클릭을 으로 착용과 해제를 함
+
+    착용시 클릭한 아이템을 입히고 제거
+
+    해제시 먼저 해체를 하고 해당 슬롯 변경
+    if 인벤토리가 꽉찬경우 아이템을 뱉음
+
+    그리고 착용할때는 내부 키가 있지만 해제의 경우 해당 키값을 지워야함
