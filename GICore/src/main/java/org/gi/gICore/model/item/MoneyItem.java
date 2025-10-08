@@ -38,10 +38,10 @@ public class MoneyItem extends CustomItem {
 
         ItemStack icon = getItem();
 
-        Component display = componentBuilder.style(getDisplay()).with(amount.doubleValue()).gold().build();
+        Component display = componentBuilder.translateNamed(getDisplay(),Map.of(ValueName.AMOUNT,amount.doubleValue()));
         List<Component> lore = new ArrayList<>();
 
-        lore.add(componentBuilder.style(getLore()).with(amount.doubleValue()).build());
+        lore.add(componentBuilder.translateNamed(getLore().get(0),Map.of(ValueName.AMOUNT,economyManager.format(amount.doubleValue()))));
 
         icon = ItemUtil.parseItem(icon,display,lore);
 

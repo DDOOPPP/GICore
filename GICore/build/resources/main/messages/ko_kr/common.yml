@@ -9,5 +9,5 @@ item_send_ok:  "§e{item_name}을 %player_name%에게 보냈습니다."
 reload_start: 'Plugin Reload Start'
 reload_end: 'Plugin reload complete: {tack_time}ms'
 
-balance_set_ok: "§e%player_name%님의 소지금액을 {amount}로 설정했습니다."
+balance_set_ok: "§e%player_name%님의 소지금액을 {amount}골드로 설정했습니다."
 balance_set_fail: "§c해당유저의 금액설정을 실패했습니다."

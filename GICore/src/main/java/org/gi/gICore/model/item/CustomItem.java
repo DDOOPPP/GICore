@@ -10,18 +10,20 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.gi.gICore.util.Result;
 
+import java.util.List;
+
 
 @Getter
 public abstract class CustomItem {
     private String display;
-    private String lore;
+    private List<String> lore;
     private String namespace;
     private Material material;
 
 
     public CustomItem(ConfigurationSection section) {
         this.display = section.getString("display");
-        this.lore = section.getString("lore");
+        this.lore = section.getStringList("lore");
         this.namespace = section.getString("namespace");
         this.material = Material.valueOf(section.getString("material"));
     }

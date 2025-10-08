@@ -9,6 +9,7 @@ import org.bukkit.persistence.PersistentDataType;
 import org.gi.gICore.GICore;
 import org.gi.gICore.component.adapter.ItemPack;
 import org.gi.gICore.config.ConfigCore;
+import org.gi.gICore.manager.GUIManager;
 import org.gi.gICore.model.item.GUIITem;
 import org.gi.gICore.util.ItemUtil;
 import org.gi.gICore.util.ModuleLogger;
@@ -58,6 +59,12 @@ public class MainMenu extends GUIHolder{
             return;
         }
         String action = ItemUtil.getValue(clickedItem, ValueName.ACTION, PersistentDataType.STRING);
+
+        switch (action){
+            case "STATUS":
+                GUIManager.getStatusGUI().open(player);
+                return;
+        }
         player.sendMessage(action);
     }
 }

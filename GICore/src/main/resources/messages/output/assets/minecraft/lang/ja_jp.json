@@ -1,4 +1,18 @@
 {
-  "gi.item.money.unit" : "%s골드",
-  "gi.item.money.lore": "우클릭을 통해서 <gold><amount></gold>을 획득합니다"
+  "gi.item.money.unit": "<gold><bold>{amount}ゴールド</bold></gold>",
+  "gi.item.money.lore": "右クリックで<gold>{amount}</gold>を獲得します",
+  "gi.item.main.status.name": "ステータス",
+  "gi.item.main.status.lore": "ステータスに移動します",
+  "gi.profess.newbie.name": "「冒険者（ぼうけんしゃ）」",
+  "gi.profess.mage.name": "「魔法使い（まほうつかい）」",
+  "gi.profess.warrior.name": "「戦士（せんし）」",
+  "gi.data.mana.spell": "呪文力（じゅもんりょく）",
+  "gi.data.mana.rage": "闘志（とうし）",
+  "gi.item.status.info.name": "<gold><bold>{name}のステータス</bold></gold>",
+  "gi.item.status.info.lore1": "職業: {profess}",
+  "gi.item.status.info.lore2": "現在レベル: {level}",
+  "gi.item.status.info.lore3": "経験値: {exp}/{next_exp}",
+  "gi.item.status.info.lore4": "体力: {health}/{MAX_HEALTH}",
+  "gi.item.status.info.lore5": "{mana_name}: {mana}/{MAX_MANA}",
+  "gi.item.status.info.lore6": "所持金額: {balance}"
 }

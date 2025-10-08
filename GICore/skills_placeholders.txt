@@ -1,0 +1,929 @@
+================================================================================
+Skills 폴더 플레이스홀더 정리
+================================================================================
+
+=== ambers.yml ===
+  {cooldown}
+  {percent}
+
+=== arcane-hail.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== arcane-rift.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== backstab.yml ===
+  {cooldown}
+  {extra}
+  {mana}
+  {mana_name}
+
+=== black-hole.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== blind.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== blink.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== blizzard.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== bloodbath.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== blunt-attack-effect.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== bouncy-fireball.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== bunny-mode.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== burn.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== burning-hands.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== chicken-wraith.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== circular-slash.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== combo-attack.yml ===
+  {cooldown}
+  {count}
+  {damage}
+  {mana}
+  {mana_name}
+
+=== confuse.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== contamination.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== control.yml ===
+  {cooldown}
+  {duration}
+  {knockback}
+  {mana}
+  {mana_name}
+
+=== corrosion.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== corrupt.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== corrupted-fangs.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== crossbow-arrow-tick.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== crossbow-attack.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== cursed-beam.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== death-mark.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== deep-wound.yml ===
+  {cooldown}
+  {damage}
+  {extra}
+  {mana}
+  {mana_name}
+
+=== earth-crit-subskill.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== earth-critical-strike.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== earth-elemental-attack.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== earthquake.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== empowered-attack.yml ===
+  {cooldown}
+  {extra}
+  {mana}
+  {mana_name}
+  {radius}
+  {ratio}
+
+=== empty-skill.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== evade.yml ===
+  {cooldown}
+  {duration}
+  {mana}
+  {mana_name}
+
+=== explosive-turkey.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== fire-berserker.yml ===
+  {extra}
+
+=== fire-critical-strike.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== fire-elemental-attack.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== fire-meteor.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== fire-rage.yml ===
+  {cooldown}
+  {count}
+  {damage}
+  {duration}
+  {ignite}
+  {mana}
+  {mana_name}
+
+=== fire-storm.yml ===
+  {cooldown}
+  {damage}
+  {ignite}
+  {mana}
+  {mana_name}
+
+=== fireball.yml ===
+  {cooldown}
+  {damage}
+  {ignite}
+  {mana}
+  {mana_name}
+  {ratio}
+
+=== firebolt.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== firefly.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== freeze.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== freezing-curse.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== frog-mode.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== frozen-aura.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== furtive-strike.yml ===
+  {cooldown}
+  {damage}
+  {extra}
+  {mana}
+  {mana_name}
+  {radius}
+
+=== gauntlet-special-attack.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== grand-heal.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== greater-healings.yml ===
+  {cooldown}
+  {heal}
+  {mana}
+  {mana_name}
+
+=== heal.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== heavy-charge.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== hoearthquake.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== holy-missile.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== human-shield.yml ===
+  {cooldown}
+  {duration}
+  {low}
+  {mana}
+  {mana_name}
+  {redirect}
+  {reduction}
+
+=== ice-crit-strike-subskill.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== ice-critical-strike.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== ice-crystal.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== ice-elemental-attack.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== ice-spikes.yml ===
+  {cooldown}
+  {damage}
+  {mana}
+  {mana_name}
+  {slow}
+
+=== ignite.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== item-bomb.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== item-throw.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== leap.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== life-ender.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== light-dash.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== lightning-beam.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== lightning-spirit.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== magical-path.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== magical-shield.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== magma-fissure.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== mana-spirit.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== minor-explosion.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== minor-healings.yml ===
+  {cooldown}
+  {heal}
+  {mana}
+  {mana_name}
+
+=== neptune-gift.yml ===
+  {extra}
+
+=== nether-spirit.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== none.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== overload.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== piercing-attack-effect.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== poison.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== power-mark.yml ===
+  {cooldown}
+  {duration}
+  {ratio}
+  {stun}
+
+=== present-throw.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== propagate-damage.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== regen-ally.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== sae1.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== sae2.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== shadow-veil.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== shock.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== shockwave.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== shulker-missile.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== sky-smash.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== slash-attack-effect.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== slashing-attack-effect.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== slow.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== smite.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== sneaky-picky.yml ===
+  {extra}
+  {mana}
+  {mana_name}
+
+=== snowman-turret.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== sparkle.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-attack-hit-entity.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-attack-tick.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-attack.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-deal-damage.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-default-hit.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-default-tick.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-default.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-lightning-hit.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-lightning-tick.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-lightning.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-mana-hit-tick.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-mana-hit.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-mana-tick-2.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-mana-tick.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-mana.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-nether-hit.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-nether-tick.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-nether.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-special-attack.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-sunfire-explode.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-sunfire-hit.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-sunfire-success-2.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-sunfire-success-block.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-sunfire-success-entity.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-sunfire-tick.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-sunfire-tick2.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-sunfire.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-thunder-explode.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-thunder-hit.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-thunder-success-2.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-thunder-success-block.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-thunder-success-entity.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-thunder-tick.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-thunder-tick2.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-thunder.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-void-hit-tick.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-void-hit.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-void.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-xray-hit.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-xray-tick.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== staff-xray.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== starfall.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== stun.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== sunfire-spirit.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== swiftness.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== tactical-grenade.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== targeted-fireball.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== telekinesy.yml ===
+  {cooldown}
+  {duration}
+  {knockback}
+  {mana}
+  {mana_name}
+
+=== throw-up.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== thrust.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== thunder-crit-subskill-1.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== thunder-critical-strike.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== thunder-elemental-attack.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== thunder-spirit.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== tnt-throw.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== vampirism.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== void-spirit.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== void-zapper.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== warp.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+  {range}
+
+=== water-crit-subskill-1.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== water-crit-subskill-2.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== water-critical-strike.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== water-elemental-attack.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== weaken-target.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== weaken.yml ===
+  {cooldown}
+  {duration}
+  {mana}
+  {mana_name}
+  {ratio}
+
+=== whip-attack-hit.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== whip-attack-tick.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== whip-attack.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== wind-crit-sub-skill.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== wind-critical-strike.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== wind-elemental-attack.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== wither.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+=== xray-spirit.yml ===
+  {cooldown}
+  {mana}
+  {mana_name}
+
+
+================================================================================
+전체 플레이스홀더 목록 (중복 제거)
+================================================================================
+{cooldown} - 사용 파일: 171개
+{count} - 사용 파일: 2개
+{damage} - 사용 파일: 7개
+{duration} - 사용 파일: 7개
+{extra} - 사용 파일: 7개
+{heal} - 사용 파일: 2개
+{ignite} - 사용 파일: 3개
+{knockback} - 사용 파일: 2개
+{low} - 사용 파일: 1개
+{mana} - 사용 파일: 170개
+{mana_name} - 사용 파일: 170개
+{percent} - 사용 파일: 1개
+{radius} - 사용 파일: 2개
+{range} - 사용 파일: 1개
+{ratio} - 사용 파일: 4개
+{redirect} - 사용 파일: 1개
+{reduction} - 사용 파일: 1개
+{slow} - 사용 파일: 1개
+{stun} - 사용 파일: 1개

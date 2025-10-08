@@ -55,6 +55,7 @@ dependencies {
     implementation("redis.clients:jedis:6.1.0")
 
     compileOnly 'net.kyori:adventure-api:4.17.0'
+    implementation 'net.kyori:adventure-text-minimessage:4.17.0'
 }
 shadowJar {
     archiveBaseName.set("GICore")

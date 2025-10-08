@@ -10,7 +10,7 @@ public class GUICommand {
             return false;
         }
 
-        player.openInventory(GUIManager.getMainMenu().getInventory());
+        GUIManager.getMainMenu().open(player);
         return true;
     }
 }

@@ -66,7 +66,7 @@ public class ItemPack {
                 }
                 CustomItem item = switch (action){
                     case "MONEY" -> new MoneyItem(section);
-                    case "NONE" -> new GUIITem(section);
+                    case "NONE", "INFO" -> new GUIITem(section);
                     default -> null;
                 };
 

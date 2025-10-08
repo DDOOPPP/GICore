@@ -4,9 +4,14 @@ import net.kyori.adventure.text.Component;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.OfflinePlayer;
+import org.gi.gICore.builder.ComponentBuilder;
 import org.gi.gICore.loader.VaultLoader;
+import org.gi.gICore.value.ValueName;
+
+import java.util.Map;
 
 public class EconomyManager {
+    private static ComponentBuilder componentBuilder;
     private static Economy economy;
     private static String unit;
     private static String loreKey;
@@ -14,12 +19,11 @@ public class EconomyManager {
         economy = VaultLoader.getEconomy();
         unit = economy.currencyNameSingular();
         loreKey = economy.currencyNamePlural();
+        componentBuilder = new ComponentBuilder();
     }
 
     public Component format(double amount){
-        Component amountComponent = Component.text(String.format("%.0f", amount));
-        Component unitComponent = Component.translatable(unit);
-        return amountComponent.append(Component.text(" ")).append(unitComponent);
+        return componentBuilder.translateNamed(getUnit(), Map.of(ValueName.AMOUNT,amount));
     }
 
     public boolean hasAccount(OfflinePlayer player){

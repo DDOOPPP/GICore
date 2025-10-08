@@ -1,6 +1,8 @@
 package org.gi.gICore.commands;
 
 import me.clip.placeholderapi.PlaceholderAPI;
+import net.Indyuce.mmocore.api.player.PlayerData;
+import net.Indyuce.mmocore.manager.SkillManager;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.OfflinePlayer;
@@ -9,6 +11,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.gi.gICore.GICore;
 import org.gi.gICore.component.adapter.GIPlayer;
+import org.gi.gICore.component.adapter.ItemPack;
 import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.loader.VaultLoader;
 import org.gi.gICore.manager.*;
@@ -55,6 +58,9 @@ public class ManagerCommand {
         } else if (command.equalsIgnoreCase("econ")) {
             return playerBalanceSet(player,arg);
         }
+//        else if (command.equalsIgnoreCase("test")) {
+//            return Test(player,arg);
+//        }
         return false;
     }
 
@@ -70,7 +76,7 @@ public class ManagerCommand {
         componentManager.reload();
         ConfigManager.loadGUIConfig();
         ResourcePackManager.reloadResourcePack();
-
+        ItemPack.reload();
 
         LocalDateTime end = TimeUtil.now();
 
@@ -108,10 +114,7 @@ public class ManagerCommand {
                 return true;
             }
             Map<String ,String > data = new HashMap<>();
-            Component value = economyManager.format(amount.doubleValue());
-            String text = PlainTextComponentSerializer.plainText().serialize(value);
-
-            data.put(ValueName.AMOUNT, text);
+            data.put(ValueName.AMOUNT, String.valueOf(amount.doubleValue()));
 
             if (target.isOnline()){
                 Player onlinePlayer = target.getPlayer();
@@ -134,6 +137,10 @@ public class ManagerCommand {
         player.sendMessage(MessagePack.getMessage(local,MessageName.BALANCE_SET_FAIL));
         return true;
     }
+
+//    public static boolean Test(Player player,String[] args){
+//
+//    }
 
     private static Result insertLog(OfflinePlayer target, BigDecimal amount){
         BigDecimal balance = userManager.getUserWallet(target.getUniqueId());

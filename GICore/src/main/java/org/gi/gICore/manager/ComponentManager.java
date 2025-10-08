@@ -12,6 +12,8 @@ public class ComponentManager {
     ModuleLogger logger;
 
     private Set<String> transferKeys = new HashSet<>();
+    private Map<String, String> translationMap = new HashMap<>();
+
     public ComponentManager(){
         registerTranslation(ConfigManager.getLangugeFile());
         logger = new ModuleLogger(GICore.getInstance(),"ComponentManager");
@@ -26,6 +28,11 @@ public class ComponentManager {
             return;
         }
         transferKeys.addAll(keys);
+
+        Map<String, String> keyValueMap = JsonUtil.getKeyValueMap(translationFile);
+        if (keyValueMap != null) {
+            translationMap.putAll(keyValueMap);
+        }
     }
 
 
@@ -33,8 +40,13 @@ public class ComponentManager {
         return transferKeys.contains(key);
     }
 
+    public String getText(String key){
+        return translationMap.getOrDefault(key, key);
+    }
+
     public void reload(){
         transferKeys.clear();
+        translationMap.clear();
         registerTranslation(ConfigManager.getLangugeFile());
         logger.info("Reload Translation Keys");
         for (String key : transferKeys){

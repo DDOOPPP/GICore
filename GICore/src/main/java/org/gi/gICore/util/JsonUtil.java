@@ -66,4 +66,26 @@ public class JsonUtil {
             return Set.of();
         }
     }
+
+    public static Map<String, String> getKeyValueMap(File file){
+        try{
+            Map<String ,String > keyMaps =  mapper.readValue(file, new TypeReference<Map<String,String>>() {
+            });
+
+            if (keyMaps == null) {
+                return Map.of();
+            }
+
+            return keyMaps;
+        } catch (StreamReadException e) {
+            logger.error("Json Convert Error: %s", e.getMessage());
+            return Map.of();
+        } catch (DatabindException e) {
+            logger.error("Databind Error: %s", e.getMessage());
+            return Map.of();
+        } catch (IOException e) {
+            logger.error("IO Error: %s", e.getMessage());
+            return Map.of();
+        }
+    }
 }

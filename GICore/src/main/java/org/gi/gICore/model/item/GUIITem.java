@@ -8,7 +8,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.gi.gICore.builder.ComponentBuilder;
 import org.gi.gICore.component.adapter.GIPlayer;
+import org.gi.gICore.component.adapter.ItemPack;
 import org.gi.gICore.config.ConfigCore;
+import org.gi.gICore.manager.DataService;
 import org.gi.gICore.manager.EconomyManager;
 import org.gi.gICore.util.ItemUtil;
 import org.gi.gICore.util.Result;
@@ -16,6 +18,7 @@ import org.gi.gICore.value.ValueName;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Getter
 public class GUIITem extends CustomItem{
@@ -32,15 +35,40 @@ public class GUIITem extends CustomItem{
     @Override
     public ItemStack buildItem(OfflinePlayer player, Object... arg) {
         ItemStack icon = getItem();
-
-        Component display = componentBuilder.style(getDisplay()).build();
-        List<Component> lore = new ArrayList<>();
-        lore.add(componentBuilder.style(getLore()).build());
-
-        icon = ItemUtil.parseItem(icon,display,lore);
+        switch (type){
+            case "INFO":
+                icon = playerData(icon,player);
+                break;
+            default:
+                icon = defaultData(icon);
+                break;
+        }
 
         ItemUtil.setString(icon,ValueName.ACTION,type);
         return icon;
+    }
+
+    private ItemStack playerData(ItemStack icon, OfflinePlayer player){
+
+        List<Component> lore = new ArrayList<>();
+        Map<String ,Object > data = DataService.getPlayerData(player);
+        Component display = componentBuilder.translateNamed(getDisplay(),data);
+        for (String s : getLore()){
+            lore.add(componentBuilder.translateNamed(s,data));
+        }
+
+        return  ItemUtil.parseItem(icon,display,lore);
+    }
+
+
+    private ItemStack defaultData(ItemStack icon){
+        Component display = componentBuilder.style(getDisplay()).build();
+        List<Component> lore = new ArrayList<>();
+        for (String s : getLore()){
+            lore.add(componentBuilder.style(s).build());
+        }
+
+        return  ItemUtil.parseItem(icon,display,lore);
     }
 
     @Override

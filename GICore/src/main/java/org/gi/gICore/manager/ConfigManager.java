@@ -54,7 +54,6 @@ public class ConfigManager {
             logger.info(f.getName().replace(".yml",""));
             configCoreMap.put(f.getName().replace(".yml",""),config);
         }
-
         return;
     }
 

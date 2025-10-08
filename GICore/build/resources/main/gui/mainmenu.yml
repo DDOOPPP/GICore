@@ -1,0 +1,7 @@
+title: 'MainMenu'
+size: 54
+type: ''
+items:
+  status:
+    key: 'status'
+    slots: [0]

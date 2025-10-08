@@ -1,8 +1,8 @@
 info: "%player_name%의 소지금액: %gi_balance%"
 # 출금 성공 시
-withdraw_success: "§c-{amount}"
+withdraw_success: "§c-{amount}골드."
 # 입금 성공 시
-deposit_success: "§a+{amount}."
+deposit_success: "§a+{amount}골드."
 # 출금 시 잔액이 부족할 때
 not_enough_money: "§c소지금액이 부족합니다."
 # 출금 실패 시
@@ -13,12 +13,12 @@ deposit_fail: "§c입금에 실패했습니다. 잠시 후 다시 시도해주�
 # 관리자가 플레이어에게 돈을 지급 성공 시
 # %player_name%: 대상 플레이어 이름
 # {amount}: 지급액
-deposit_admin_success: "§a%player_name%님에게 {amount}을 지급했습니다."
+deposit_admin_success: "§a%player_name%님에게 {amount}골드를 지급했습니다."
 
 # 관리자가 플레이어의 돈을 차감 성공 시
 # %player_name%: 대상 플레이어 이름
 # {amount}: 차감액
-withdraw_admin_success: "§a%player_name%님의 소지금액에서 {amount}을 차감했습니다."
+withdraw_admin_success: "§a%player_name%님의 소지금액에서 {amount}골드를 차감했습니다."
 
 # 관리자 지급 실패 시
 deposit_admin_fail: "§c%player_name%에게 금액 지급에 실패했습니다."
@@ -26,4 +26,4 @@ deposit_admin_fail: "§c%player_name%에게 금액 지급에 실패했습니다.
 # 관리자 차감 실패 시
 withdraw_admin_fail: "§c%player_name%에게 금액 차감에 실패했습니다."
 
-set_balance: '소지금액이 {amount}로 변경되었습니다'
+set_balance: '소지금액이 {amount}골드로 변경되었습니다'

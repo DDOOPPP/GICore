@@ -5,17 +5,20 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.gi.gICore.GICore;
 import org.gi.gICore.manager.ComponentManager;
 import org.gi.gICore.util.ModuleLogger;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.zip.CheckedInputStream;
 
 public class ComponentBuilder {
     private ComponentManager componentManager;
     private ModuleLogger logger = new ModuleLogger(GICore.getInstance(),"ComponentBuilder");
+    private MiniMessage miniMessage = MiniMessage.miniMessage();
 
     public ComponentBuilder(){
         this.componentManager = ComponentManager.getInstance();
@@ -49,6 +52,28 @@ public class ComponentBuilder {
         }
 
         return Component.translatable(key,components);
+    }
+
+    public Component translateNamed(String key, Map<String, Object> placeholders){
+        if (!componentManager.hasKey(key)){
+            logger.error("Key not found : %s",key);
+            return Component.text(key);
+        }
+
+        String template = componentManager.getText(key);
+        String replaced = replacePlaceholders(template, placeholders);
+
+        return miniMessage.deserialize(replaced);
+    }
+
+    private String replacePlaceholders(String template, Map<String, Object> placeholders){
+        String result = template;
+        for (Map.Entry<String, Object> entry : placeholders.entrySet()){
+            String placeholder = "{" + entry.getKey() + "}";
+            String value = entry.getValue().toString();
+            result = result.replace(placeholder, value);
+        }
+        return result;
     }
 
     public StyleBuilder style(String key){
