@@ -28,7 +28,7 @@ public class ComponentBuilder {
         if (!componentManager.hasKey(key)){
             logger.error("Key not found : %s",key);
 
-            return Component.text(key);
+            return Component.translatable(key);
         }
 
         return Component.translatable(key);
@@ -70,7 +70,12 @@ public class ComponentBuilder {
         String result = template;
         for (Map.Entry<String, Object> entry : placeholders.entrySet()){
             String placeholder = "{" + entry.getKey() + "}";
-            String value = entry.getValue().toString();
+            String value;
+            if (entry.getValue() instanceof Component){
+                value = miniMessage.serialize((Component) entry.getValue());
+            } else {
+                value = entry.getValue().toString();
+            }
             result = result.replace(placeholder, value);
         }
         return result;

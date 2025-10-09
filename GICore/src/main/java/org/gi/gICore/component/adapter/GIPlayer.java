@@ -13,6 +13,7 @@ import org.gi.gICore.value.MessageName;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
@@ -25,6 +26,18 @@ public class GIPlayer {
             return;
         }
         player.getPlayer().sendMessage(msg);
+    }
+
+    public Locale getLocale(Player player){
+        switch (player.getLocale()){
+            case "ko_kr":
+                return Locale.KOREA;
+            case "ja_jp":
+                return Locale.JAPAN;
+            case "en_us":
+            default:
+                return Locale.ENGLISH;
+        }
     }
 
     public Result sendItem(OfflinePlayer player, ItemStack item) {

@@ -2,6 +2,7 @@ package org.gi.gICore.model.item;
 
 import lombok.Getter;
 import net.kyori.adventure.text.Component;
+import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
@@ -15,12 +16,10 @@ import org.gi.gICore.manager.EconomyManager;
 import org.gi.gICore.util.ItemUtil;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.util.Result;
+import org.gi.gICore.util.StringUtil;
 import org.gi.gICore.value.ValueName;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Getter
 public class GUIITem extends CustomItem{
@@ -29,6 +28,7 @@ public class GUIITem extends CustomItem{
     private static final GIPlayer giPlayer = new GIPlayer();
     private static final ModuleLogger logger = new ModuleLogger(GICore.getInstance(),"GUIITem");
     private static final ComponentManager componentManager = ComponentManager.getInstance();
+    private static final GIPlayer giplayer = new GIPlayer();
     private String type;
     public GUIITem(ConfigurationSection section) {
         super(section);
@@ -64,6 +64,7 @@ public class GUIITem extends CustomItem{
         }
 
         return ItemUtil.parseItem(icon,display,lore);
+
     }
 
 
@@ -74,22 +75,35 @@ public class GUIITem extends CustomItem{
         String typeKey = "gi.data.armor.type.%s".formatted(armorType);
         String noneKey = "gi.item.armor.none";
         String TypeName = componentManager.getText(typeKey);
-        logger.info("Load ArmorType: %s",TypeName);
         data.put(ValueName.ARMOR_TYPE,TypeName);
 
         if (equipmentMap.containsKey(armorType)){
             ItemStack itemStack = equipmentMap.get(armorType);
             if (itemStack == null){
                 String none = componentManager.getText(noneKey);
-
-                logger.info("Load Armor: %s",none);
                 data.put(ValueName.EQUIPMENT,none);
-            }
+            }else{
+                String key = "";
+                ItemStack armor = equipmentMap.get(armorType);
+                icon = armor.clone();
 
+                if (ItemUtil.isMMOItem(armor)){
+                    key = armor.getItemMeta().getDisplayName();
+
+                    key = StringUtil.decolorize(key);
+
+                    logger.info(key);
+
+                    Component component = componentBuilder.translate(key);
+                    data.put(ValueName.EQUIPMENT,component);
+                }else{
+                    key = icon.getType().translationKey();
+                    Component component = Component.translatable(key);
+                    data.put(ValueName.EQUIPMENT,component);
+                }
+            }
         }else{
             String none = componentManager.getText(noneKey);
-
-            logger.info("Load Armor: %s",none);
             data.put(ValueName.EQUIPMENT,none);
         }
 

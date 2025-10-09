@@ -2,6 +2,7 @@ package org.gi.gICore.model.gui;
 
 import io.lumine.mythic.bukkit.utils.lib.jooq.impl.QOM;
 import io.lumine.mythic.lib.listener.option.GameIndicators;
+import lombok.Getter;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -21,6 +22,7 @@ import java.util.UUID;
 
 public abstract class GUIHolder implements InventoryHolder {
     private Inventory inventory;
+    @Getter
     private Map<String, Object> data = new HashMap<>();
     private ModuleLogger logger;
 

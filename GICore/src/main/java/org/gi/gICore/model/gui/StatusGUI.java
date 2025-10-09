@@ -5,11 +5,15 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.persistence.PersistentDataType;
 import org.gi.gICore.GICore;
 import org.gi.gICore.component.adapter.ItemPack;
 import org.gi.gICore.config.ConfigCore;
 import org.gi.gICore.model.item.GUIITem;
+import org.gi.gICore.util.ItemUtil;
 import org.gi.gICore.util.ModuleLogger;
+import org.gi.gICore.util.ValidationUtil;
+import org.gi.gICore.value.ValueName;
 
 import java.util.List;
 
@@ -55,6 +59,30 @@ public class StatusGUI extends GUIHolder{
 
     @Override
     public void onClick(Player player, int slot, ItemStack clickedItem, ClickType clickType) {
+        if (!ItemUtil.hasKey(clickedItem, ValueName.ACTION, PersistentDataType.STRING)){
+            if (!ItemUtil.isArmor(clickedItem)){
+                return;
+            }
+            if (clickType.isLeftClick()){
 
+            }
+            return;
+        }
+        String action = ItemUtil.getValue(clickedItem, ValueName.ACTION, PersistentDataType.STRING);
+
+        switch (action){
+            case "ARMOR_SLOT":
+                if (clickType.isRightClick()){
+
+                }
+                if (clickType.isLeftClick()){
+                    GUIHolder holder = (GUIHolder) getInventory().getHolder();
+
+                    //아이템 상세스펙
+                }
+                return;
+            default:
+                return;
+        }
     }
 }

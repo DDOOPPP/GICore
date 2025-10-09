@@ -32,6 +32,6 @@ armor_slot:
     - 'gi.item.main.armor_slot.lore1'
     - 'gi.item.main.armor_slot.lore2'
   namespace: ''
-  material: 'BLACK_STAINED_GLASS'
+  material: 'BLACK_STAINED_GLASS_PANE'
   action: 'NONE'
   type: 'ARMOR_SLOT'

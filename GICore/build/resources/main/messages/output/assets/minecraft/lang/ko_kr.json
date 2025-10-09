@@ -15,7 +15,7 @@
   "gi.item.status.info.lore4": "체력:  {health}/{MAX_HEALTH}",
   "gi.item.status.info.lore5": "{mana_name}: {mana}/{MAX_MANA}",
   "gi.item.status.info.lore6": "소지금액: {balance}",
-  "gi.item.main.armor_slot.name": "<white><bold>{type}슬롯: {equipment}</bold></white>",
+  "gi.item.main.armor_slot.name": "<white>{type} 슬롯: {equipment}</white>",
   "gi.item.main.armor_slot.lore1": "현재 장착된 {type}: {equipment}",
   "gi.item.main.armor_slot.lore2": "좌클릭으로 방어구를 착용할수있습니다.",
   "gi.item.main.armor_slot.lore3": "우클릭으로 방어구를 해제할수있습니다.",
@@ -23,5 +23,9 @@
   "gi.data.armor.type.chestplate": "갑옷",
   "gi.data.armor.type.leggings": "바지",
   "gi.data.armor.type.boots": "신발",
-  "gi.item.armor.none": "없음"
+  "gi.item.armor.none": "없음",
+  "gi.item.armor.dragonset.helmet": "드래곤의 숨결 투구",
+  "gi.item.armor.dragonset.chestplate": "드래곤의 비늘 갑옷",
+  "gi.item.armor.dragonset.leggings": "드래곤의 강철 각반",
+  "gi.item.armor.dragonset.boots": "드래곤의 날개 부츠"
 }

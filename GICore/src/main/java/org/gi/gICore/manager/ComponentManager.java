@@ -1,5 +1,9 @@
 package org.gi.gICore.manager;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
+import net.kyori.adventure.translation.GlobalTranslator;
+import org.bukkit.entity.Player;
 import org.gi.gICore.GICore;
 import org.gi.gICore.util.JsonUtil;
 import org.gi.gICore.util.ModuleLogger;
@@ -42,6 +46,13 @@ public class ComponentManager {
 
     public String getText(String key){
         return translationMap.getOrDefault(key, key);
+    }
+
+    public String getText(Component component, Locale locale){
+        String translate = PlainTextComponentSerializer.plainText().serialize(
+                GlobalTranslator.render(component, locale)
+        );
+        return translate;
     }
 
     public void reload(){

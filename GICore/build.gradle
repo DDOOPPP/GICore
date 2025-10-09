@@ -65,9 +65,17 @@ shadowJar {
         attributes 'Main-Class': 'org.gi.gICore.GICore' // Main 클래스 지정
     }
 }
-tasks.build {
-    dependsOn shadowJar
+tasks.named('build') {
+    dependsOn tasks.named('shadowJar')
+    finalizedBy 'copyJarToOut'
 }
+
+tasks.register('copyJarToOut', Copy) {
+    dependsOn tasks.named('shadowJar')
+    from tasks.named('shadowJar').get().archiveFile
+    into file("D:/MC/TEST_SERVER/plugins")
+}
+
 tasks {
     runServer {
         // Configure the Minecraft version for our task.
