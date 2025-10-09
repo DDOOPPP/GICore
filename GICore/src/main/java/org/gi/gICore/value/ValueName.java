@@ -34,6 +34,13 @@ public class ValueName {
             "STUN"
     );
 
+    public static final List<String> ARMOR_PART_LIST = List.of(
+            "helmet",
+            "chestplate",
+            "leggings",
+            "boots"
+    );
+
     //Skill
     public static final String SKILL_NAME = "skill_name";
     public static final String SKILL_LEVEL = "skill_level";
@@ -68,8 +75,11 @@ public class ValueName {
     public static final String MAX_HEALTH = "MAX_HEALTH";
     public static final String MAX_MANA = "MAX_MANA";
     public static final String HEALTH = "health";
+
     public static final String HELMET = "helmet";
     public static final String LEGGINGS = "leggings";
     public static final String CHESTPLATE = "chestplate";
     public static final String BOOTS = "boots";
+    public static final String ARMOR_TYPE = "type";
+    public static final String EQUIPMENT = "equipment";
 }

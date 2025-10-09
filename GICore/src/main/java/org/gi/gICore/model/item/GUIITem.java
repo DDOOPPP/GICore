@@ -6,17 +6,19 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.gi.gICore.GICore;
 import org.gi.gICore.builder.ComponentBuilder;
 import org.gi.gICore.component.adapter.GIPlayer;
-import org.gi.gICore.component.adapter.ItemPack;
-import org.gi.gICore.config.ConfigCore;
+import org.gi.gICore.manager.ComponentManager;
 import org.gi.gICore.manager.DataService;
 import org.gi.gICore.manager.EconomyManager;
 import org.gi.gICore.util.ItemUtil;
+import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.util.Result;
 import org.gi.gICore.value.ValueName;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -25,6 +27,8 @@ public class GUIITem extends CustomItem{
     private static final EconomyManager economyManager = new EconomyManager();
     private static final ComponentBuilder componentBuilder = new ComponentBuilder();
     private static final GIPlayer giPlayer = new GIPlayer();
+    private static final ModuleLogger logger = new ModuleLogger(GICore.getInstance(),"GUIITem");
+    private static final ComponentManager componentManager = ComponentManager.getInstance();
     private String type;
     public GUIITem(ConfigurationSection section) {
         super(section);
@@ -40,6 +44,7 @@ public class GUIITem extends CustomItem{
                 icon = playerData(icon,player);
                 break;
             case "ARMOR_SLOT":
+                icon = armorSlot(icon,player,arg[0].toString());
                 break;
             default:
                 icon = defaultData(icon);
@@ -58,9 +63,43 @@ public class GUIITem extends CustomItem{
             lore.add(componentBuilder.translateNamed(s,data));
         }
 
-        return  ItemUtil.parseItem(icon,display,lore);
+        return ItemUtil.parseItem(icon,display,lore);
     }
 
+
+    private ItemStack armorSlot(ItemStack icon, OfflinePlayer player,String armorType){
+        Map<String,ItemStack> equipmentMap = DataService.getEquipmentData(player);
+        Map<String,Object> data = new HashMap<>();
+        List<Component> lore = new ArrayList<>();
+        String typeKey = "gi.data.armor.type.%s".formatted(armorType);
+        String noneKey = "gi.item.armor.none";
+        String TypeName = componentManager.getText(typeKey);
+        logger.info("Load ArmorType: %s",TypeName);
+        data.put(ValueName.ARMOR_TYPE,TypeName);
+
+        if (equipmentMap.containsKey(armorType)){
+            ItemStack itemStack = equipmentMap.get(armorType);
+            if (itemStack == null){
+                String none = componentManager.getText(noneKey);
+
+                logger.info("Load Armor: %s",none);
+                data.put(ValueName.EQUIPMENT,none);
+            }
+
+        }else{
+            String none = componentManager.getText(noneKey);
+
+            logger.info("Load Armor: %s",none);
+            data.put(ValueName.EQUIPMENT,none);
+        }
+
+        Component display = componentBuilder.translateNamed(getDisplay(),data);
+        for (String s : getLore()){
+            lore.add(componentBuilder.translateNamed(s,data));
+        }
+
+        return ItemUtil.parseItem(icon,display,lore);
+    }
 
     private ItemStack defaultData(ItemStack icon){
         Component display = componentBuilder.style(getDisplay()).build();

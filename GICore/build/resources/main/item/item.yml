@@ -1,0 +1,37 @@
+money:
+  display: 'gi.item.money.unit'
+  lore:
+    - 'gi.item.money.lore'
+  namespace: ''
+  material: 'PAPER'
+  action: 'MONEY'
+status:
+  display: 'gi.item.main.status.name'
+  lore:
+    - 'gi.item.main.status.lore'
+  namespace: ''
+  material: 'BOOK'
+  action: 'NONE'
+  type: 'STATUS'
+info:
+  display: 'gi.item.status.info.name'
+  lore:
+    - 'gi.item.status.info.lore1'
+    - 'gi.item.status.info.lore2'
+    - 'gi.item.status.info.lore3'
+    - 'gi.item.status.info.lore4'
+    - 'gi.item.status.info.lore5'
+    - 'gi.item.status.info.lore6'
+  namespace: ''
+  material: 'BOOK'
+  action: 'NONE'
+  type: 'INFO'
+armor_slot:
+  display: 'gi.item.main.armor_slot.name'
+  lore:
+    - 'gi.item.main.armor_slot.lore1'
+    - 'gi.item.main.armor_slot.lore2'
+  namespace: ''
+  material: 'BLACK_STAINED_GLASS'
+  action: 'NONE'
+  type: 'ARMOR_SLOT'

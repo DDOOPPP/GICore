@@ -1,0 +1,4 @@
+economy:
+  start: 500
+  unit: 'gi.item.money.unit'
+  lore: 'gi.item.money.lore'

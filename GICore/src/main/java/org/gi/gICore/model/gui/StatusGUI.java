@@ -31,16 +31,20 @@ public class StatusGUI extends GUIHolder{
             logger.error("Please Check Config File");
             return inventory;
         }
-
         for (String key : section.getKeys(false)){
             ConfigurationSection itemSection = section.getConfigurationSection(key);
-
             String itemKey = itemSection.getString("key");
+            GUIITem item = (GUIITem) ItemPack.getItem(itemKey);
+            ItemStack icon = null;
             List<Integer> slots = itemSection.getIntegerList("slots");
+            if (key.contains("slot")){
+                String armorType = key.replace("_slot","");
+                logger.info("Load Armor: %s",armorType);
 
-            GUIITem item = (GUIITem) ItemPack.getItem(key);
-
-            ItemStack icon = item.buildItem(player);
+                icon = item.buildItem(player,armorType);
+            }else{
+                icon = item.buildItem(player);
+            }
 
             for (int slot : slots){
                 inventory.setItem(slot,icon);

@@ -92,6 +92,8 @@ public class DataService {
         Map<String,ItemStack> data = new HashMap<>();
 
         if (!player.isOnline()){
+            //오프라인 유저에게서 Player를 받아와서 데이터출력이 가능한지?
+
             return data;
         }
         Player online = player.getPlayer();

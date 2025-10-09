@@ -1,0 +1,40 @@
+name: GICore
+version: '1.0-SNAPSHOT'
+main: org.gi.gICore.GICore
+api-version: '1.21'
+commands:
+  조회:
+    aliases:
+      - mo
+      - money
+    description: "소지금액을 조회할수있습니다"
+    usage: '/조회'
+  출금:
+    aliases:
+      - draw
+    description: "출금 커맨드입니다"
+    usage: '/출금 Or (draw) money'
+  입금:
+    aliases:
+      - depo
+    description: "입금 커맨드입니다"
+    usage: '/입금 유저 금액'
+    permission: gicore.admin
+    permission-message: '해당권한이 없습니다'
+  관리:
+    aliases:
+      - manage
+    description: '관리자 권한 커맨드'
+    permission: gicore.admin
+    permission-message: '해당권한이 없습니다'
+  메뉴:
+    aliases:
+      - menu
+    description: '메인메뉴로 이동합니다.'
+permissions:
+  gicore.admin:
+    description: "관리자 권한"
+    default: op
+  guild.owner:
+    description: "길드장 권한"
+    default: op
