@@ -73,7 +73,7 @@ tasks.named('build') {
 tasks.register('copyJarToOut', Copy) {
     dependsOn tasks.named('shadowJar')
     from tasks.named('shadowJar').get().archiveFile
-    into file("D:/MC/TEST_SERVER/plugins")
+    into file("C:/Users/khona/OneDrive/바탕 화면/Server/Dummy/plugins")
 }
 
 tasks {

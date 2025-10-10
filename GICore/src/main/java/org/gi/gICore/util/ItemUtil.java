@@ -18,7 +18,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.persistence.PersistentDataType;
 
-import javax.naming.Name;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;

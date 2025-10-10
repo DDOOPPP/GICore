@@ -4,7 +4,6 @@ import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.gi.gICore.GICore;
 import org.gi.gICore.component.adapter.GIEconomy;
 import org.gi.gICore.util.ModuleLogger;
 

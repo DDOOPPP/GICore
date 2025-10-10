@@ -12,7 +12,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.gi.gICore.manager.EconomyManager;
 import org.gi.gICore.util.ItemUtil;
-import org.gi.gICore.util.MessageUtil;
 import org.gi.gICore.value.ValueName;
 
 import java.math.BigDecimal;

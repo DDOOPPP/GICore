@@ -1,6 +1,6 @@
 package org.gi.gICore.builder;
 
-import com.sun.jdi.request.StepRequest;
+import lombok.Getter;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
@@ -13,9 +13,9 @@ import org.gi.gICore.util.ModuleLogger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.zip.CheckedInputStream;
 
 public class ComponentBuilder {
+    @Getter
     private ComponentManager componentManager;
     private ModuleLogger logger = new ModuleLogger(GICore.getInstance(),"ComponentBuilder");
     private MiniMessage miniMessage = MiniMessage.miniMessage();
@@ -55,18 +55,17 @@ public class ComponentBuilder {
     }
 
     public Component translateNamed(String key, Map<String, Object> placeholders){
+        String replaced;
         if (!componentManager.hasKey(key)){
-            logger.error("Key not found : %s",key);
-            return Component.text(key);
+            replaced = replacePlaceholders(key, placeholders);
+        }else{
+            String template = componentManager.getText(key);
+            replaced = replacePlaceholders(template, placeholders);
         }
-
-        String template = componentManager.getText(key);
-        String replaced = replacePlaceholders(template, placeholders);
-
         return miniMessage.deserialize(replaced);
     }
 
-    private String replacePlaceholders(String template, Map<String, Object> placeholders){
+    public String replacePlaceholders(String template, Map<String, Object> placeholders){
         String result = template;
         for (Map.Entry<String, Object> entry : placeholders.entrySet()){
             String placeholder = "{" + entry.getKey() + "}";

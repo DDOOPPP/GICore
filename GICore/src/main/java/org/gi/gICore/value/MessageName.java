@@ -29,4 +29,10 @@ public class MessageName {
     public static final String BALANCE_SET_FAIL = "balance_set_fail";
     public static final String SET_BALANCE = "set_balance";
 
+
+    //스테이터스 화면 메세지
+    public static final String NOT_EQUIPMENT_ARMOR = "not_equip_armor";
+    public static final String EQUIP_ARMOR = "equip_armor";
+    public static final String REMOVE_EQUIP_ARMOR = "remove_equip_armor";
+    public static final String EQUIP_ERROR = "equip_error";
 }

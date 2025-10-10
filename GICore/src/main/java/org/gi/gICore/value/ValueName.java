@@ -81,5 +81,6 @@ public class ValueName {
     public static final String CHESTPLATE = "chestplate";
     public static final String BOOTS = "boots";
     public static final String ARMOR_TYPE = "type";
+    public static final String ARMOR_PART = "armor_part";
     public static final String EQUIPMENT = "equipment";
 }

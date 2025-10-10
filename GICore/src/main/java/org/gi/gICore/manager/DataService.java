@@ -12,6 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.gi.gICore.GICore;
 import org.gi.gICore.builder.ComponentBuilder;
+import org.gi.gICore.util.ItemUtil;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.value.ValueName;
 

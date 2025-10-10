@@ -1,5 +1,8 @@
 package org.gi.gICore.util;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
+
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;

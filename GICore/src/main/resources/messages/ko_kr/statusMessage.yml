@@ -1,0 +1,4 @@
+not_equip_armor: '현재 착용중인 방어구가 없습니다'
+equip_armor: '{equipment}를 착용했습니다.'
+remove_equip_armor: '{equipment}를 해제했습니다.'
+equip_error: '방어구 착용에 실패했습니다'
