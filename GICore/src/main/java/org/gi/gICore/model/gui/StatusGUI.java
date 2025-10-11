@@ -11,13 +11,16 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataType;
 import org.gi.gICore.GICore;
 import org.gi.gICore.builder.ComponentBuilder;
+import org.gi.gICore.component.adapter.GIPlayer;
 import org.gi.gICore.component.adapter.ItemPack;
 import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.config.ConfigCore;
+import org.gi.gICore.manager.DataService;
 import org.gi.gICore.model.item.GUIITem;
 import org.gi.gICore.util.ItemUtil;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.util.StringUtil;
+import org.gi.gICore.util.TaskUtil;
 import org.gi.gICore.value.MessageName;
 import org.gi.gICore.value.ValueName;
 
@@ -29,6 +32,7 @@ public class StatusGUI extends GUIHolder{
     private ConfigCore configCore;
     private ModuleLogger logger;
     private ComponentBuilder builder = new ComponentBuilder();
+    private GIPlayer giPlayer = new GIPlayer();
 
     public StatusGUI(ConfigCore configCore) {
         super(configCore);
@@ -52,7 +56,6 @@ public class StatusGUI extends GUIHolder{
             List<Integer> slots = itemSection.getIntegerList("slots");
             if (key.contains("slot")){
                 String armorType = key.replace("_slot","");
-                logger.info("Load Armor: %s",armorType);
 
                 icon = item.buildItem(player,armorType);
 
@@ -67,18 +70,12 @@ public class StatusGUI extends GUIHolder{
                 inventory.setItem(slot,icon);
             }
         }
-        GUIHolder holder = (GUIHolder) getInventory().getHolder();
-        if (holder.getData() == null){
-            return inventory;
-        }
-        logger.info("Load Data: %s",holder.getData().get("TEST"));
         return inventory;
     }
 
     @Override
     public void onClick(Player player, int slot, ItemStack clickedItem, ClickType clickType) {
         GUIHolder holder = (GUIHolder) getInventory().getHolder();
-        holder.getData().put("TEST","TEST");
         String message = "";
         if (!ItemUtil.hasKey(clickedItem, ValueName.ACTION, PersistentDataType.STRING)){
             if (!ItemUtil.isArmor(clickedItem)){
@@ -88,12 +85,16 @@ public class StatusGUI extends GUIHolder{
                 var data = equip(player,clickedItem,slot);
                 if (data == null || data.isEmpty()){
                     player.sendMessage(MessagePack.getMessage(player.getLocale(),MessageName.EQUIP_ERROR));
+                    logger.error("%s Equip Error".formatted(player.getName()));
+
+                    logger.transData_Json(clickedItem.serialize());
                     return;
                 }
                 Component component = builder.translateNamed(MessagePack.getMessage(player.getLocale(), MessageName.EQUIP_ARMOR),data);
                 player.sendMessage(component);
-
-                holder.open(player,getData());
+                holder.open(player, getData());
+            }else{
+                return;
             }
             return;
         }
@@ -107,8 +108,22 @@ public class StatusGUI extends GUIHolder{
                     player.sendMessage(message);
                     return;
                 }
+
+                if (!ItemUtil.isArmor(clickedItem)){
+                    return;
+                }
                 if (clickType.isRightClick()){
-                    unEquip(player,clickedItem);
+                   var data = unEquip(player,clickedItem);
+                    if (data == null || data.isEmpty()){
+                        player.sendMessage(MessagePack.getMessage(player.getLocale(),MessageName.EQUIP_ERROR));
+
+                        logger.error("%s UnEquip Error".formatted(player.getName()));
+                        logger.transData_Json(clickedItem.serialize());
+                        return;
+                    }
+
+                    Component component = builder.translateNamed(MessagePack.getMessage(player.getLocale(), MessageName.REMOVE_EQUIP_ARMOR),data);
+                    player.sendMessage(component);
                 }
                 if (clickType.isLeftClick()){
                     //아이템 상세스펙
@@ -117,19 +132,43 @@ public class StatusGUI extends GUIHolder{
             default:
                 return;
         }
-        holder.open(player,getData());
+        holder.open(player, getData());
         return;
     }
 
-    private boolean unEquip(Player player,ItemStack item){
+    private  Map<String,Object> unEquip(Player player,ItemStack item){
         if (!ItemUtil.hasKey(item,ValueName.ARMOR_PART,PersistentDataType.STRING)){
-            return false;
+            return Map.of();
         }
+        Map<String ,Object> data = new HashMap<>();
         String armorPart = ItemUtil.getValue(item,ValueName.ARMOR_PART,PersistentDataType.STRING);
-        player.sendMessage("UnEquip: "+armorPart);
-
-        return true;
+        ItemStack equip = DataService.getEquipmentData(player).get(armorPart.toLowerCase());
+        switch (armorPart){
+            case "HELMET":
+                player.getInventory().setHelmet(null);
+                break;
+            case "CHESTPLATE":
+                player.getInventory().setChestplate(null);
+                break;
+            case "LEGGINGS":
+                player.getInventory().setLeggings(null);
+                break;
+            case "BOOTS":
+                player.getInventory().setBoots(null);
+                break;
+        }
+        Component component = translate(item);
+        if (component == null){
+            return Map.of();
+        }
+        if (ItemUtil.hasKey(equip,ValueName.ACTION,PersistentDataType.STRING)){
+            ItemUtil.deleteKey(equip,ValueName.ACTION);
+        }
+        data.put(ValueName.EQUIPMENT,component);
+        giPlayer.sendItem(player,equip);
+        return data;
     }
+
     private Map<String,Object> equip(Player player,ItemStack item,int slot){
         Map<String ,Object> data = new HashMap<>();
         String amrormPart = ItemUtil.getArmorString(item);
@@ -149,24 +188,35 @@ public class StatusGUI extends GUIHolder{
             default:
                 return Map.of();
         }
+
+        Component component = translate(item);
+        if (component == null){
+            return Map.of();
+        }
+
+        data.put(ValueName.EQUIPMENT,component);
+
+        player.getInventory().setItem(slot,null);
+        return data;
+    }
+
+    private Component translate(ItemStack clickedItem){
         String key = "";
-        if (ItemUtil.isMMOItem(item)){
-            key = item.getItemMeta().getDisplayName();
+        Component x = null;
+        if (ItemUtil.isMMOItem(clickedItem)){
+            key = clickedItem.getItemMeta().getDisplayName();
 
             key = StringUtil.decolorize(key);
 
-            logger.info(key);
+            if (key.contains(":")){
+                key = key.split(":")[1].trim();
+            }
 
-            Component component = builder.translate(key);
-            data.put(ValueName.EQUIPMENT,component);
+            x = builder.translate(key);
         }else{
-            key = item.getType().translationKey();
-            Component component = Component.translatable(key);
-            data.put(ValueName.EQUIPMENT,component);
-            String text = PlainTextComponentSerializer.plainText().serialize(component);
-            logger.info(text);
+            key = clickedItem.getType().translationKey();
+            x = Component.translatable(key);
         }
-        player.getInventory().setItem(slot,null);
-        return data;
+        return x;
     }
 }

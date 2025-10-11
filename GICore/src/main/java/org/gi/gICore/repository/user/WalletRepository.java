@@ -25,7 +25,6 @@ public class WalletRepository {
 
     public Result insert(UserWallet wallet, Connection connection) {
         String query = builder.insert("player_id","balance");
-        logger.info(query);
         try(PreparedStatement statement = connection.prepareStatement(query)){
             statement.setString(1,wallet.getPlayerId().toString());
             statement.setBigDecimal(2, wallet.getBalance());
@@ -39,7 +38,6 @@ public class WalletRepository {
 
     public Result delete(UUID player_id, Connection connection) {
         String query = builder.delete().where("player_id").build();
-        logger.info(query);
 
         try(PreparedStatement statement = connection.prepareStatement(query)){
             statement.setString(1,player_id.toString());
@@ -52,7 +50,6 @@ public class WalletRepository {
 
     public Result update(UUID player_id, BigDecimal balance, Connection connection) {
         String query = builder.update().set("balance").where("player_id = ?").build();
-        logger.info(query);
 
         try(PreparedStatement statement = connection.prepareStatement(query)){
             statement.setBigDecimal(1, balance);
@@ -68,7 +65,7 @@ public class WalletRepository {
     public BigDecimal getBalance(UUID player_id, Connection connection) {
         String query = builder.selectAll().where("player_id = ?").build();
         BigDecimal balance = BigDecimal.ZERO;
-        logger.info(query);
+
         try(PreparedStatement statement = connection.prepareStatement(query)){
             statement.setString(1,player_id.toString());
 

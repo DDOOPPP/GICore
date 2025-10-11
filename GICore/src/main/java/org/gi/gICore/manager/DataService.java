@@ -6,14 +6,13 @@ import net.kyori.adventure.text.Component;
 
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import net.milkbowl.vault.economy.EconomyResponse;
-import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.gi.gICore.GICore;
 import org.gi.gICore.builder.ComponentBuilder;
-import org.gi.gICore.util.ItemUtil;
 import org.gi.gICore.util.ModuleLogger;
+import org.gi.gICore.util.TaskUtil;
 import org.gi.gICore.value.ValueName;
 
 import java.util.HashMap;
@@ -21,6 +20,7 @@ import java.util.Map;
 
 public class DataService {
     private static EconomyManager economyManager = new EconomyManager();
+    private static ComponentManager componentManager = ComponentManager.getInstance();
     private static ComponentBuilder builder = new ComponentBuilder();
     private static ModuleLogger logger = new ModuleLogger(GICore.getInstance(),"DataService");
 
@@ -33,34 +33,30 @@ public class DataService {
     public static Map<String,Object> getPlayerData(OfflinePlayer player) {
         Map<String,Object> data = new HashMap<>();
         PlayerData playerData = PlayerData.get(player);
-
+        playerData.getStats().updateStats();
         data.put(ValueName.NAME,player.getName());
         data.put(ValueName.LEVEL,playerData.getLevel());
         data.put(ValueName.EXP,playerData.getExperience());
 
         String professKey = playerData.getProfess().getName();
-        logger.warn(professKey);
-        ComponentManager componentManager = ComponentManager.getInstance();
-        String professName = componentManager.getText(professKey);
-        logger.warn(professName);
+        String professName = componentManager.getText(professKey);;
         data.put(ValueName.PROFESS,professName);
 
         Component balance = economyManager.format(economyManager.getBalance(player));
         data.put(ValueName.BALANCE,PlainTextComponentSerializer.plainText().serialize(balance));
 
-        var maxHealth = playerData.getStats().getStat(ValueName.MAX_HEALTH.toUpperCase());
-        var maxmana = playerData.getStats().getStat(ValueName.MAX_MANA.toUpperCase());
+//        var maxHealth = playerData.getStats().getStat(ValueName.MAX_HEALTH.toUpperCase());
+//        var maxMana = playerData.getStats().getStat(ValueName.MAX_MANA.toUpperCase());
 
-        data.put(ValueName.MAX_MANA,maxmana);
-        data.put(ValueName.MAX_HEALTH,maxHealth);
-        data.put(ValueName.HEALTH,playerData.getCachedHealth());
-        data.put(ValueName.MANA,playerData.getMana());
+//        data.put(ValueName.MAX_MANA, maxMana);
+//        data.put(ValueName.MAX_HEALTH, maxHealth);
+//        data.put(ValueName.HEALTH, playerData.getCachedHealth());
+//        data.put(ValueName.MANA, playerData.getMana());
         data.put(ValueName.NEXT_EXP,playerData.getLevelUpExperience());
 
-        String manaKey = playerData.getProfess().getManaDisplay().getName();
-        logger.warn(manaKey);
-        String manaName = componentManager.getText(manaKey);
-        data.put(ValueName.MANA_NAME,manaName);
+//        String manaKey = playerData.getProfess().getManaDisplay().getName();
+//        String manaName = componentManager.getText(manaKey);
+//        data.put(ValueName.MANA_NAME,manaName);
         return data;
     }
 
@@ -94,7 +90,6 @@ public class DataService {
 
         if (!player.isOnline()){
             //오프라인 유저에게서 Player를 받아와서 데이터출력이 가능한지?
-
             return data;
         }
         Player online = player.getPlayer();

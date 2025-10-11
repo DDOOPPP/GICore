@@ -73,7 +73,7 @@ public class GUIITem extends CustomItem{
         Map<String,Object> data = new HashMap<>();
         List<Component> lore = new ArrayList<>();
         String typeKey = "gi.data.armor.type.%s".formatted(armorType);
-        String noneKey = "gi.item.armor.none";
+        String noneKey = "gi.item.name.none";
         String TypeName = componentManager.getText(typeKey);
         data.put(ValueName.ARMOR_TYPE,TypeName);
 
@@ -91,8 +91,6 @@ public class GUIITem extends CustomItem{
                     key = armor.getItemMeta().getDisplayName();
 
                     key = StringUtil.decolorize(key);
-
-                    logger.info(key);
 
                     Component component = componentBuilder.translate(key);
                     data.put(ValueName.EQUIPMENT,component);

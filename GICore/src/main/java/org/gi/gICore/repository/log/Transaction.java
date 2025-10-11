@@ -28,8 +28,6 @@ public class Transaction {
                 "previous",
                 "current");
 
-        logger.info(query);
-
         try(PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1,log.getPlayerId().toString());
             statement.setString(2,log.getType().getDisplay());

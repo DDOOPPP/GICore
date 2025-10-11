@@ -36,7 +36,6 @@ public class UserRepository {
                 "fishing_level",
                 "tutorial_done"
                 );
-        logger.info(query);
         try(PreparedStatement statement = connection.prepareStatement(query)){
             statement.setString(1,userdata.getPlayerId().toString());
             statement.setString(2,userdata.getPlayerName());
@@ -57,7 +56,6 @@ public class UserRepository {
 
     public Result deleteUser(UUID player_id, Connection connection) {
         String query = queryBuilder.delete().where("player_id").build();
-        logger.info(query);
         try(PreparedStatement statement = connection.prepareStatement(query)){
             statement.setString(1,player_id.toString());
 
@@ -70,7 +68,6 @@ public class UserRepository {
 
     public Result updateLevel(UUID player_id, int level, Connection connection, Userdata.LevelType type) {
         String query = queryBuilder.update().set(type.getName()).where("player_id").build();
-        logger.info(query);
 
         try(PreparedStatement statement = connection.prepareStatement(query)){
             statement.setInt(1,level);
@@ -111,7 +108,6 @@ public class UserRepository {
     public Userdata getUser(UUID player_id, Connection connection) {
         String query = queryBuilder.selectAll().where("player_id = ?").build();
         Userdata userdata = null;
-        logger.info(query);
 
         try(PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1,player_id.toString());
@@ -141,7 +137,6 @@ public class UserRepository {
 
     public List<Userdata> getAllUsers(Connection connection) {
         String query = queryBuilder.selectAll().build();
-        logger.info(query);
 
         List<Userdata> userdataList = new ArrayList<>();
         Userdata data = null;

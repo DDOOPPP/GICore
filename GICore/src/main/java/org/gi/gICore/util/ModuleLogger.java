@@ -90,9 +90,10 @@ public class ModuleLogger {
         }
 
         // 파일 로깅 (비동기)
-        if (Level.WARNING.equals(bukkitLevel) || Level.SEVERE.equals(bukkitLevel)) {
+        if (message != null || !message.isEmpty()) {
             CompletableFuture.runAsync(() -> writeToFile(level, message, throwable));
         }
+
     }
 
     /**
@@ -119,6 +120,13 @@ public class ModuleLogger {
             logger.severe("Failed to write to log file: " + e.getMessage());
         }
     }
+
+    public void transData_Json(Object o){
+        String json = JsonUtil.toJson(o);
+        logger.severe("Export Data: ");
+        logger.severe(json);
+    }
+
     public enum LogLevel {
         DEBUG(Level.FINE),
         INFO(Level.INFO),
