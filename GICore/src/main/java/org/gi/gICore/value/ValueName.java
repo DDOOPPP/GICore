@@ -41,6 +41,10 @@ public class ValueName {
             "boots"
     );
 
+    public static final List<String> STATUS_STAT_LIST = List.of(
+            "attack_damage","attack_speed","movement_speed"
+    );
+
     //Skill
     public static final String SKILL_NAME = "skill_name";
     public static final String SKILL_LEVEL = "skill_level";
@@ -83,4 +87,13 @@ public class ValueName {
     public static final String ARMOR_TYPE = "type";
     public static final String ARMOR_PART = "armor_part";
     public static final String EQUIPMENT = "equipment";
+
+    //Stat
+    public static final String ATTACK_DAMAGE = "attack_damage";
+    public static final String ATTACK_DAMAGE_BASE = "attack_damage_base";
+    public static final String ATTACK_DAMAGE_EXTRA = "attack_damage_extra";
+
+    public static final String ATTACK_SPEED = "attack_speed";
+    public static final String ATTACK_SPEED_BASE = "attack_speed_base";
+    public static final String ATTACK_SPEED_EXTRA = "attack_speed_extra";
 }

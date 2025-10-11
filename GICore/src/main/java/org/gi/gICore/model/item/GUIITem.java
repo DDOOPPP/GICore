@@ -41,6 +41,7 @@ public class GUIITem extends CustomItem{
         ItemStack icon = getItem();
         switch (type){
             case "INFO":
+                icon = getItem(player);
                 icon = playerData(icon,player);
                 break;
             case "ARMOR_SLOT":

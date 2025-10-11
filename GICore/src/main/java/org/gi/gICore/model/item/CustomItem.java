@@ -8,6 +8,7 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.gi.gICore.util.ItemUtil;
 import org.gi.gICore.util.Result;
 
 import java.util.List;
@@ -41,4 +42,8 @@ public abstract class CustomItem {
     public abstract Result destroyItem(Player player, ItemStack itemStack);
 
     public abstract boolean action(Player player, ItemStack item);
+
+    public ItemStack getItem(OfflinePlayer player){
+        return ItemUtil.getPlayerHead(player);
+    }
 }

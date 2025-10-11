@@ -1,6 +1,7 @@
 package org.gi.gICore.manager;
 
 import net.Indyuce.mmocore.api.player.PlayerData;
+import net.Indyuce.mmocore.manager.StatManager;
 import net.Indyuce.mmocore.skill.ClassSkill;
 import net.kyori.adventure.text.Component;
 
@@ -15,6 +16,7 @@ import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.util.TaskUtil;
 import org.gi.gICore.value.ValueName;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,6 +24,7 @@ public class DataService {
     private static EconomyManager economyManager = new EconomyManager();
     private static ComponentManager componentManager = ComponentManager.getInstance();
     private static ComponentBuilder builder = new ComponentBuilder();
+    private static DecimalFormat statFormat = new DecimalFormat("#.#");
     private static ModuleLogger logger = new ModuleLogger(GICore.getInstance(),"DataService");
 
     public static Map<String,String> getEconomyData(EconomyResponse economyResponse) {
@@ -33,31 +36,61 @@ public class DataService {
     public static Map<String,Object> getPlayerData(OfflinePlayer player) {
         Map<String,Object> data = new HashMap<>();
         PlayerData playerData = PlayerData.get(player);
-        playerData.getStats().updateStats();
-        data.put(ValueName.NAME,player.getName());
-        data.put(ValueName.LEVEL,playerData.getLevel());
-        data.put(ValueName.EXP,playerData.getExperience());
 
-        String professKey = playerData.getProfess().getName();
-        String professName = componentManager.getText(professKey);;
-        data.put(ValueName.PROFESS,professName);
+        for (String statKey : ValueName.STATUS_STAT_LIST){
+            data.put(statKey,getStat(playerData,statKey.toUpperCase()));
+            data.put(statKey+"_base",getBase(playerData,statKey.toUpperCase()));
+            data.put(statKey+"_extra",getExtra(playerData,statKey.toUpperCase()));
+        }
 
-        Component balance = economyManager.format(economyManager.getBalance(player));
-        data.put(ValueName.BALANCE,PlainTextComponentSerializer.plainText().serialize(balance));
-
-//        var maxHealth = playerData.getStats().getStat(ValueName.MAX_HEALTH.toUpperCase());
-//        var maxMana = playerData.getStats().getStat(ValueName.MAX_MANA.toUpperCase());
-
-//        data.put(ValueName.MAX_MANA, maxMana);
-//        data.put(ValueName.MAX_HEALTH, maxHealth);
-//        data.put(ValueName.HEALTH, playerData.getCachedHealth());
-//        data.put(ValueName.MANA, playerData.getMana());
-        data.put(ValueName.NEXT_EXP,playerData.getLevelUpExperience());
-
-//        String manaKey = playerData.getProfess().getManaDisplay().getName();
-//        String manaName = componentManager.getText(manaKey);
-//        data.put(ValueName.MANA_NAME,manaName);
         return data;
+    }
+
+    private static String getStat(PlayerData playerData, String key) {
+        Double stat = playerData.getStats().getStat(key);
+        return setStatColor(stat,true);
+    }
+
+    private static String getBase(PlayerData playerData,String key){
+        Double base = playerData.getStats().getBase(key);
+
+        return setStatColor(base,false);
+    }
+
+    public static String getExtra(PlayerData playerData,String key){
+        Double base = playerData.getStats().getBase(key);
+        Double main = playerData.getStats().getStat(key);
+        Double extra = main-base;
+        String value = statFormat.format(Math.abs(extra));
+        if (extra < 0){
+            return "<red>-"+value+"</red>";
+        }
+        return "<yellow>+"+value+"</yellow>";
+    }
+
+    private static String setStatColor(Double stat,boolean plus){
+        if (stat == 0) {
+            String value = statFormat.format(stat);
+            if (!plus){
+               return "<gray>"+value+"</gray>";
+            }
+            return "<gray>+"+value+"</gray>";
+        }
+
+        if (stat > 0) {
+            String value = statFormat.format(stat);
+            if (!plus){
+                return "<green>"+value+"</green>";
+            }
+            return "<green>+" + value + "</green>";
+        }
+        else {
+            String value = statFormat.format(Math.abs(stat));
+            if (!plus){
+                return "<red>-"+value+"</red>";
+            }
+            return "<red>-" + value + "</red>";
+        }
     }
 
     public static Map<String,String> getSkillData(OfflinePlayer player, ClassSkill skill) {
