@@ -24,6 +24,8 @@ public abstract class GUIHolder implements InventoryHolder {
     private Inventory inventory;
     @Getter
     private Map<String, Object> data = new HashMap<>();
+    @Getter
+    private Map<String, ItemStack> itemDataMap = new HashMap<>();
     private ModuleLogger logger;
 
     public GUIHolder(ConfigCore configCore) {
@@ -52,8 +54,9 @@ public abstract class GUIHolder implements InventoryHolder {
         player.openInventory(inventory);
     }
 
-    public void open(Player player,Map<String, Object> data) {
+    public void open(Player player,Map<String, Object> data, Map<String, ItemStack> itemDataMap) {
         this.data = data;
+        this.itemDataMap = itemDataMap;
         inventory = load(inventory, player);
         player.openInventory(inventory);
     }

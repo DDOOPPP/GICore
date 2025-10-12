@@ -22,8 +22,8 @@ public class EconomyManager {
         componentBuilder = new ComponentBuilder();
     }
 
-    public Component format(double amount){
-        return componentBuilder.translateNamed(getUnit(), Map.of(ValueName.AMOUNT,amount));
+    public Component format(OfflinePlayer player,double amount){
+        return componentBuilder.translateNamed(player.getPlayer(),getUnit(), Map.of(ValueName.AMOUNT,amount));
     }
 
     public boolean hasAccount(OfflinePlayer player){

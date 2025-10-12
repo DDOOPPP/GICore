@@ -1,0 +1,149 @@
+2025-10-12 05:08:20.190 [main] INFO  c.d.d.DemoApplication - Starting DemoApplication using Java 21.0.7 with PID 10700 (D:\project\MC_PR\WEB\demo\build\classes\java\main started by khona in D:\project\MC_PR\WEB\demo)
+2025-10-12 05:08:20.191 [main] INFO  c.d.d.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-12 05:08:20.571 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-12 05:08:20.584 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2025-10-12 05:08:20.868 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-10-12 05:08:20.878 [main] INFO  o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-12 05:08:20.879 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
+2025-10-12 05:08:20.879 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-12 05:08:20.917 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+2025-10-12 05:08:20.917 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 700 ms
+2025-10-12 05:08:21.024 [main] INFO  o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-12 05:08:21.067 [main] INFO  o.h.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-12 05:08:21.096 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-10-12 05:08:21.436 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-12 05:08:21.492 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2025-10-12 05:08:21.714 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/dev user=SA
+2025-10-12 05:08:21.715 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-12 05:08:21.735 [main] WARN  o.h.o.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-12 05:08:21.748 [main] INFO  o.h.o.c.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-12 05:08:21.962 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-12 05:08:21.964 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-12 05:08:21.989 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-12 05:08:22.171 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/dev'
+2025-10-12 05:08:22.214 [main] INFO  o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-10-12 05:08:22.228 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-10-12 05:08:22.232 [main] INFO  c.d.d.DemoApplication - Started DemoApplication in 2.456 seconds (process running for 2.949)
+2025-10-12 05:08:49.498 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-12 05:08:49.498 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-12 05:08:49.498 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 0 ms
+2025-10-12 05:08:49.546 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 05:08:49.546 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - SHA1: 5b357569a58d835446d00d99e756b646c3f8b76e
+2025-10-12 05:08:49.546 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 05:14:18.071 [http-nio-8080-exec-2] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 05:14:18.072 [http-nio-8080-exec-2] INFO  c.d.d.c.ResourcePackController - SHA1: 5b357569a58d835446d00d99e756b646c3f8b76e
+2025-10-12 05:14:18.072 [http-nio-8080-exec-2] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 05:38:10.239 [http-nio-8080-exec-5] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 05:38:10.241 [http-nio-8080-exec-5] INFO  c.d.d.c.ResourcePackController - SHA1: 5b357569a58d835446d00d99e756b646c3f8b76e
+2025-10-12 05:38:10.241 [http-nio-8080-exec-5] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 05:55:33.551 [http-nio-8080-exec-6] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 05:55:33.552 [http-nio-8080-exec-6] INFO  c.d.d.c.ResourcePackController - SHA1: 5b357569a58d835446d00d99e756b646c3f8b76e
+2025-10-12 05:55:33.552 [http-nio-8080-exec-6] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 05:59:08.345 [http-nio-8080-exec-7] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 05:59:08.345 [http-nio-8080-exec-7] INFO  c.d.d.c.ResourcePackController - SHA1: 5b357569a58d835446d00d99e756b646c3f8b76e
+2025-10-12 05:59:08.345 [http-nio-8080-exec-7] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 06:19:00.132 [http-nio-8080-exec-4] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 06:19:00.137 [http-nio-8080-exec-4] INFO  c.d.d.c.ResourcePackController - SHA1: 5fd1590ce73d302a8cb2ddafcb314595e96aee9d
+2025-10-12 06:19:00.137 [http-nio-8080-exec-4] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 06:21:34.913 [http-nio-8080-exec-3] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 06:21:34.915 [http-nio-8080-exec-3] INFO  c.d.d.c.ResourcePackController - SHA1: 5fd1590ce73d302a8cb2ddafcb314595e96aee9d
+2025-10-12 06:21:34.915 [http-nio-8080-exec-3] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 06:21:43.207 [http-nio-8080-exec-8] INFO  c.d.d.c.ResourcePackController - Received resource pack download request
+2025-10-12 06:21:43.216 [http-nio-8080-exec-8] INFO  c.d.d.c.ResourcePackController - Resource pack file downloaded successfully
+2025-10-12 06:21:43.216 [http-nio-8080-exec-8] INFO  c.d.d.c.ResourcePackController - Size: 2832 bytes
+2025-10-12 06:25:40.730 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 06:25:40.730 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - SHA1: fdbbcd22f57aab68c630e9dd1314041c33f2af2c
+2025-10-12 06:25:40.730 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 06:26:00.139 [http-nio-8080-exec-5] INFO  c.d.d.c.ResourcePackController - Received resource pack download request
+2025-10-12 06:26:00.139 [http-nio-8080-exec-5] INFO  c.d.d.c.ResourcePackController - Resource pack file downloaded successfully
+2025-10-12 06:26:00.139 [http-nio-8080-exec-5] INFO  c.d.d.c.ResourcePackController - Size: 2830 bytes
+2025-10-12 06:28:06.194 [http-nio-8080-exec-7] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 06:28:06.194 [http-nio-8080-exec-7] INFO  c.d.d.c.ResourcePackController - SHA1: fdbbcd22f57aab68c630e9dd1314041c33f2af2c
+2025-10-12 06:28:06.194 [http-nio-8080-exec-7] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 06:33:59.974 [http-nio-8080-exec-3] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 06:33:59.975 [http-nio-8080-exec-3] INFO  c.d.d.c.ResourcePackController - SHA1: 9cfdc4b88409f0df0c178b34c10896c916ce7366
+2025-10-12 06:33:59.975 [http-nio-8080-exec-3] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 06:34:54.039 [http-nio-8080-exec-8] INFO  c.d.d.c.ResourcePackController - Received resource pack download request
+2025-10-12 06:34:54.041 [http-nio-8080-exec-8] INFO  c.d.d.c.ResourcePackController - Resource pack file downloaded successfully
+2025-10-12 06:34:54.041 [http-nio-8080-exec-8] INFO  c.d.d.c.ResourcePackController - Size: 2743 bytes
+2025-10-12 06:35:59.865 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 06:35:59.865 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - SHA1: 9cfdc4b88409f0df0c178b34c10896c916ce7366
+2025-10-12 06:35:59.865 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 06:40:38.110 [http-nio-8080-exec-5] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 06:40:38.110 [http-nio-8080-exec-5] INFO  c.d.d.c.ResourcePackController - SHA1: 9cfdc4b88409f0df0c178b34c10896c916ce7366
+2025-10-12 06:40:38.111 [http-nio-8080-exec-5] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 07:05:25.015 [http-nio-8080-exec-7] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 07:05:25.016 [http-nio-8080-exec-7] INFO  c.d.d.c.ResourcePackController - SHA1: bdaab33343ac5fa0d36a5bc5a3f6ef21c4e34097
+2025-10-12 07:05:25.016 [http-nio-8080-exec-7] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 07:05:43.746 [http-nio-8080-exec-4] INFO  c.d.d.c.ResourcePackController - Received resource pack download request
+2025-10-12 07:05:43.747 [http-nio-8080-exec-4] INFO  c.d.d.c.ResourcePackController - Resource pack file downloaded successfully
+2025-10-12 07:05:43.747 [http-nio-8080-exec-4] INFO  c.d.d.c.ResourcePackController - Size: 2760 bytes
+2025-10-12 07:18:50.639 [http-nio-8080-exec-9] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 07:18:50.640 [http-nio-8080-exec-9] INFO  c.d.d.c.ResourcePackController - SHA1: 0292a82c3061401b6debcc1de095032e3b9c8349
+2025-10-12 07:18:50.640 [http-nio-8080-exec-9] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 07:18:56.008 [http-nio-8080-exec-8] INFO  c.d.d.c.ResourcePackController - Received resource pack download request
+2025-10-12 07:18:56.009 [http-nio-8080-exec-8] INFO  c.d.d.c.ResourcePackController - Resource pack file downloaded successfully
+2025-10-12 07:18:56.009 [http-nio-8080-exec-8] INFO  c.d.d.c.ResourcePackController - Size: 2753 bytes
+2025-10-12 07:19:45.331 [http-nio-8080-exec-10] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 07:19:45.331 [http-nio-8080-exec-10] INFO  c.d.d.c.ResourcePackController - SHA1: 0292a82c3061401b6debcc1de095032e3b9c8349
+2025-10-12 07:19:45.332 [http-nio-8080-exec-10] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 07:22:00.344 [http-nio-8080-exec-5] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 07:22:00.345 [http-nio-8080-exec-5] INFO  c.d.d.c.ResourcePackController - SHA1: 0292a82c3061401b6debcc1de095032e3b9c8349
+2025-10-12 07:22:00.345 [http-nio-8080-exec-5] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 07:22:42.087 [http-nio-8080-exec-7] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 07:22:42.087 [http-nio-8080-exec-7] INFO  c.d.d.c.ResourcePackController - SHA1: 0292a82c3061401b6debcc1de095032e3b9c8349
+2025-10-12 07:22:42.087 [http-nio-8080-exec-7] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 07:25:33.594 [http-nio-8080-exec-3] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 07:25:33.595 [http-nio-8080-exec-3] INFO  c.d.d.c.ResourcePackController - SHA1: 0292a82c3061401b6debcc1de095032e3b9c8349
+2025-10-12 07:25:33.595 [http-nio-8080-exec-3] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 07:26:48.103 [http-nio-8080-exec-8] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 07:26:48.103 [http-nio-8080-exec-8] INFO  c.d.d.c.ResourcePackController - SHA1: 0292a82c3061401b6debcc1de095032e3b9c8349
+2025-10-12 07:26:48.103 [http-nio-8080-exec-8] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 07:27:11.429 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 07:27:11.430 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - SHA1: 0292a82c3061401b6debcc1de095032e3b9c8349
+2025-10-12 07:27:11.430 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 07:27:57.804 [http-nio-8080-exec-5] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 07:27:57.804 [http-nio-8080-exec-5] INFO  c.d.d.c.ResourcePackController - SHA1: 0292a82c3061401b6debcc1de095032e3b9c8349
+2025-10-12 07:27:57.804 [http-nio-8080-exec-5] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 07:34:35.493 [http-nio-8080-exec-7] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 07:34:35.494 [http-nio-8080-exec-7] INFO  c.d.d.c.ResourcePackController - SHA1: 0292a82c3061401b6debcc1de095032e3b9c8349
+2025-10-12 07:34:35.494 [http-nio-8080-exec-7] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 07:40:28.993 [http-nio-8080-exec-3] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 07:40:28.993 [http-nio-8080-exec-3] INFO  c.d.d.c.ResourcePackController - SHA1: 0292a82c3061401b6debcc1de095032e3b9c8349
+2025-10-12 07:40:28.993 [http-nio-8080-exec-3] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 07:43:48.572 [http-nio-8080-exec-9] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 07:43:48.572 [http-nio-8080-exec-9] INFO  c.d.d.c.ResourcePackController - SHA1: 8ca5f30160250e52a02c33216d401c6948c4c3a3
+2025-10-12 07:43:48.572 [http-nio-8080-exec-9] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 07:43:53.787 [http-nio-8080-exec-10] INFO  c.d.d.c.ResourcePackController - Received resource pack download request
+2025-10-12 07:43:53.788 [http-nio-8080-exec-10] INFO  c.d.d.c.ResourcePackController - Resource pack file downloaded successfully
+2025-10-12 07:43:53.788 [http-nio-8080-exec-10] INFO  c.d.d.c.ResourcePackController - Size: 2766 bytes
+2025-10-12 07:48:43.949 [http-nio-8080-exec-2] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 07:48:43.949 [http-nio-8080-exec-2] INFO  c.d.d.c.ResourcePackController - SHA1: 8ca5f30160250e52a02c33216d401c6948c4c3a3
+2025-10-12 07:48:43.949 [http-nio-8080-exec-2] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 08:04:49.366 [http-nio-8080-exec-6] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 08:04:49.367 [http-nio-8080-exec-6] INFO  c.d.d.c.ResourcePackController - SHA1: bf400237f9a198d4dd2dbb6d5f49676ba929eff8
+2025-10-12 08:04:49.367 [http-nio-8080-exec-6] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 08:05:02.706 [http-nio-8080-exec-4] INFO  c.d.d.c.ResourcePackController - Received resource pack download request
+2025-10-12 08:05:02.706 [http-nio-8080-exec-4] INFO  c.d.d.c.ResourcePackController - Resource pack file downloaded successfully
+2025-10-12 08:05:02.706 [http-nio-8080-exec-4] INFO  c.d.d.c.ResourcePackController - Size: 2754 bytes
+2025-10-12 08:13:30.249 [http-nio-8080-exec-9] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 08:13:30.252 [http-nio-8080-exec-9] INFO  c.d.d.c.ResourcePackController - SHA1: bf400237f9a198d4dd2dbb6d5f49676ba929eff8
+2025-10-12 08:13:30.252 [http-nio-8080-exec-9] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 08:15:11.031 [http-nio-8080-exec-8] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 08:15:11.031 [http-nio-8080-exec-8] INFO  c.d.d.c.ResourcePackController - SHA1: bf400237f9a198d4dd2dbb6d5f49676ba929eff8
+2025-10-12 08:15:11.031 [http-nio-8080-exec-8] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 08:19:21.053 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - Received resource pack upload request
+2025-10-12 08:19:21.053 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - SHA1: bf400237f9a198d4dd2dbb6d5f49676ba929eff8
+2025-10-12 08:19:21.053 [http-nio-8080-exec-1] INFO  c.d.d.c.ResourcePackController - Filename: resourcepack.zip
+2025-10-12 18:33:42.641 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.t.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-12 18:33:42.651 [tomcat-shutdown] INFO  o.s.b.w.e.t.GracefulShutdown - Graceful shutdown complete
+2025-10-12 18:33:42.663 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-12 18:33:42.671 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-12 18:33:42.872 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.

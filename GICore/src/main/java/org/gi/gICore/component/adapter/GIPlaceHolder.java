@@ -41,7 +41,7 @@ public class GIPlaceHolder extends PlaceholderExpansion {
     public String onRequest(OfflinePlayer player, @NotNull String params) {
         if (params.equalsIgnoreCase("balance")){
             double balance = economyManager.getBalance(player);
-            Component formatted = economyManager.format(balance);
+            Component formatted = economyManager.format(player,balance);
             return PlainTextComponentSerializer.plainText().serialize(formatted);
         }
         return null;
@@ -51,7 +51,7 @@ public class GIPlaceHolder extends PlaceholderExpansion {
     public String onPlaceholderRequest(Player player, @NotNull String params) {
         if (params.equalsIgnoreCase("balance")){
             double balance = economyManager.getBalance(player);
-            Component formatted = economyManager.format(balance);
+            Component formatted = economyManager.format(player,balance);
             return PlainTextComponentSerializer.plainText().serialize(formatted);
         }
         return null;

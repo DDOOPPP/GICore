@@ -8,6 +8,7 @@ import org.gi.gICore.loader.CommandLoader;
 import org.gi.gICore.loader.EventLoader;
 import org.gi.gICore.loader.PlaceHolderLoader;
 import org.gi.gICore.loader.VaultLoader;
+import org.gi.gICore.manager.ComponentManager;
 import org.gi.gICore.manager.ConfigManager;
 import org.gi.gICore.manager.DatabaseManager;
 import org.gi.gICore.manager.ResourcePackManager;
@@ -48,6 +49,7 @@ public final class GICore extends JavaPlugin {
         ItemPack.initializer();
         ConfigManager.loadGUIConfig();
         ResourcePackManager.initialize();
+        ComponentManager manager = new ComponentManager();
     }
 
     public static void copyResourceFolder(String folderName) {

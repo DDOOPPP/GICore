@@ -1,0 +1,22 @@
+§k	랜덤 문자 (Obfuscated)	█████
+§l	굵게 (Bold)	굵게
+§m	취소선 (Strikethrough)	취소선
+§n	밑줄 (Underline)	밑줄
+§o	기울이기 (Italic)	기울이기
+§r	초기화 (Reset)	기본 글꼴로 초기화
+§0	검은색 (Black)	█
+§1	진한 파랑 (Dark Blue)	█
+§2	진한 초록 (Dark Green)	█
+§3	청록색 (Dark Aqua)	█
+§4	진한 빨강 (Dark Red)	█
+§5	자주색 (Dark Purple)	█
+§6	금색 (Gold)	█
+§7	회색 (Gray)	█
+§8	진한 회색 (Dark Gray)	█
+§9	파랑 (Blue)	█
+§a	초록 (Green)	█
+§b	하늘색 (Aqua)	█
+§c	빨강 (Red)	█
+§d	분홍 (Light Purple)	█
+§e	노랑 (Yellow)	█
+§f	흰색 (White)	█

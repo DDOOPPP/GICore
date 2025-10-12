@@ -36,7 +36,8 @@ armor_slot:
 weapon_slot:
   display: 'gi.item.main.weapon_slot.name'
   lore:
-    - ''
+    - 'gi.item.main.armor_slot.lore1'
+    - 'gi.item.main.armor_slot.lore2'
   namespace: ''
   material: 'BLACK_STAINED_GLASS_PANE'
   action: 'NONE'

@@ -48,6 +48,8 @@ public class StatusGUI extends GUIHolder{
             logger.error("Please Check Config File");
             return inventory;
         }
+        GUIHolder holder = (GUIHolder) getInventory().getHolder();
+        holder.getItemDataMap().putIfAbsent(ValueName.WEAPON,new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
         for (String key : section.getKeys(false)){
             ConfigurationSection itemSection = section.getConfigurationSection(key);
             String itemKey = itemSection.getString("key");
@@ -55,12 +57,16 @@ public class StatusGUI extends GUIHolder{
             ItemStack icon = null;
             List<Integer> slots = itemSection.getIntegerList("slots");
             if (key.contains("slot")){
-                String armorType = key.replace("_slot","");
+                if (key.equals("weapon_slot")){
+                    icon = item.getWeapon(player,holder.getItemDataMap().get(ValueName.WEAPON));
+                }else {
+                    String armorType = key.replace("_slot","");
 
-                icon = item.buildItem(player,armorType);
+                    icon = item.buildItem(player,armorType);
 
-                if (!icon.getType().equals(Material.BLACK_STAINED_GLASS_PANE)){
-                    ItemUtil.setString(icon,ValueName.ARMOR_PART,armorType.toUpperCase());
+                    if (!icon.getType().equals(Material.BLACK_STAINED_GLASS_PANE)){
+                        ItemUtil.setString(icon,ValueName.ARMOR_PART,armorType.toUpperCase());
+                    }
                 }
             }else{
                 icon = item.buildItem(player);
@@ -78,21 +84,28 @@ public class StatusGUI extends GUIHolder{
         GUIHolder holder = (GUIHolder) getInventory().getHolder();
         String message = "";
         if (!ItemUtil.hasKey(clickedItem, ValueName.ACTION, PersistentDataType.STRING)){
-            if (!ItemUtil.isArmor(clickedItem)){
-                return;
-            }
             if (clickType.isLeftClick()){
-                var data = equip(player,clickedItem,slot);
-                if (data == null || data.isEmpty()){
-                    player.sendMessage(MessagePack.getMessage(player.getLocale(),MessageName.EQUIP_ERROR));
-                    logger.error("%s Equip Error".formatted(player.getName()));
+                if (ItemUtil.isArmor(clickedItem)){
+                    var data = equip(player,clickedItem,slot);
+                    if (data == null || data.isEmpty()){
+                        player.sendMessage(MessagePack.getMessage(player.getLocale(),MessageName.EQUIP_ERROR));
+                        logger.error("%s Equip Error".formatted(player.getName()));
 
-                    logger.transData_Json(clickedItem.serialize());
-                    return;
+                        logger.transData_Json(clickedItem.serialize());
+                        return;
+                    }
+                    Component component = builder.translateNamed(player,MessagePack.getMessage(player.getLocale(), MessageName.EQUIP_ARMOR),data);
+                    player.sendMessage(component);
+                    holder.open(player, getData(),holder.getItemDataMap());
                 }
-                Component component = builder.translateNamed(MessagePack.getMessage(player.getLocale(), MessageName.EQUIP_ARMOR),data);
-                player.sendMessage(component);
-                holder.open(player, getData());
+
+                if (ItemUtil.isCombatItems(clickedItem)){
+                    ItemStack stack = holder.getItemDataMap().get(ValueName.WEAPON);
+
+                    holder.getItemDataMap().put(ValueName.WEAPON,clickedItem.clone());
+
+                    holder.open(player, getData(),holder.getItemDataMap());
+                }
             }else{
                 return;
             }
@@ -122,17 +135,23 @@ public class StatusGUI extends GUIHolder{
                         return;
                     }
 
-                    Component component = builder.translateNamed(MessagePack.getMessage(player.getLocale(), MessageName.REMOVE_EQUIP_ARMOR),data);
+                    Component component = builder.translateNamed(player,MessagePack.getMessage(player.getLocale(), MessageName.REMOVE_EQUIP_ARMOR),data);
                     player.sendMessage(component);
                 }
                 if (clickType.isLeftClick()){
                     //아이템 상세스펙
                 }
                 break;
+            case "WEAPON_SLOT":
+                if (clickType.isRightClick()){
+                    holder.getItemDataMap().put(ValueName.WEAPON,new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
+                    break;
+                }
+                return;
             default:
                 return;
         }
-        holder.open(player, getData());
+        holder.open(player, getData(),holder.getItemDataMap());
         return;
     }
 
@@ -172,6 +191,7 @@ public class StatusGUI extends GUIHolder{
     private Map<String,Object> equip(Player player,ItemStack item,int slot){
         Map<String ,Object> data = new HashMap<>();
         String amrormPart = ItemUtil.getArmorString(item);
+        ItemStack equip = DataService.getEquipmentData(player).get(amrormPart.toLowerCase());
         switch (amrormPart){
             case "HELMET":
                 player.getInventory().setHelmet(item);
@@ -195,6 +215,10 @@ public class StatusGUI extends GUIHolder{
         }
 
         data.put(ValueName.EQUIPMENT,component);
+        if (equip != null){
+            player.getInventory().setItem(slot,equip);
+            return data;
+        }
 
         player.getInventory().setItem(slot,null);
         return data;

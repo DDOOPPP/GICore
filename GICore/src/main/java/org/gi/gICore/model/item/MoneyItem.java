@@ -1,5 +1,6 @@
 package org.gi.gICore.model.item;
 
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.kyori.adventure.text.Component;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.ConfigurationSection;
@@ -13,11 +14,13 @@ import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.manager.DataService;
 import org.gi.gICore.manager.EconomyManager;
 import org.gi.gICore.util.ItemUtil;
+import org.gi.gICore.util.JsonUtil;
 import org.gi.gICore.util.MessageUtil;
 import org.gi.gICore.util.Result;
 import org.gi.gICore.value.MessageName;
 import org.gi.gICore.value.ValueName;
 
+import java.awt.color.ICC_ColorSpace;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,15 +39,14 @@ public class MoneyItem extends CustomItem {
     public ItemStack buildItem(OfflinePlayer player, Object... arg) {
         BigDecimal amount = BigDecimal.valueOf(Double.parseDouble(arg[0].toString()));
 
-        ItemStack icon = getItem();
-
-        Component display = componentBuilder.translateNamed(getDisplay(),Map.of(ValueName.AMOUNT,amount.doubleValue()));
+        Component display = componentBuilder.style(getDisplay()).with(amount.doubleValue()).gold().build() ;
         List<Component> lore = new ArrayList<>();
 
-        lore.add(componentBuilder.translateNamed(getLore().get(0),Map.of(ValueName.AMOUNT,economyManager.format(amount.doubleValue()))));
-
+        for (String s : getLore()){
+               lore.add(componentBuilder.style(s).with(display).white().build());
+        }
+        ItemStack icon = getItem();
         icon = ItemUtil.parseItem(icon,display,lore);
-
         ItemUtil.setDouble(icon, ValueName.AMOUNT, amount.doubleValue());
         ItemUtil.setBoolean(icon,ValueName.MONEY,true);
 

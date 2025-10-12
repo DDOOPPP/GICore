@@ -7,13 +7,16 @@ items:
     slots: [ 11 ]
   helmet_slot:
     key: 'armor_slot'
-    slots: [ 10 ]
+    slots: [ 9 ]
   chestplate_slot:
     key: 'armor_slot'
-    slots: [ 19 ]
+    slots: [ 18 ]
   leggings_slot:
     key: 'armor_slot'
-    slots: [ 28 ]
+    slots: [ 27 ]
   boots_slot:
     key: 'armor_slot'
-    slots: [ 37 ]
+    slots: [ 36 ]
+  weapon_slot:
+    key: 'weapon_slot'
+    slots: [ 29 ]

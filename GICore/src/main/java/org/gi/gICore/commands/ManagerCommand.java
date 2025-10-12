@@ -6,10 +6,18 @@ import net.Indyuce.mmocore.manager.SkillManager;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.checkerframework.checker.units.qual.A;
 import org.gi.gICore.GICore;
 import org.gi.gICore.component.adapter.GIPlayer;
 import org.gi.gICore.component.adapter.ItemPack;
@@ -18,19 +26,18 @@ import org.gi.gICore.loader.VaultLoader;
 import org.gi.gICore.manager.*;
 import org.gi.gICore.model.log.TransactionLog;
 import org.gi.gICore.repository.log.Transaction;
-import org.gi.gICore.util.ModuleLogger;
-import org.gi.gICore.util.Result;
-import org.gi.gICore.util.StringUtil;
-import org.gi.gICore.util.TimeUtil;
+import org.gi.gICore.util.*;
 import org.gi.gICore.value.MessageName;
 import org.gi.gICore.value.ValueName;
 
+import java.io.*;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,9 +67,9 @@ public class ManagerCommand {
         } else if (command.equalsIgnoreCase("econ")) {
             return playerBalanceSet(player,arg);
         }
-//        else if (command.equalsIgnoreCase("test")) {
-//            return Test(player,arg);
-//        }
+        else if (command.equalsIgnoreCase("test")) {
+            return Test(player,arg);
+        }
         return false;
     }
 
@@ -146,9 +153,44 @@ public class ManagerCommand {
         return true;
     }
 
-//    public static boolean Test(Player player,String[] args){
-//
-//    }
+    public static boolean Test(Player player,String[] args){
+        ItemStack item = player.getInventory().getItemInMainHand();
+
+        if (item == null || item.getType().equals(Material.AIR)){
+            return true;
+        }
+
+        Map<String,Object> data = item.serialize();
+            String name = "";
+        if (item.hasItemMeta()){
+            ItemMeta meta = item.getItemMeta();
+
+            name = meta.getDisplayName();
+
+        }else {
+            name = item.getType().name();
+        }
+
+        String json = JsonUtil.toJson(data);
+
+        File file = new File(GICore.getInstance().getDataFolder(),name+".txt");
+
+        try{
+            if (!file.exists()){
+                file.createNewFile();
+            }
+            try(FileOutputStream outputStream= new FileOutputStream(file);){
+                byte[] b = json.getBytes();
+
+                outputStream.write(b);
+            }
+        } catch (IOException e) {
+            logger.error("Error: %s",e.getMessage());
+            return false;
+        }
+
+        return true;
+   }
 
     private static Result insertLog(OfflinePlayer target, BigDecimal amount){
         BigDecimal balance = userManager.getUserWallet(target.getUniqueId());

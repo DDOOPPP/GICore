@@ -36,6 +36,16 @@ public class JsonUtil {
         }
     }
 
+    public static <T> T fromJson(String json, TypeReference<T> type) {
+        if (json == null || json.isEmpty()) return null;
+        try {
+            return mapper.readValue(json, type);
+        } catch (Exception e) {
+            logger.error(String.format("Json Convert Error: %s | input=%s", e.getMessage(), json));
+            return null;
+        }
+    }
+
     public static <T> T fromJson(String json, Class<T> clazz){
         try {
             return mapper.readValue(json, clazz);

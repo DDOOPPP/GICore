@@ -6,6 +6,8 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.entity.Player;
 import org.gi.gICore.GICore;
 import org.gi.gICore.manager.ComponentManager;
 import org.gi.gICore.util.ModuleLogger;
@@ -24,25 +26,16 @@ public class ComponentBuilder {
         this.componentManager = ComponentManager.getInstance();
     }
 
+
+    /**
+     Client 번역
+     */
     public Component translate(String key){
-        if (!componentManager.hasKey(key)){
-            logger.error("Key not found : %s",key);
-
-            return Component.translatable(key);
-        }
-
         return Component.translatable(key);
     }
 
     public Component translate(String key, Object... args){
-        if (!componentManager.hasKey(key)){
-            logger.error("Key not found : %s",key);
-
-            return Component.text(key);
-        }
-
         Component[] components = new Component[args.length];
-
         for (int i = 0; i < args.length; i++){
             if (args[i] instanceof Component){
                 components[i] = (Component) args[i];
@@ -53,13 +46,15 @@ public class ComponentBuilder {
 
         return Component.translatable(key,components);
     }
-
-    public Component translateNamed(String key, Map<String, Object> placeholders){
+    /*
+    * 서버측 번역
+    */
+    public Component translateNamed(OfflinePlayer player, String key, Map<String, Object> placeholders){
         String replaced;
         if (!componentManager.hasKey(key)){
             replaced = replacePlaceholders(key, placeholders);
         }else{
-            String template = componentManager.getText(key);
+            String template = componentManager.getText(player,key);
             replaced = replacePlaceholders(template, placeholders);
         }
         return miniMessage.deserialize(replaced);

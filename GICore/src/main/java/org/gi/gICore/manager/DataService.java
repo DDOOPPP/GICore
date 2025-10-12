@@ -3,13 +3,16 @@ package org.gi.gICore.manager;
 import net.Indyuce.mmocore.api.player.PlayerData;
 import net.Indyuce.mmocore.manager.StatManager;
 import net.Indyuce.mmocore.skill.ClassSkill;
+import net.Indyuce.mmoitems.stat.data.StringData;
 import net.kyori.adventure.text.Component;
 
+import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.checkerframework.checker.units.qual.C;
 import org.gi.gICore.GICore;
 import org.gi.gICore.builder.ComponentBuilder;
 import org.gi.gICore.util.ModuleLogger;
@@ -72,7 +75,7 @@ public class DataService {
         if (stat == 0) {
             String value = statFormat.format(stat);
             if (!plus){
-               return "<gray>"+value+"</gray>";
+                return "<gray>"+value+"</gray>";
             }
             return "<gray>+"+value+"</gray>";
         }

@@ -1,6 +1,10 @@
 package org.gi.gICore.value;
 
+import net.Indyuce.mmoitems.api.Type;
+import org.bukkit.Material;
+
 import java.util.List;
+import java.util.Set;
 
 public class ValueName {
     //경제
@@ -10,6 +14,10 @@ public class ValueName {
     //Common
     public static final String TACK_TIME = "tack_time";
     public static final String ACTION = "action";
+
+    public static final List<String> INFO_LIST = List.of(
+            "ATTACK_DAMAGE","ATTACK_SPEED","MOVEMENT_SPEED"
+    );
 
     public static final List<String> SKILL_LIST = List.of(
             "SKILL_LEVEL",
@@ -88,6 +96,11 @@ public class ValueName {
     public static final String ARMOR_PART = "armor_part";
     public static final String EQUIPMENT = "equipment";
 
+    public static final String DISPLAY = "display_key";
+    public static final String LORE_KEY = "lore_key";
+    public static final String PL_DATA = "pl_data";
+
+    public static final String WEAPON = "weapon";
     //Stat
     public static final String ATTACK_DAMAGE = "attack_damage";
     public static final String ATTACK_DAMAGE_BASE = "attack_damage_base";
@@ -96,4 +109,29 @@ public class ValueName {
     public static final String ATTACK_SPEED = "attack_speed";
     public static final String ATTACK_SPEED_BASE = "attack_speed_base";
     public static final String ATTACK_SPEED_EXTRA = "attack_speed_extra";
+
+    public static final Set<Material> VANILLA_WEAPONS = Set.of(
+            Material.WOODEN_SWORD, Material.STONE_SWORD, Material.IRON_SWORD,
+            Material.GOLDEN_SWORD, Material.DIAMOND_SWORD, Material.NETHERITE_SWORD,
+            Material.WOODEN_AXE, Material.STONE_AXE, Material.IRON_AXE,
+            Material.GOLDEN_AXE, Material.DIAMOND_AXE, Material.NETHERITE_AXE,
+            Material.TRIDENT, Material.BOW, Material.CROSSBOW,Material.MACE
+    );
+
+    public static final Set<Type> MMOITEMS_WEAPONS = Set.of(
+            Type.SWORD,
+            Type.DAGGER,
+            Type.SPEAR,
+            Type.HAMMER,
+            Type.GAUNTLET,
+            Type.WHIP,
+            Type.STAFF,
+            Type.BOW,
+            Type.CROSSBOW,
+            Type.MUSKET,
+            Type.LUTE,
+            Type.CATALYST,
+            Type.OFF_CATALYST,
+            Type.MAIN_CATALYST
+    );
 }

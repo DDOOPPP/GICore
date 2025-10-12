@@ -1,6 +1,8 @@
 package org.gi.gICore.model.item;
 
 import lombok.Getter;
+import net.Indyuce.mmoitems.api.PluginUpdate;
+import net.kyori.adventure.text.BuildableComponent;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
@@ -29,6 +31,8 @@ public class GUIITem extends CustomItem{
     private static final ModuleLogger logger = new ModuleLogger(GICore.getInstance(),"GUIITem");
     private static final ComponentManager componentManager = ComponentManager.getInstance();
     private static final GIPlayer giplayer = new GIPlayer();
+
+    private static final String noneKey = "gi.item.name.none";
     private String type;
     public GUIITem(ConfigurationSection section) {
         super(section);
@@ -56,32 +60,48 @@ public class GUIITem extends CustomItem{
         return icon;
     }
 
+    public ItemStack getWeapon(OfflinePlayer player,ItemStack icon){
+        if (icon != null && !icon.getType().equals(Material.BLACK_STAINED_GLASS_PANE)){
+            ItemUtil.setString(icon,ValueName.ACTION,type);
+            return icon;
+        }
+        Map<String,Object> data = new HashMap<>();
+
+        data.put(ValueName.WEAPON,componentBuilder.translate(noneKey));
+        List<Component> lore = new ArrayList<>();
+        Component display = componentBuilder.translateNamed(player,getDisplay(),data);
+        for (String s : getLore()){
+            lore.add(componentBuilder.translateNamed(player,s,data));
+        }
+        ItemUtil.setString(icon,ValueName.ACTION,type);
+        return ItemUtil.parseItem(icon,display,lore);
+    }
+
     private ItemStack playerData(ItemStack icon, OfflinePlayer player){
         List<Component> lore = new ArrayList<>();
         Map<String ,Object > data = DataService.getPlayerData(player);
-        Component display = componentBuilder.translateNamed(getDisplay(),data);
+
+        Component display = componentBuilder.translate(getDisplay());
+
         for (String s : getLore()){
-            lore.add(componentBuilder.translateNamed(s,data));
+            lore.add(componentBuilder.translateNamed(player,s,data));
         }
-
         return ItemUtil.parseItem(icon,display,lore);
-
     }
-
 
     private ItemStack armorSlot(ItemStack icon, OfflinePlayer player,String armorType){
         Map<String,ItemStack> equipmentMap = DataService.getEquipmentData(player);
         Map<String,Object> data = new HashMap<>();
         List<Component> lore = new ArrayList<>();
         String typeKey = "gi.data.armor.type.%s".formatted(armorType);
-        String noneKey = "gi.item.name.none";
-        String TypeName = componentManager.getText(typeKey);
+
+        String TypeName = componentManager.getText(player,typeKey);
         data.put(ValueName.ARMOR_TYPE,TypeName);
 
         if (equipmentMap.containsKey(armorType)){
             ItemStack itemStack = equipmentMap.get(armorType);
             if (itemStack == null){
-                String none = componentManager.getText(noneKey);
+                Component none = componentBuilder.translate(noneKey);
                 data.put(ValueName.EQUIPMENT,none);
             }else{
                 String key = "";
@@ -102,13 +122,13 @@ public class GUIITem extends CustomItem{
                 }
             }
         }else{
-            String none = componentManager.getText(noneKey);
+            Component none = componentBuilder.translate(noneKey);
             data.put(ValueName.EQUIPMENT,none);
         }
 
-        Component display = componentBuilder.translateNamed(getDisplay(),data);
+        Component display = componentBuilder.translateNamed(player,getDisplay(),data);
         for (String s : getLore()){
-            lore.add(componentBuilder.translateNamed(s,data));
+            lore.add(componentBuilder.translateNamed(player,s,data));
         }
 
         return ItemUtil.parseItem(icon,display,lore);

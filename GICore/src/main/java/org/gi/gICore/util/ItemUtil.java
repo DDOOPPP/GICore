@@ -1,7 +1,10 @@
 package org.gi.gICore.util;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import dev.lone.itemsadder.api.CustomStack;
+import io.lumine.mythic.bukkit.utils.nbt.NBT;
 import io.lumine.mythic.lib.api.item.NBTItem;
+import net.Indyuce.mmoitems.ItemStats;
 import net.Indyuce.mmoitems.MMOItems;
 import net.Indyuce.mmoitems.api.Type;
 import net.Indyuce.mmoitems.api.item.mmoitem.LiveMMOItem;
@@ -13,17 +16,22 @@ import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.persistence.PersistentDataType;
+import org.gi.gICore.builder.ComponentBuilder;
+import org.gi.gICore.model.item.ListData;
+import org.gi.gICore.value.ValueName;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ItemUtil {
+    private static ComponentBuilder builder = new ComponentBuilder();
+
     public static ItemStack parseItem(ItemStack item, Component component, List<Component> lore) {
         if (item == null || item.getType() == Material.AIR) {
             return item;
@@ -183,6 +191,12 @@ public class ItemUtil {
         return value != null && value;
     }
 
+    public static void setStringList(ItemStack item, String key, List<String> value){
+        ListData data = new ListData();
+
+        edit(item,key,data,value);
+    }
+
     public static void setString(ItemStack item, String key, String value) {
         edit(item, key, PersistentDataType.STRING, value);
     }
@@ -297,4 +311,41 @@ public class ItemUtil {
         if (type.equals(Type.ACCESSORY)) return true;
         return false;
     }
+
+    public static ItemStack locallizedItem(Player player, ItemStack itemStack){
+        String display = getString(itemStack, ValueName.DISPLAY);
+        String loreKey = getString(itemStack, ValueName.LORE_KEY);
+        String dataKey = getString(itemStack, ValueName.PL_DATA);
+
+        List<String> lore = JsonUtil.fromJson(loreKey,new TypeReference<List<String>>() {});
+
+        Map<String,Object> data = JsonUtil.fromJson(loreKey,new TypeReference<Map<String,Object>>() {});
+
+        Component displayComponent = builder.translateNamed(player,display,data);
+
+        List<Component> loreComponent = new ArrayList<>();
+        for (String s : lore) {
+            Component component = builder.translateNamed(player,s,data);
+            loreComponent.add(component);
+        }
+
+        return parseItem(itemStack,displayComponent,loreComponent);
+    }
+
+    public static boolean isCombatItems(ItemStack itemStack) {
+        if (itemStack == null || itemStack.getType().isAir()) return false;
+        ItemMeta meta = itemStack.getItemMeta();
+        if (meta == null) return false;
+
+        if (isMMOItem(itemStack)) {
+            NBTItem nbtItem = NBTItem.get(itemStack);
+
+            Type type = Type.get(nbtItem);
+
+            return ValueName.MMOITEMS_WEAPONS.contains(type);
+        }else{
+            return ValueName.VANILLA_WEAPONS.contains(itemStack.getType());
+        }
+    }
+
 }
