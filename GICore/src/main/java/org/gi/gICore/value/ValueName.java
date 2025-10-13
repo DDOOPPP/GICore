@@ -35,7 +35,6 @@ public class ValueName {
     );
 
     public static final List<String> SKILL_LIST = List.of(
-            "SKILL_LEVEL",
             "COOLDOWN",
             "COUNT",
             "DAMAGE",
@@ -46,7 +45,6 @@ public class ValueName {
             "KNOCKBACK",
             "LOW",
             "MANA",
-            "MANA_NAME",
             "PERCENT",
             "RADIUS",
             "RANGE",

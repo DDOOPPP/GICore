@@ -3,6 +3,10 @@
   "gi.item.money.lore": "우클릭을 통해서 %s§r§f을 획득합니다",
   "gi.item.main.status.name" : "§f스테이터스",
   "gi.item.main.status.lore" : "§7스테이터스로 이동합니다",
+
+  "gi.item.main.skill.name": "§f스킬창",
+  "gi.item.main.skill.lore": "§7스킬창으로 이동합니다",
+
   "gi.profess.newbie.name": "모험가",
   "gi.profess.mage.name": "마법사",
   "gi.profess.warrior.name": "전사",
@@ -28,5 +32,29 @@
   "gi.item.armor.dragonset.helmet": "드래곤의 숨결 투구",
   "gi.item.armor.dragonset.chestplate": "드래곤의 비늘 갑옷",
   "gi.item.armor.dragonset.leggings": "드래곤의 강철 각반",
-  "gi.item.armor.dragonset.boots": "드래곤의 날개 부츠"
+  "gi.item.armor.dragonset.boots": "드래곤의 날개 부츠",
+
+  "gi.item.gui.skill.name": "<gold>{skill_name} </gold> <gray>[</gray>{skill_level}<gray>]</gray>",
+  "gi.item.gui.skill.lore1": "<gray>해금 레벨: </gray>{unlock_level}",
+
+  "gi.skill.amber.name": "마나 엠버",
+
+  "gi.skill.amber.lore_1": "마법 공격 시 일정 확률로 <aqua>마나의 결정</aqua>을 생성합니다.",
+  "gi.skill.amber.lore_2": "",
+  "gi.skill.amber.lore_3": "생성된 결정을 주우면,",
+  "gi.skill.amber.lore_4": "잃은 마나의 <blue>{percent}%</blue>를 회복합니다.",
+  "gi.skill.amber.lore_5": "",
+  "gi.skill.amber.lore_6": "<gray>재사용 대기시간:</gray> <yellow>{cooldown}</yellow>초",
+
+  "gi.skill.fireball.name": "파이어볼",
+  "gi.skill.fireball.lore_1": "치명적인 화염구를 발사하여",
+  "gi.skill.fireball.lore_2": "대상에게 <red>{damage}</red>의 피해를 입히고",
+  "gi.skill.fireball.lore_3": "<red>{ignite}</red>초 동안 불태웁니다.",
+  "gi.skill.fireball.lore_4": "",
+  "gi.skill.fireball.lore_5": "화염구는 <gold>3개의 불타는 파편</gold>으로 흩어지며,",
+  "gi.skill.fireball.lore_6": "벽에 붙은 뒤 <yellow>3초</yellow> 후 폭발하여",
+  "gi.skill.fireball.lore_7": "<red>{ratio}%</red>의 초기 피해를 입힙니다.",
+  "gi.skill.fireball.lore_8": "",
+  "gi.skill.fireball.lore_9": "<gray>재사용 대기시간:</gray> <yellow>{cooldown}</yellow>초",
+  "gi.skill.fireball.lore_10": "<gray>소모:</gray> <aqua>{mana}</aqua> {mana_name}"
 }

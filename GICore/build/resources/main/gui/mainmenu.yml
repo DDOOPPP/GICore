@@ -5,3 +5,6 @@ items:
   status:
     key: 'status'
     slots: [0]
+  skill:
+    key: 'skill'
+    slots: [ 3 ]

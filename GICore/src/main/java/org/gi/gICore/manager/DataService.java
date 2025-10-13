@@ -51,7 +51,10 @@ public class DataService {
             }
         }else{
             for (String statKey : ValueName.INFO_LIST){
-                double value = (Double) values.get(statKey);
+                Double value = null;
+                if (values.get(statKey) instanceof Number) {
+                    value = ((Number) values.get(statKey)).doubleValue(); // ✅ 안전하게 Double 변환
+                }
                 String key = statKey.toLowerCase();
                 data.put(key,getStat(playerData,statKey.toUpperCase(),value));
                 data.put(key+"_base",getBase(playerData,statKey.toUpperCase()));
@@ -148,17 +151,20 @@ public class DataService {
         return data;
     }
 
-
     private static String getSkillParameter(PlayerData player, ClassSkill skill, String parameterName){
         var parameterInfo = skill.getSkill().getParameterInfo(parameterName);
         if (parameterInfo == null) {
-            parameterInfo = skill.getSkill().getParameterInfo(parameterName.toUpperCase());
-            logger.info("UP");
+            parameterInfo = skill.getSkill().getParameterInfo(parameterName.toLowerCase());
+        }
+
+        if (parameterInfo == null) {
+            return null;
         }
         String display = parameterInfo.getDisplay(player.getSkillLevel(skill.getSkill()));
         if (display == null) {
             return null;
         }
+        logger.info(display);
         return display;
     }
 

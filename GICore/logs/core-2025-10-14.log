@@ -1,0 +1,1294 @@
+[2025-10-14 07:17:07] [INFO] [ForkJoinPool.commonPool-worker-9] Database is running
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-9] PlaceHolder registered
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-9] Loading Message Pack
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded 10 messages from en_us/common.yml
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded 10 messages from en_us/economy.yml
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded 10 messages from ko_kr/common.yml
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded 11 messages from ko_kr/economy.yml
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded 1 messages from ko_kr/skillmessage.yml
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-11] Loaded 4 messages from ko_kr/statusMessage.yml
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-11] Loaded 10 messages from ja_jp/common.yml
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-11] Loaded 10 messages from ja_jp/economy.yml
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-11] Event registered
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-11] Command registered
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-11] Item folder not found. Create folder.
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-11] Loaded 7 items from item.yml
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-11] Loaded GUI Config: MainMenu
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-9] mainmenu
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded GUI Config: Status
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-11] skill
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded GUI Config: Status
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-11] status
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-11] Resource pack created
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-9] SHA1: d27f1efc69b4a65b88ca28682f04102be5c5c01c
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-11] SIZE: 3303Bytes
+[2025-10-14 07:17:08] [INFO] [ForkJoinPool.commonPool-worker-11] Resource pack uploaded successfully
+[2025-10-14 07:17:52] [INFO] [ForkJoinPool.commonPool-worker-11] Resource Pack accepted: DDOOPPP
+[2025-10-14 07:17:54] [INFO] [ForkJoinPool.commonPool-worker-6] Resource Pack loaded: DDOOPPP
+[2025-10-14 07:17:55] [INFO] [ForkJoinPool.commonPool-worker-11] DDOOPPP Connected
+[2025-10-14 07:17:55] [INFO] [ForkJoinPool.commonPool-worker-11] Resource pack sent to DDOOPPP
+[2025-10-14 07:17:55] [INFO] [ForkJoinPool.commonPool-worker-11] Resource Pack accepted: DDOOPPP
+[2025-10-14 07:18:00] [INFO] [ForkJoinPool.commonPool-worker-6] Resource Pack loaded: DDOOPPP
+[2025-10-14 07:18:05] [INFO] [ForkJoinPool.commonPool-worker-6] UP
+[2025-10-14 07:18:57] [INFO] [ForkJoinPool.commonPool-worker-6] UP
+[2025-10-14 07:20:46] [INFO] [ForkJoinPool.commonPool-worker-7] Database is running
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] PlaceHolder registered
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] Loading Message Pack
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] Loaded 10 messages from en_us/common.yml
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] Loaded 10 messages from en_us/economy.yml
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] Loaded 10 messages from ko_kr/common.yml
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] Loaded 11 messages from ko_kr/economy.yml
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] Loaded 1 messages from ko_kr/skillmessage.yml
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] Loaded 4 messages from ko_kr/statusMessage.yml
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] Loaded 10 messages from ja_jp/common.yml
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] Loaded 10 messages from ja_jp/economy.yml
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] Event registered
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] Command registered
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] Loaded 7 items from item.yml
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] Loaded GUI Config: MainMenu
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-6] mainmenu
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] Loaded GUI Config: Status
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-6] skill
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] Loaded GUI Config: Status
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-6] status
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-6] Resource pack created
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-7] SHA1: d27f1efc69b4a65b88ca28682f04102be5c5c01c
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-6] SIZE: 3303Bytes
+[2025-10-14 07:20:47] [INFO] [ForkJoinPool.commonPool-worker-6] Resource pack uploaded successfully
+[2025-10-14 07:21:27] [INFO] [ForkJoinPool.commonPool-worker-10] Database is running
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] PlaceHolder registered
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] Loading Message Pack
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] Loaded 10 messages from en_us/common.yml
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] Loaded 10 messages from en_us/economy.yml
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] Loaded 10 messages from ko_kr/common.yml
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] Loaded 11 messages from ko_kr/economy.yml
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] Loaded 1 messages from ko_kr/skillmessage.yml
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] Loaded 4 messages from ko_kr/statusMessage.yml
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] Loaded 10 messages from ja_jp/common.yml
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] Loaded 10 messages from ja_jp/economy.yml
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] Event registered
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] Command registered
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] Loaded 7 items from item.yml
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] Loaded GUI Config: MainMenu
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-11] mainmenu
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] Loaded GUI Config: Status
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-1] skill
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-1] Loaded GUI Config: Status
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] status
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-10] Resource pack created
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-1] SHA1: d27f1efc69b4a65b88ca28682f04102be5c5c01c
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-1] SIZE: 3303Bytes
+[2025-10-14 07:21:29] [INFO] [ForkJoinPool.commonPool-worker-1] Resource pack uploaded successfully
+[2025-10-14 07:21:44] [INFO] [ForkJoinPool.commonPool-worker-10] Resource Pack accepted: DDOOPPP
+[2025-10-14 07:21:46] [INFO] [ForkJoinPool.commonPool-worker-10] Resource Pack loaded: DDOOPPP
+[2025-10-14 07:21:46] [INFO] [ForkJoinPool.commonPool-worker-10] DDOOPPP Connected
+[2025-10-14 07:21:46] [INFO] [ForkJoinPool.commonPool-worker-10] Resource pack sent to DDOOPPP
+[2025-10-14 07:21:47] [INFO] [ForkJoinPool.commonPool-worker-10] Resource Pack accepted: DDOOPPP
+[2025-10-14 07:21:49] [INFO] [ForkJoinPool.commonPool-worker-10] Resource Pack loaded: DDOOPPP
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name damage is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : count
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name count is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : ignite
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : damage
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : duration
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name duration is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : extra
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : heal
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name extra is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name heal is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name ignite is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name knockback is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : low
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name low is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : radius
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name mana_name is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name radius is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name range is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : range
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : ratio
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name ratio is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name redirect is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name reduction is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : slow
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name slow is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name stun is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : stun
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : count
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name count is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : duration
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name duration is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : extra
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name extra is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : heal
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : low
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name knockback is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name heal is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : percent
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name low is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name mana_name is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name percent is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : radius
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name radius is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : range
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name redirect is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name ratio is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name range is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : ratio
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name reduction is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name slow is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : stun
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : slow
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name stun is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : count
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : duration
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name extra is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name duration is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : extra
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : heal
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name count is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name heal is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name knockback is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : low
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name low is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name mana_name is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : percent
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name radius is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : radius
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name percent is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : range
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name redirect is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name range is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name reduction is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : slow
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name slow is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : stun
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name stun is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : count
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name count is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : damage
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name duration is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : duration
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name damage is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : extra
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name extra is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name ignite is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name knockback is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : low
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name mana_name is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name low is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : ignite
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : percent
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name percent is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : radius
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name radius is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : range
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name ratio is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name range is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : ratio
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name reduction is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name redirect is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : slow
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : stun
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name slow is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : count
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name stun is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name count is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : duration
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : extra
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name duration is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name extra is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : heal
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name heal is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : ignite
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : low
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name knockback is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name low is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name ignite is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name mana_name is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name percent is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : percent
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : range
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name radius is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name ratio is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : ratio
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name redirect is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : radius
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name range is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name stun is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : count
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name count is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name reduction is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : damage
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : stun
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name damage is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : duration
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name duration is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : extra
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name extra is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : ignite
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name knockback is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name ignite is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : low
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name low is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name mana_name is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : percent
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name percent is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : radius
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name radius is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : range
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name ratio is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name range is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : ratio
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name redirect is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : slow
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name reduction is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name slow is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : stun
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : count
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name damage is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : damage
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name stun is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name count is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name extra is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : extra
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : heal
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name heal is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : ignite
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name ignite is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name knockback is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name low is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name mana_name is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : percent
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name percent is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : low
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : radius
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : range
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name radius is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name range is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name count is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : count
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name reduction is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : slow
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name redirect is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name slow is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name damage is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : damage
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : duration
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name duration is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : extra
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name extra is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : ignite
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : heal
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name heal is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name ignite is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name knockback is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name low is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : low
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name mana_name is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : percent
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name percent is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : radius
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name radius is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name redirect is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : ratio
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name reduction is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name ratio is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : stun
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : slow
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name slow is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name stun is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : count
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name damage is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : damage
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name count is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : extra
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name extra is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : heal
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name heal is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name ignite is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : ignite
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name low is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name knockback is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : low
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name mana_name is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name radius is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : percent
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name percent is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : radius
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name range is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : range
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name redirect is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name slow is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : slow
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name reduction is Null
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : stun
+[2025-10-14 07:21:53] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name stun is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name damage is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name count is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : duration
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : count
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : damage
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name extra is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name heal is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : extra
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : heal
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name duration is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : ignite
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name ignite is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name knockback is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name low is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : low
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name mana_name is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : radius
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name range is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : ratio
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name ratio is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : range
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name radius is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name redirect is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name reduction is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : slow
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name slow is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : stun
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name stun is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name count is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : count
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name duration is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : extra
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : duration
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : heal
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name extra is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name heal is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name knockback is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : low
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name low is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : percent
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name mana_name is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name percent is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : radius
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name radius is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name range is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : range
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : ratio
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name redirect is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name slow is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name ratio is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name reduction is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : slow
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : stun
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name stun is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : count
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name count is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : duration
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name duration is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : extra
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : heal
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name extra is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name heal is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : low
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name knockback is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name low is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name mana_name is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name percent is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : percent
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : radius
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : range
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name radius is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name range is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name redirect is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name reduction is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : slow
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name slow is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name count is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : count
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name stun is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : stun
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : damage
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : duration
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : extra
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name damage is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name duration is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name extra is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : ignite
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name ignite is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : low
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name knockback is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name low is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name mana_name is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : radius
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : percent
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name ratio is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name percent is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name range is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : range
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name radius is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : ratio
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name redirect is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name reduction is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name slow is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : slow
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name stun is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : count
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : stun
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name count is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name duration is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : duration
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : extra
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name extra is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : heal
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : ignite
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name ignite is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name heal is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : low
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : percent
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name percent is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name knockback is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name mana_name is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : radius
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name low is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name radius is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : range
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name range is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : ratio
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name ratio is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name reduction is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name redirect is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : stun
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : count
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : duration
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : damage
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name stun is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name count is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name damage is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name duration is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : extra
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : ignite
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name extra is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name knockback is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : low
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name ignite is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name low is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name percent is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : percent
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name mana_name is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : radius
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : range
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name radius is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name range is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : ratio
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name redirect is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name ratio is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : slow
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name reduction is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name slow is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name stun is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : stun
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name count is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : count
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : damage
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : extra
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name damage is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name extra is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : heal
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name heal is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name ignite is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : low
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name knockback is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : ignite
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name low is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : percent
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name percent is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : radius
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : range
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name radius is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name mana_name is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name range is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name redirect is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name reduction is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : slow
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : count
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name slow is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name count is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : damage
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : duration
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name duration is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : extra
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : ignite
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name ignite is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name extra is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name damage is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : heal
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name heal is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name knockback is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : low
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name low is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name mana_name is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : percent
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : radius
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name percent is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name radius is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name redirect is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : ratio
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name reduction is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name ratio is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name slow is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : slow
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name stun is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : stun
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name count is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : damage
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : count
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : extra
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name damage is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name heal is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name ignite is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : ignite
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : heal
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name extra is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : knockback
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name knockback is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : low
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name low is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : percent
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : mana_name
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name mana_name is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name percent is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : radius
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name radius is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : range
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name range is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : redirect
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name redirect is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name reduction is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : slow
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : reduction
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name slow is Null
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : stun
+[2025-10-14 07:21:57] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name stun is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : count
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name count is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : damage
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name damage is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name duration is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : extra
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : duration
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name extra is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name heal is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : heal
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name knockback is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : ignite
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name ignite is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : low
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : knockback
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name low is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name mana_name is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : mana_name
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : radius
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name radius is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : range
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : ratio
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name range is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name ratio is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : redirect
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name redirect is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : reduction
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : slow
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name slow is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : stun
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name stun is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : count
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name reduction is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : duration
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name count is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name duration is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : extra
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name extra is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name heal is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : heal
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name knockback is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name low is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : low
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : knockback
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : mana_name
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name mana_name is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name percent is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : percent
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : range
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name range is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : radius
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name radius is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : ratio
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name ratio is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : redirect
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name redirect is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : reduction
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name reduction is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : slow
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name slow is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : stun
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name stun is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : count
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name count is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : duration
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name duration is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : extra
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : heal
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : knockback
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name heal is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name knockback is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name extra is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name low is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : low
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : mana_name
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name mana_name is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : percent
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name percent is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : radius
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : range
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name radius is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name range is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : redirect
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name redirect is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : reduction
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name reduction is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name slow is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : stun
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : slow
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name stun is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name count is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : count
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : damage
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name duration is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name damage is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : duration
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : extra
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : ignite
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name extra is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name ignite is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : knockback
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name knockback is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name low is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : low
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : mana_name
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name mana_name is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : percent
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name percent is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : radius
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : range
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : ratio
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name radius is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : redirect
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name range is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name redirect is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : reduction
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name ratio is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name reduction is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : slow
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name slow is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : stun
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name stun is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : duration
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name count is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : count
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name duration is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : extra
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name extra is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name ignite is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : ignite
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : heal
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name heal is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : knockback
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name knockback is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : low
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name low is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : mana_name
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : percent
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name mana_name is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name percent is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name radius is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : radius
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name range is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : ratio
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name ratio is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : range
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : redirect
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name redirect is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : reduction
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name reduction is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : stun
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : count
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name stun is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name damage is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name count is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : damage
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name extra is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : extra
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : duration
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name duration is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : ignite
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name ignite is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : knockback
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name knockback is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : low
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name low is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : mana_name
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name mana_name is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name percent is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : percent
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : radius
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name radius is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : ratio
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name range is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : range
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : redirect
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name ratio is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name redirect is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : reduction
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name reduction is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name slow is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : slow
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : stun
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name stun is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name count is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : count
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : extra
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name damage is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : damage
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name extra is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : heal
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name heal is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : ignite
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name ignite is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name knockback is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : low
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : knockback
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name low is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name mana_name is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : mana_name
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : percent
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name percent is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : radius
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name radius is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : range
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name range is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : redirect
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name redirect is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : reduction
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name reduction is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : slow
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name slow is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : count
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : damage
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name count is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : duration
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name damage is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name duration is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : extra
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name extra is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : heal
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : ignite
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name heal is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : knockback
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name ignite is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name knockback is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : low
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : mana_name
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name low is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : percent
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name mana_name is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name percent is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : radius
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : ratio
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name radius is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name ratio is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name redirect is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : redirect
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : reduction
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name reduction is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name slow is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : slow
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : stun
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : count
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name stun is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name count is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : damage
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name damage is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : extra
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name extra is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name heal is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : heal
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : ignite
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name ignite is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : knockback
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : low
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name knockback is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name low is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : mana_name
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name mana_name is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : percent
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name percent is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name radius is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : radius
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : range
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name range is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : redirect
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name redirect is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : reduction
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name reduction is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name slow is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : slow
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name stun is Null
+[2025-10-14 07:22:00] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : stun
+[2025-10-14 07:28:54] [INFO] [ForkJoinPool.commonPool-worker-4] Database is running
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-4] PlaceHolder registered
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-4] Loading Message Pack
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-4] Loaded 10 messages from en_us/common.yml
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-4] Loaded 10 messages from en_us/economy.yml
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-4] Loaded 10 messages from ko_kr/common.yml
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-4] Loaded 11 messages from ko_kr/economy.yml
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-4] Loaded 1 messages from ko_kr/skillmessage.yml
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-4] Loaded 4 messages from ko_kr/statusMessage.yml
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-4] Loaded 10 messages from ja_jp/common.yml
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-4] Loaded 10 messages from ja_jp/economy.yml
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-4] Event registered
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-4] Command registered
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-4] Loaded 7 items from item.yml
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-4] Loaded GUI Config: MainMenu
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-9] mainmenu
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-8] Loaded GUI Config: Status
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-7] skill
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-8] Loaded GUI Config: Status
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-7] status
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-7] Resource pack created
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-8] SHA1: d27f1efc69b4a65b88ca28682f04102be5c5c01c
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-7] SIZE: 3303Bytes
+[2025-10-14 07:28:56] [INFO] [ForkJoinPool.commonPool-worker-7] Resource pack uploaded successfully
+[2025-10-14 07:28:59] [INFO] [ForkJoinPool.commonPool-worker-8] Resource Pack accepted: DDOOPPP
+[2025-10-14 07:29:00] [INFO] [ForkJoinPool.commonPool-worker-7] Resource Pack loaded: DDOOPPP
+[2025-10-14 07:29:01] [INFO] [ForkJoinPool.commonPool-worker-7] DDOOPPP Connected
+[2025-10-14 07:29:01] [INFO] [ForkJoinPool.commonPool-worker-7] Resource pack sent to DDOOPPP
+[2025-10-14 07:29:01] [INFO] [ForkJoinPool.commonPool-worker-7] Resource Pack accepted: DDOOPPP
+[2025-10-14 07:29:04] [INFO] [ForkJoinPool.commonPool-worker-7] Resource Pack loaded: DDOOPPP
+[2025-10-14 07:29:47] [ERROR] [ForkJoinPool.commonPool-worker-8] Not found stat MOVEMENT_SPEED
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] cooldown 3.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : count
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name count is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : damage
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : duration
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : heal
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : extra
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name duration is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name extra is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name damage is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : ignite
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name heal is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name ignite is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : knockback
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : low
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name knockback is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name low is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : radius
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] mana 2.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name radius is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] percent 10.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name range is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : range
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : ratio
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name ratio is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : redirect
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name redirect is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : reduction
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : slow
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name reduction is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name slow is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name stun is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : stun
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] cooldown 5.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] damage 5.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : count
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name count is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name duration is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : extra
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name extra is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name heal is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name knockback is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : heal
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] ignite 2.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : low
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : knockback
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : duration
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name low is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] mana 15.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : percent
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name percent is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : radius
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : range
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name radius is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name range is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : ratio
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name ratio is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : redirect
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name redirect is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : reduction
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name reduction is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name slow is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : slow
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name stun is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : stun
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : count
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] cooldown 9.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] damage 5.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name count is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : duration
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : heal
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : extra
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name duration is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name extra is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name heal is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] mana 15.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : low
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : knockback
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name knockback is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name low is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] ignite 2.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : radius
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name percent is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name radius is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : percent
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : range
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] ratio 50.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name range is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : reduction
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name redirect is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : slow
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : redirect
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name reduction is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name slow is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name stun is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : stun
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] cooldown 9.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : count
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name count is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : damage
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name damage is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : duration
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : extra
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name extra is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name duration is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] heal 10.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : ignite
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name ignite is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : knockback
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : low
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name percent is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : percent
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name knockback is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] mana 4.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name low is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : radius
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : range
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name radius is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name range is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : ratio
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name ratio is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : redirect
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : reduction
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name redirect is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : slow
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name stun is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : stun
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name slow is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : count
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name reduction is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] cooldown 6.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name count is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] damage 3.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : duration
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name duration is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name extra is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : extra
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name heal is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : heal
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : ignite
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name ignite is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : knockback
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name knockback is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] mana 20.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : low
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name low is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name radius is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : radius
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name percent is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : percent
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : range
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name range is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name redirect is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name ratio is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : redirect
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name reduction is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : ratio
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] slow 4.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : stun
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : reduction
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name stun is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] cooldown 9.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name count is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : damage
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : count
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name damage is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : duration
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name duration is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] heal 4.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name extra is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : extra
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : ignite
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : knockback
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name low is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name knockback is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : low
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name ignite is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : percent
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name percent is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] mana 4.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : radius
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name radius is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name range is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : range
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : ratio
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name ratio is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : redirect
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name reduction is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name redirect is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : reduction
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : stun
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name slow is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name stun is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : slow
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] cooldown 30.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : count
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name count is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : damage
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] duration 10.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : extra
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name extra is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name damage is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : heal
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Lower Case Parameter Name : ignite
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name heal is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name ignite is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : knockback
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : low
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : percent
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] mana 2.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name knockback is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name low is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name percent is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : range
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name radius is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : redirect
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : reduction
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name redirect is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : radius
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name range is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] ratio 10.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name reduction is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Parameter Name slow is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : slow
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] stun 2.4
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] cooldown 15.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name count is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : damage
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : count
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name damage is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : extra
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Lower Case Parameter Name : duration
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name duration is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name extra is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : ignite
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name heal is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name ignite is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : heal
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name knockback is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : knockback
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : low
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Parameter Name low is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] mana 8.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : percent
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name percent is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : radius
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : ratio
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name ratio is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name radius is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] range 16.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : redirect
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name reduction is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : reduction
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Parameter Name redirect is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : slow
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : stun
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name slow is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name stun is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] cooldown 20.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : count
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name damage is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Parameter Name count is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Lower Case Parameter Name : damage
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] duration 10.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : extra
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name extra is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name heal is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Lower Case Parameter Name : ignite
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name ignite is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : heal
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] Lower Case Parameter Name : knockback
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name knockback is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : low
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Lower Case Parameter Name : radius
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Parameter Name percent is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name low is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : percent
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] mana 4.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Lower Case Parameter Name : range
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-10] Parameter Name radius is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-2] Parameter Name range is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-3] ratio 30.0
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-11] Lower Case Parameter Name : redirect
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-8] Lower Case Parameter Name : reduction
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-9] Parameter Name slow is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-4] Parameter Name redirect is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-1] Parameter Name reduction is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-7] Parameter Name stun is Null
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-6] Lower Case Parameter Name : slow
+[2025-10-14 07:30:09] [INFO] [ForkJoinPool.commonPool-worker-5] Lower Case Parameter Name : stun
+[2025-10-14 07:31:20] [INFO] [ForkJoinPool.commonPool-worker-9] Database is running
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] PlaceHolder registered
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] Loading Message Pack
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded 10 messages from en_us/common.yml
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded 10 messages from en_us/economy.yml
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded 10 messages from ko_kr/common.yml
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded 11 messages from ko_kr/economy.yml
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded 1 messages from ko_kr/skillmessage.yml
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded 4 messages from ko_kr/statusMessage.yml
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded 10 messages from ja_jp/common.yml
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded 10 messages from ja_jp/economy.yml
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] Event registered
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] Command registered
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded 7 items from item.yml
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] Loaded GUI Config: MainMenu
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-7] mainmenu
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-6] Loaded GUI Config: Status
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-3] skill
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-7] Loaded GUI Config: Status
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] status
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] Resource pack created
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-7] SHA1: d27f1efc69b4a65b88ca28682f04102be5c5c01c
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] SIZE: 3303Bytes
+[2025-10-14 07:31:22] [INFO] [ForkJoinPool.commonPool-worker-9] Resource pack uploaded successfully
+[2025-10-14 07:31:45] [INFO] [ForkJoinPool.commonPool-worker-7] Resource Pack accepted: DDOOPPP
+[2025-10-14 07:31:47] [INFO] [ForkJoinPool.commonPool-worker-7] Resource Pack loaded: DDOOPPP
+[2025-10-14 07:31:47] [INFO] [ForkJoinPool.commonPool-worker-9] DDOOPPP Connected
+[2025-10-14 07:31:47] [INFO] [ForkJoinPool.commonPool-worker-9] Resource pack sent to DDOOPPP
+[2025-10-14 07:31:48] [INFO] [ForkJoinPool.commonPool-worker-9] Resource Pack accepted: DDOOPPP
+[2025-10-14 07:31:50] [INFO] [ForkJoinPool.commonPool-worker-9] Resource Pack loaded: DDOOPPP
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-7] 0
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-6] 20
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-9] 1.3
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-7] 2.9
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-9] 68
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-6] 25.1
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-3] 57
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-3] 5
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-9] 2
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-6] 5
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-8] 50
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-7] 15
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-7] 5
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-8] 10
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-6] 4
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-6] 6
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-8] 3
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-9] 4
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-7] 20
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-7] 5
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-9] 4
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-8] 4
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-9] 30
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-8] 10
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-6] 10
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-7] 0
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-3] 2.4
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-6] 15
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-3] 8
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-7] 16
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-3] 20
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-7] 10
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-6] 4
+[2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-8] 30

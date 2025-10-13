@@ -1,0 +1,7 @@
+title: 'Skill'
+size: 54
+type: ''
+items:
+  skill_slot:
+    key: 'skill_item'
+    slot: [0]
