@@ -1,5 +1,6 @@
 package org.gi.gICore.util;
 
+import net.Indyuce.mmocore.skill.ClassSkill;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 
@@ -98,4 +99,6 @@ public class StringUtil {
         if (text == null) return null;
         return text.replaceAll("§[0-9a-fk-or]", "");
     }
+
+
 }

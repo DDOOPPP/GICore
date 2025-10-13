@@ -64,6 +64,9 @@ public class MainMenu extends GUIHolder{
             case "STATUS":
                 GUIManager.getStatusGUI().open(player);
                 return;
+            case "SKILL":
+                GUIManager.getSkillGUI().open(player);
+                return;
         }
         player.sendMessage(action);
     }

@@ -21,6 +21,7 @@ import org.gi.gICore.value.ValueName;
 
 import java.text.DecimalFormat;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class DataService {
@@ -36,21 +37,38 @@ public class DataService {
         return data;
     }
 
-    public static Map<String,Object> getPlayerData(OfflinePlayer player) {
+    public static Map<String,Object> getPlayerData(OfflinePlayer player,Map<String,Object> values) {
         Map<String,Object> data = new HashMap<>();
         PlayerData playerData = PlayerData.get(player);
 
-        for (String statKey : ValueName.STATUS_STAT_LIST){
-            data.put(statKey,getStat(playerData,statKey.toUpperCase()));
-            data.put(statKey+"_base",getBase(playerData,statKey.toUpperCase()));
-            data.put(statKey+"_extra",getExtra(playerData,statKey.toUpperCase()));
-        }
+        if (values == null || values.isEmpty()) {
+            for (String statKey : ValueName.INFO_LIST){
+                String key = statKey.toLowerCase();
 
+                data.put(key,getStat(playerData,statKey.toUpperCase(),null));
+                data.put(key+"_base",getBase(playerData,statKey.toUpperCase()));
+                data.put(key+"_extra",getExtra(playerData,statKey.toUpperCase(),null));
+            }
+        }else{
+            for (String statKey : ValueName.INFO_LIST){
+                double value = (Double) values.get(statKey);
+                String key = statKey.toLowerCase();
+                data.put(key,getStat(playerData,statKey.toUpperCase(),value));
+                data.put(key+"_base",getBase(playerData,statKey.toUpperCase()));
+                data.put(key+"_extra",getExtra(playerData,statKey.toUpperCase(),value));
+            }
+        }
         return data;
     }
 
-    private static String getStat(PlayerData playerData, String key) {
+    private static String getStat(PlayerData playerData, String key,Double sub) {
         Double stat = playerData.getStats().getStat(key);
+        if (sub != null) {
+            if (sub != 0){
+                stat += sub;
+            }
+        }
+
         return setStatColor(stat,true);
     }
 
@@ -60,11 +78,16 @@ public class DataService {
         return setStatColor(base,false);
     }
 
-    public static String getExtra(PlayerData playerData,String key){
+    public static String getExtra(PlayerData playerData,String key,Double sub) {
         Double base = playerData.getStats().getBase(key);
         Double main = playerData.getStats().getStat(key);
         Double extra = main-base;
         String value = statFormat.format(Math.abs(extra));
+        if (sub != null) {
+            if (sub != 0){
+                value += sub;
+            }
+        }
         if (extra < 0){
             return "<red>-"+value+"</red>";
         }
@@ -96,29 +119,47 @@ public class DataService {
         }
     }
 
-    public static Map<String,String> getSkillData(OfflinePlayer player, ClassSkill skill) {
-        Map<String,String> data = new HashMap<>();
+    public static Map<String,Object> getSkillData(OfflinePlayer player, ClassSkill skill) {
+        Map<String,Object> data = new HashMap<>();
 
         PlayerData playerData = PlayerData.get(player);
+        Component component = builder.translate(skill.getSkill().getName());
+        int player_level = playerData.getLevel();
+        data.putIfAbsent(ValueName.SKILL_NAME,component);
+        data.putIfAbsent(ValueName.SKILL_LEVEL,playerData.getSkillLevel(skill.getSkill()));
+        int unlockLevel = skill.getUnlockLevel();
+        String unlock = "";
+
+        if (player_level >= unlockLevel){
+            unlock = "<green>"+unlock+"</green>";
+        }else{
+            unlock = "<red>"+unlock+"</red>";
+        }
+        data.put(ValueName.UNLOCK_LEVEL,unlock);
 
         for (String key : ValueName.SKILL_LIST){
             key = key.toLowerCase();
-
-            data.putIfAbsent(ValueName.SKILL_NAME,skill.getSkill().getName());
-            data.putIfAbsent(ValueName.SKILL_LEVEL,String.valueOf(playerData.getSkillLevel(skill.getSkill())));
             String value = getSkillParameter(playerData,skill,key);
-
+            if (value == null) {
+                continue;
+            }
             data.put(key,value);
         }
         return data;
     }
 
+
     private static String getSkillParameter(PlayerData player, ClassSkill skill, String parameterName){
         var parameterInfo = skill.getSkill().getParameterInfo(parameterName);
         if (parameterInfo == null) {
+            parameterInfo = skill.getSkill().getParameterInfo(parameterName.toUpperCase());
+            logger.info("UP");
+        }
+        String display = parameterInfo.getDisplay(player.getSkillLevel(skill.getSkill()));
+        if (display == null) {
             return null;
         }
-        return parameterInfo.getDisplay(player.getSkillLevel(skill.getSkill()));
+        return display;
     }
 
     public static Map<String,ItemStack> getEquipmentData(OfflinePlayer player) {
@@ -135,5 +176,15 @@ public class DataService {
         data.put(ValueName.BOOTS,online.getEquipment().getBoots() != null ? online.getEquipment().getBoots() : null);
 
         return data;
+    }
+
+    public static String getTranslateId(ClassSkill skill) {
+        if (skill == null) return null;
+        String id = skill.getSkill().getHandler().getId().toLowerCase();
+        return "gi.skill.%s.name".formatted(id);
+    }
+
+    public static List<String> getTranslateName(ClassSkill skill) {
+        return skill.getSkill().getLore();
     }
 }

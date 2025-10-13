@@ -37,7 +37,6 @@ public class GUIITem extends CustomItem{
     public GUIITem(ConfigurationSection section) {
         super(section);
         type = section.getString("type");
-
     }
 
     @Override
@@ -46,7 +45,10 @@ public class GUIITem extends CustomItem{
         switch (type){
             case "INFO":
                 icon = getItem(player);
-                icon = playerData(icon,player);
+                if (arg[0] instanceof Map<?,?>){
+                    Map<String,Object> data = (Map<String,Object>) arg[0];
+                    icon = playerData(icon,player, data);
+                }
                 break;
             case "ARMOR_SLOT":
                 icon = armorSlot(icon,player,arg[0].toString());
@@ -77,14 +79,14 @@ public class GUIITem extends CustomItem{
         return ItemUtil.parseItem(icon,display,lore);
     }
 
-    private ItemStack playerData(ItemStack icon, OfflinePlayer player){
+    private ItemStack playerData(ItemStack icon, OfflinePlayer player, Map<String,Object> data){
         List<Component> lore = new ArrayList<>();
-        Map<String ,Object > data = DataService.getPlayerData(player);
+        Map<String ,Object > statusData = DataService.getPlayerData(player,data);
 
         Component display = componentBuilder.translate(getDisplay());
 
         for (String s : getLore()){
-            lore.add(componentBuilder.translateNamed(player,s,data));
+            lore.add(componentBuilder.translateNamed(player,s,statusData));
         }
         return ItemUtil.parseItem(icon,display,lore);
     }

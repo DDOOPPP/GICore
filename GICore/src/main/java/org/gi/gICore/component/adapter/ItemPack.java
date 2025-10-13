@@ -6,6 +6,7 @@ import org.gi.gICore.config.ConfigCore;
 import org.gi.gICore.model.item.CustomItem;
 import org.gi.gICore.model.item.GUIITem;
 import org.gi.gICore.model.item.MoneyItem;
+import org.gi.gICore.model.item.SkillItem;
 import org.gi.gICore.util.ModuleLogger;
 
 import java.io.File;
@@ -67,6 +68,7 @@ public class ItemPack {
                 CustomItem item = switch (action){
                     case "MONEY" -> new MoneyItem(section);
                     case "NONE", "INFO" -> new GUIITem(section);
+                    case "SKILL" -> new SkillItem(section);
                     default -> null;
                 };
 

@@ -1,9 +1,13 @@
 package org.gi.gICore.value;
 
+import net.Indyuce.mmoitems.ItemStats;
 import net.Indyuce.mmoitems.api.Type;
+import net.Indyuce.mmoitems.stat.type.ItemStat;
 import org.bukkit.Material;
+import org.bukkit.attribute.Attribute;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class ValueName {
@@ -17,6 +21,17 @@ public class ValueName {
 
     public static final List<String> INFO_LIST = List.of(
             "ATTACK_DAMAGE","ATTACK_SPEED","MOVEMENT_SPEED"
+    );
+    public static final Map<String, ItemStat> ITEM_STAT_MAP = Map.of(
+            "ATTACK_DAMAGE", ItemStats.ATTACK_DAMAGE,
+            "ATTACK_SPEED",ItemStats.ATTACK_SPEED,
+            "MOVEMENT_SPEED",ItemStats.MOVEMENT_SPEED
+    );
+
+    public static Map<String, Attribute> ATTRIBUTES = Map.of(
+            "ATTACK_DAMAGE", Attribute.GENERIC_ATTACK_DAMAGE,
+            "ATTACK_SPEED",Attribute.GENERIC_ATTACK_SPEED,
+            "MOVEMENT_SPEED",Attribute.GENERIC_MOVEMENT_SPEED
     );
 
     public static final List<String> SKILL_LIST = List.of(
@@ -49,13 +64,11 @@ public class ValueName {
             "boots"
     );
 
-    public static final List<String> STATUS_STAT_LIST = List.of(
-            "attack_damage","attack_speed","movement_speed"
-    );
-
     //Skill
     public static final String SKILL_NAME = "skill_name";
     public static final String SKILL_LEVEL = "skill_level";
+    public static final String SKILL_ID = "skill_id";
+    public static final String UNLOCK_LEVEL = "unlock_level";
     public static final String COOLDOWN = "cooldown";
     public static final String COUNT = "count";
     public static final String DAMAGE = "damage";
@@ -118,6 +131,7 @@ public class ValueName {
             Material.TRIDENT, Material.BOW, Material.CROSSBOW,Material.MACE
     );
 
+
     public static final Set<Type> MMOITEMS_WEAPONS = Set.of(
             Type.SWORD,
             Type.DAGGER,
@@ -134,4 +148,6 @@ public class ValueName {
             Type.OFF_CATALYST,
             Type.MAIN_CATALYST
     );
+
+    public static final String SELECT_SKILL = "select_skill";
 }

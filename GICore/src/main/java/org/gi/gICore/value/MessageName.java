@@ -35,4 +35,7 @@ public class MessageName {
     public static final String EQUIP_ARMOR = "equip_armor";
     public static final String REMOVE_EQUIP_ARMOR = "remove_equip_armor";
     public static final String EQUIP_ERROR = "equip_error";
+
+    //Skill
+    public static final String NOT_PROFESSION = "not_profession";
 }

@@ -13,6 +13,14 @@ status:
   material: 'BOOK'
   action: 'NONE'
   type: 'STATUS'
+skill:
+  display: 'gi.item.main.skill.name'
+  lore:
+    - 'gi.item.main.skill.lore'
+  namespace: ''
+  material: 'BOOK'
+  action: 'NONE'
+  type: 'SKILL'
 info:
   display: 'gi.item.status.info.name'
   lore:
@@ -42,3 +50,11 @@ weapon_slot:
   material: 'BLACK_STAINED_GLASS_PANE'
   action: 'NONE'
   type: 'WEAPON_SLOT'
+skill_item:
+  display: "gi.item.gui.skill.name"
+  lore:
+  namespace: ''
+  material: 'BLACK_STAINED_GLASS_PANE'
+  action: 'SKILL'
+  type: 'ARMOR_SLOT'
+

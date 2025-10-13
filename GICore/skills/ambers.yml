@@ -1,11 +1,11 @@
-name: 마나 엠버
+name: gi.skill.amber.name
 lore:
-- Dealing magic damage has &630% &7chance
-- of dropping an amber on the ground.
-- ''
-- When picked up, ambers refund &9{percent}% &7of your missing mana.
-- ''
-- '&e{cooldown}s Cooldown'
+  - 'gi.skill.amber.lore_1'
+  - 'gi.skill.amber.lore_2'
+  - 'gi.skill.amber.lore_3'
+  - 'gi.skill.amber.lore_4'
+  - 'gi.skill.amber.lore_5'
+  - 'gi.skill.amber.lore_6'
 material: EMERALD
 mana:
   base: 2.0

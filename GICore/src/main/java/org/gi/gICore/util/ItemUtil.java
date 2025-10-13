@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import dev.lone.itemsadder.api.CustomStack;
 import io.lumine.mythic.bukkit.utils.nbt.NBT;
 import io.lumine.mythic.lib.api.item.NBTItem;
+import lombok.extern.slf4j.Slf4j;
 import net.Indyuce.mmoitems.ItemStats;
 import net.Indyuce.mmoitems.MMOItems;
 import net.Indyuce.mmoitems.api.Type;
@@ -11,7 +12,10 @@ import net.Indyuce.mmoitems.api.item.mmoitem.LiveMMOItem;
 import net.Indyuce.mmoitems.api.item.mmoitem.MMOItem;
 import net.Indyuce.mmoitems.manager.StatManager;
 import net.Indyuce.mmoitems.manager.TypeManager;
+import net.Indyuce.mmoitems.stat.data.DoubleData;
+import net.Indyuce.mmoitems.stat.data.type.StatData;
 import net.Indyuce.mmoitems.stat.type.ItemStat;
+import net.Indyuce.mmoitems.stat.type.StatHistory;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -19,10 +23,12 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.persistence.PersistentDataType;
+import org.gi.gICore.GICore;
 import org.gi.gICore.builder.ComponentBuilder;
 import org.gi.gICore.model.item.ListData;
 import org.gi.gICore.value.ValueName;
@@ -30,6 +36,8 @@ import org.gi.gICore.value.ValueName;
 import java.util.*;
 
 public class ItemUtil {
+    private static ModuleLogger logger = new ModuleLogger(GICore.getInstance(),"ItemUtil");
+
     private static ComponentBuilder builder = new ComponentBuilder();
 
     public static ItemStack parseItem(ItemStack item, Component component, List<Component> lore) {
@@ -348,4 +356,57 @@ public class ItemUtil {
         }
     }
 
+    public static double exportData(ItemStack itemStack, String key) {
+        if (isMMOItem(itemStack)) {
+            NBTItem nbtItem = NBTItem.get(itemStack);
+            LiveMMOItem mmoItem = new LiveMMOItem(nbtItem);
+
+            ItemStat stat = ValueName.ITEM_STAT_MAP.get(key);
+            if (!mmoItem.hasData(stat)) {
+                logger.error("Not found stat " + key);
+                return 0;
+            }
+            DoubleData value = (DoubleData) mmoItem.getData(stat);
+            if (value == null) return 0;
+            if (mmoItem.getGemstones().isEmpty()){
+                return value.getValue();
+            }
+            int level = mmoItem.getUpgradeLevel();
+            if (level == 0) {
+                return value.getValue();
+            }
+            StatHistory history = mmoItem.getStatHistory(stat);
+
+            value = (DoubleData) history.recalculate(true,level);
+
+            return value.getValue();
+        }else{
+            if (!ValueName.ATTRIBUTES.containsKey(key)){
+                logger.error("Attribute Not Found: %s",key);
+                return 0.0;
+            }
+
+            Attribute attribute = ValueName.ATTRIBUTES.get(key);
+            if (attribute == null) {
+                logger.error("Attribute Not Found: %s", key);
+                return 0.0;
+            }
+            ItemMeta meta = itemStack.getItemMeta();
+            if (meta == null || meta.getAttributeModifiers() == null) return 0;
+            Collection<AttributeModifier> modis = meta.getAttributeModifiers(attribute);
+            if (modis == null) {
+                logger.error("Modifier is Null: %s", key);
+                return 0.0;
+            }
+
+
+            double value = 0.0;
+            for (AttributeModifier modifier : modis) {
+                if (modifier.getSlot() == EquipmentSlot.HAND) {
+                    value += modifier.getAmount();
+                }
+            }
+            return value;
+        }
+    }
 }

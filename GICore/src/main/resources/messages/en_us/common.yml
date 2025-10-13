@@ -1,10 +1,15 @@
-small_then_zero: "§c0보다 커야 합니다."
-# 예측 불가능한 오류 발생 시
-call_manager: "§e오류가 발생했습니다. 관리자에게 문의해주세요."
-number_error: "§e숫자를 입력해주세요."
+small_then_zero: "§cThe value must be greater than 0."
+# When an unexpected error occurs
+call_manager: "§eAn unexpected error occurred. Please contact an administrator."
+number_error: "§ePlease enter a valid number."
 
-player_is_offline: "§e플레이어가 오프라인입니다."
-item_send_ok:  "§e{item_name}을 %player_name%에게 보냈습니다."
+player_is_offline: "§eThe player is currently offline."
+item_send_ok: "§eYou sent {item_name} to %player_name%."
 
-reload_start: ''
-reload_end: ''
+reload_start: "Plugin reload started."
+reload_end: "Plugin reload complete: {tack_time}ms"
+
+balance_set_ok: "§eSet %player_name%'s balance to {amount} gold."
+balance_set_fail: "§cFailed to set the player's balance."
+
+not_profession: "§eYou currently have no profession."

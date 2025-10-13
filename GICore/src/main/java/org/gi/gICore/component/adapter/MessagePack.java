@@ -11,14 +11,14 @@ import java.util.*;
 
 public class MessagePack {
     public static final List<String> SUPPORTED_LANGS = List.of("en_us", "ko_kr", "ja_jp");
-    // ✅ 나중에 초기화
+    // 나중에 초기화
     private static ModuleLogger logger;
 
     // Map<언어, Map<키, 메시지>> 구조
     private static final Map<String, Map<String, String>> messagePacks = new HashMap<>();
 
     public static void loadPack(JavaPlugin plugin) {
-        // ✅ 로거 초기화
+        // 로거 초기화
         if (logger == null) {
             logger = new ModuleLogger(plugin, "MessagePack");
         }
@@ -80,13 +80,11 @@ public class MessagePack {
         }
     }
 
-    // ✅ 메서드명 통일: get → getMessage로 변경
     public static String getMessage(String lang, String key) {
         return messagePacks.getOrDefault(lang, Collections.emptyMap())
                 .getOrDefault(key, key);
     }
 
-    // 편의 메서드들
     public static String getKorean(String key) {
         return getMessage("ko_kr", key);
     }
@@ -99,9 +97,7 @@ public class MessagePack {
         return getMessage("en_us", key);
     }
 
-    // 플레이어 언어에 따라 메시지 반환
     public static String getPlayerMessage(String key, String playerLang) {
-        // 지원하지 않는 언어면 영어로 fallback
         if (!SUPPORTED_LANGS.contains(playerLang)) {
             playerLang = "en_us";
         }

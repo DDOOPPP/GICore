@@ -1,10 +1,15 @@
-small_then_zero: "§c0보다 커야 합니다."
-# 예측 불가능한 오류 발생 시
-call_manager: "§e오류가 발생했습니다. 관리자에게 문의해주세요."
-number_error: "§e숫자를 입력해주세요."
+small_then_zero: "§c0より大きい値を入力してください。"
+# 予期しないエラーが発生した場合
+call_manager: "§eエラーが発生しました。管理者にお問い合わせください。"
+number_error: "§e数字を入力してください。"
 
-player_is_offline: "§e플레이어가 오프라인입니다."
-item_send_ok:  "§e{item_name}을 %player_name%에게 보냈습니다."
+player_is_offline: "§eプレイヤーは現在オフラインです。"
+item_send_ok: "§e{item_name}を%player_name%に送りました。"
 
-reload_start: ''
-reload_end: ''
+reload_start: "プラグインのリロードを開始します。"
+reload_end: "プラグインのリロードが完了しました: {tack_time}ms"
+
+balance_set_ok: "§e%player_name%の所持金を{amount}ゴールドに設定しました。"
+balance_set_fail: "§cプレイヤーの金額設定に失敗しました。"
+
+not_profession: "§e現在、職業がありません。"

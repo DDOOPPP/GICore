@@ -1,7 +1,9 @@
 package org.gi.gICore.manager;
 
 import org.gi.gICore.model.gui.MainMenu;
+import org.gi.gICore.model.gui.SkillGUI;
 import org.gi.gICore.model.gui.StatusGUI;
+import org.gi.gICore.model.item.SkillItem;
 
 import java.util.Map;
 
@@ -15,4 +17,6 @@ public class GUIManager {
     public static StatusGUI getStatusGUI(){
         return new StatusGUI(configManager.getGUIConfig("status"));
     }
+
+    public static SkillGUI getSkillGUI(){ return new SkillGUI(configManager.getGUIConfig("skill")); }
 }

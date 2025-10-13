@@ -11,3 +11,5 @@ reload_end: 'Plugin reload complete: {tack_time}ms'
 
 balance_set_ok: "§e%player_name%님의 소지금액을 {amount}골드로 설정했습니다."
 balance_set_fail: "§c해당유저의 금액설정을 실패했습니다."
+
+not_profession: '§e현재 직업이 없습니다.'

@@ -1,15 +1,16 @@
-name: 파이어 볼
+name: gi.skill.fireball.name
 lore:
-- Casts a deadly fireball onto your
-- target, dealing &c{damage} &7damage upon contact
-- and igniting it for &c{ignite} &7seconds.
-- ''
-- Shatters into 3 blazing hot shards which stick
-- to walls and explode 3 seconds later, dealing
-- '&c{ratio}% &7of the initial spell damage.'
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+  - gi.skill.fireball.lore_1
+  - gi.skill.fireball.lore_2
+  - gi.skill.fireball.lore_3
+  - gi.skill.fireball.lore_4
+  - gi.skill.fireball.lore_5
+  - gi.skill.fireball.lore_6
+  - gi.skill.fireball.lore_7
+  - gi.skill.fireball.lore_8
+  - gi.skill.fireball.lore_9
+  - gi.skill.fireball.lore_10
+
 material: FIRE_CHARGE
 damage:
   base: 5.0
