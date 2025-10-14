@@ -176,6 +176,12 @@ public class DataService {
 
     public static Map<String ,Object> getSkillName(String key){
         RegisteredSkill skill = skillManager.getSkill(key);
+        if (skill == null) {
+            logger.debug(key+"is null");
+
+            r
+        }
+
         Map<String ,Object> data = new HashMap<>();
         Component component = builder.translate(skill.getName());
 
@@ -184,7 +190,7 @@ public class DataService {
     }
 
     public static RegisteredSkill getSkill(String key) {
-        RegisteredSkill skill = skillManager.getSkill(key);
+        RegisteredSkill skill = skillManager(key);
         if (skill == null) {
             return null;
         }

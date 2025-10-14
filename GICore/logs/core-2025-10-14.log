@@ -1292,3 +1292,33 @@
 [2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-7] 10
 [2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-6] 4
 [2025-10-14 07:31:53] [INFO] [ForkJoinPool.commonPool-worker-8] 30
+[07:33:06 ERROR]: Could not pass event InventoryClickEvent to GICore v1.0-SNAPSHOT
+java.lang.NullPointerException: Cannot invoke "net.Indyuce.mmocore.skill.RegisteredSkill.getName()" because "skill" is null
+        at GICore-1.0.0.jar/org.gi.gICore.manager.DataService.getSkillName(DataService.java:180) ~[GICore-1.0.0.jar:?]
+        at GICore-1.0.0.jar/org.gi.gICore.model.gui.SkillGUI.onClick(SkillGUI.java:116) ~[GICore-1.0.0.jar:?]
+        at GICore-1.0.0.jar/org.gi.gICore.events.PlayerEvents.onInventoryClick(PlayerEvents.java:129) ~[GICore-1.0.0.jar:?]
+        at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor279.execute(Unknown Source) ~[?:?]
+        at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.21-R0.1-SNAPSHOT.jar:?]
+        at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:80) ~[paper-api-1.21-R0.1-SNAPSHOT.jar:1.21-130-b1b5d4c]
+        at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.21-R0.1-SNAPSHOT.jar:?]
+        at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:131) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:628) ~[paper-api-1.21-R0.1-SNAPSHOT.jar:?]
+        at net.minecraft.server.network.ServerGamePacketListenerImpl.handleContainerClick(ServerGamePacketListenerImpl.java:3122) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:69) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:33) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:56) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:151) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1537) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:201) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:125) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1514) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1507) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:135) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at net.minecraft.server.MinecraftServer.managedBlock(MinecraftServer.java:1466) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1473) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1318) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:330) ~[paper-1.21.jar:1.21-130-b1b5d4c]
+        at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
