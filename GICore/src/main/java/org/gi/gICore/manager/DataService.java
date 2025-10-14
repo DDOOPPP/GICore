@@ -126,6 +126,7 @@ public class DataService {
                 continue;
             }
             data.put(key,value);
+            logger.info(key+": %s".format(value));
         }
         return data;
     }

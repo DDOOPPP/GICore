@@ -37,10 +37,12 @@
   "gi.item.gui.skill.name": "{skill_name} <gray>[</gray>{skill_level}<gray>]</gray>",
   "gi.item.gui.select_skill.name": "<white>현재 선택된 스킬: </white> {skill_name}",
   "gi.item.gui.bindslot.name": "<white>{slot_number}번 슬롯 </white> {skill_name}",
-  "gi.item.gui.bindslot.lore1": "<gray>좌클릭으로 등록할수있습니다.</gray>",
-  "gi.item.gui.bindslot.lore2": "<gray>우클릭으로 해제할수있습니다.</gray>",
+  "gi.item.gui.bindslot.lore1": "§7좌클릭으로 등록할수있습니다.",
+  "gi.item.gui.bindslot.lore2": "§7우클릭으로 해제할수있습니다.",
 
   "gi.item.gui.skill.lore1": "<gray>해금 레벨: </gray>{unlock_level}",
+
+  "gi.skill.amber.name": "§6마나앰버",
 
   "gi.skill.amber.lore_1": "마법 공격 시 일정 확률로 <aqua>마나의 결정</aqua>을 생성합니다.",
   "gi.skill.amber.lore_2": "",

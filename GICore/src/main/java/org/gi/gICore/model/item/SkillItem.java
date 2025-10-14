@@ -22,6 +22,8 @@ import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.util.Result;
 import org.gi.gICore.value.ValueName;
 
+import io.lumine.mythic.bukkit.utils.items.nbt.reee;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,6 +51,7 @@ public class SkillItem extends CustomItem{
 
     public List<ItemStack> buildSkillItem(OfflinePlayer player) {
         PlayerData playerData = PlayerData.get(player);
+        Component manaName = builder.translate(playerData.getProfess().getManaDisplay().getName());
 
         List<ClassSkill> skills = playerData
                 .getProfess()
@@ -62,10 +65,11 @@ public class SkillItem extends CustomItem{
         }
         List<ItemStack> icons = new ArrayList<>();
 
+
         for (ClassSkill skill : skills) {
             ItemStack icon = skill.getSkill().getIcon().clone();
             Map<String,Object> data = DataService.getSkillData(player, skill);
-
+            data.put(ValueName.MANA_NAME, manaName);
             Component display = builder.translateNamed(player,getDisplay(),data);
             List<Component> components = new ArrayList<>();
             List<String> lore = skill.getSkill().getLore();
@@ -103,8 +107,6 @@ public class SkillItem extends CustomItem{
             Component component = null;
             if (info == null) {
                 component = builder.translate(ValueName.NONE_ITEM_KEY);
-
-                ItemUtil.setString(icon, ValueName.SKILL_ID, null);
             }else{
                 icon = info.getClassSkill().getSkill().getIcon().clone();
                 String name = info.getClassSkill().getSkill().getName();
@@ -113,7 +115,8 @@ public class SkillItem extends CustomItem{
                 ItemUtil.setString(icon, ValueName.SKILL_ID, info.getClassSkill().getUnlockNamespacedKey());
             }
             data.put(ValueName.SKILL_NAME,component);
-            for (String line : slot.getLore()) {
+
+            for (String line : getLore()) {
                 components.add(builder.translate(line));
             }
 
@@ -129,14 +132,18 @@ public class SkillItem extends CustomItem{
     public ItemStack buildSelectSkillItem(OfflinePlayer player,Map<String,Object> data){
         ItemStack itemStack = getItem().clone();
         Map<String,Object> values = new HashMap<>();
-        if (!data.containsKey(ValueName.SELECT_SKILL)) {
+        
+        if (data == null) {
+            logger.debug("data is Null");
+            return itemStack;
+        }
+        Object obj = data.get(ValueName.SELECT_SKILL);
+        if (obj == null) {
             Component component = builder.translate(ValueName.NONE_ITEM_KEY);
 
-            ItemUtil.setString(itemStack, ValueName.SKILL_ID, null);
             values.put(ValueName.SKILL_NAME, component);
         }else{
-            String id = data.get(ValueName.SELECT_SKILL).toString();
-
+            String id = obj.toString();
             RegisteredSkill skill = DataService.getSkill(id);
 
             if (skill == null) {
@@ -145,7 +152,6 @@ public class SkillItem extends CustomItem{
                 Component component = builder.translate(ValueName.NONE_ITEM_KEY);
 
                 values.put(ValueName.SKILL_NAME, component);
-                ItemUtil.setString(itemStack, ValueName.SKILL_ID, null);
             }else{
                 values = DataService.getSkillName(id);
 
@@ -155,7 +161,7 @@ public class SkillItem extends CustomItem{
         }
         ItemUtil.setString(itemStack,ValueName.ACTION,"VIEW");
 
-        Component display  = builder.translate(getDisplay(),values);
+        Component display  = builder.translateNamed(player,getDisplay(),values);
 
         itemStack = ItemUtil.parseItem(itemStack,display,null);
         return itemStack;

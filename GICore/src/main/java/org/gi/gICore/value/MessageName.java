@@ -43,4 +43,5 @@ public class MessageName {
     public static final String SELECT_SKILL_ERROR = "select_skill_error";
     public static final String REMOVE_SKILL = "remove_skill";
 
+    public static final String WRONG_CLASS = "wrong_class";
 }

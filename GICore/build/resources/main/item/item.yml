@@ -1,14 +1,14 @@
 money:
   display: 'gi.item.money.unit'
   lore:
-    - 'gi.item.money.lore'
+  - 'gi.item.money.lore'
   namespace: ''
   material: 'PAPER'
   action: 'MONEY'
 status:
   display: 'gi.item.main.status.name'
   lore:
-    - 'gi.item.main.status.lore'
+  - 'gi.item.main.status.lore'
   namespace: ''
   material: 'BOOK'
   action: 'NONE'
@@ -16,7 +16,7 @@ status:
 skill:
   display: 'gi.item.main.skill.name'
   lore:
-    - 'gi.item.main.skill.lore'
+  - 'gi.item.main.skill.lore'
   namespace: ''
   material: 'BOOK'
   action: 'NONE'
@@ -24,10 +24,10 @@ skill:
 info:
   display: 'gi.item.status.info.name'
   lore:
-    - 'gi.item.status.info.lore1'
-    - 'gi.item.status.info.lore2'
-    - 'gi.item.status.info.lore3'
-    - 'gi.item.status.info.lore4'
+  - 'gi.item.status.info.lore1'
+  - 'gi.item.status.info.lore2'
+  - 'gi.item.status.info.lore3'
+  - 'gi.item.status.info.lore4'
   namespace: ''
   material: 'PLAYER_HEAD'
   action: 'NONE'
@@ -35,8 +35,8 @@ info:
 armor_slot:
   display: 'gi.item.main.armor_slot.name'
   lore:
-    - 'gi.item.main.armor_slot.lore1'
-    - 'gi.item.main.armor_slot.lore2'
+  - 'gi.item.main.armor_slot.lore1'
+  - 'gi.item.main.armor_slot.lore2'
   namespace: ''
   material: 'BLACK_STAINED_GLASS_PANE'
   action: 'NONE'
@@ -44,8 +44,8 @@ armor_slot:
 weapon_slot:
   display: 'gi.item.main.weapon_slot.name'
   lore:
-    - 'gi.item.main.armor_slot.lore1'
-    - 'gi.item.main.armor_slot.lore2'
+  - 'gi.item.main.armor_slot.lore1'
+  - 'gi.item.main.armor_slot.lore2'
   namespace: ''
   material: 'BLACK_STAINED_GLASS_PANE'
   action: 'NONE'
@@ -60,8 +60,8 @@ skill_item:
 bind_slot:
   display: "gi.item.gui.bindslot.name"
   lore:
-    - "gi.item.gui.bindslot.lore1"
-    - "gi.item.gui.bindslot.lore2"
+  - "gi.item.gui.bindslot.lore1"
+  - "gi.item.gui.bindslot.lore2"
   namespace: ''
   material: 'BLACK_STAINED_GLASS_PANE'
   action: 'SKILL_SLOT'
@@ -73,4 +73,3 @@ select_skill_view:
   material: 'BLACK_STAINED_GLASS_PANE'
   action: 'SKILL_SLOT'
   type: 'NONE'
-

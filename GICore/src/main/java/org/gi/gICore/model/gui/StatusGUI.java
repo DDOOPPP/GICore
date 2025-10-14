@@ -1,5 +1,14 @@
 package org.gi.gICore.model.gui;
 
+import net.Indyuce.mmocore.api.player.PlayerData;
+import net.Indyuce.mmoitems.ItemStats;
+import net.Indyuce.mmoitems.api.item.mmoitem.LiveMMOItem;
+import net.Indyuce.mmoitems.stat.RequiredClass;
+import net.Indyuce.mmoitems.stat.data.StringListData;
+import net.Indyuce.mmoitems.stat.data.type.StatData;
+import net.Indyuce.mmoitems.stat.type.DoubleStat;
+import net.Indyuce.mmoitems.stat.type.ItemStat;
+import net.Indyuce.mmoitems.stat.type.StringListStat;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.Material;
@@ -9,6 +18,8 @@ import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataType;
+import org.checkerframework.checker.units.qual.m;
+import org.checkerframework.checker.units.qual.mm;
 import org.gi.gICore.GICore;
 import org.gi.gICore.builder.ComponentBuilder;
 import org.gi.gICore.component.adapter.GIPlayer;
@@ -23,6 +34,10 @@ import org.gi.gICore.util.StringUtil;
 import org.gi.gICore.util.TaskUtil;
 import org.gi.gICore.value.MessageName;
 import org.gi.gICore.value.ValueName;
+
+import io.lumine.mythic.bukkit.utils.items.nbt.reee;
+import io.lumine.mythic.bukkit.utils.nbt.NBT;
+import io.lumine.mythic.lib.api.item.NBTItem;
 
 import java.util.HashMap;
 import java.util.List;
@@ -58,7 +73,11 @@ public class StatusGUI extends GUIHolder{
             List<Integer> slots = itemSection.getIntegerList("slots");
             if (key.contains("slot")){
                 if (key.equals("weapon_slot")){
-                    icon = item.getWeapon(player,holder.getItemDataMap().get(ValueName.WEAPON));
+                    
+                    icon = getItem(player,null);//메인에 들고있던거
+                    if (icon == null) {
+                        icon = item.getWeapon(player,holder.getItemDataMap().get(ValueName.WEAPON));
+                    }
                 }else {
                     String armorType = key.replace("_slot","");
 
@@ -96,18 +115,29 @@ public class StatusGUI extends GUIHolder{
                     }
                     Component component = builder.translateNamed(player,MessagePack.getMessage(player.getLocale(), MessageName.EQUIP_ARMOR),data);
                     player.sendMessage(component);
-                    holder.open(player, getData(),holder.getItemDataMap());
+                    TaskUtil.runSyncLater(10L,() -> {
+                         holder.open(player, getData(),holder.getItemDataMap());
+                    });
                 }
 
                 if (ItemUtil.isCombatItems(clickedItem)){
+                    if (getItem(player,clickedItem) == null) {
+                        player.sendMessage(MessagePack.getMessage(player.getLocale(), MessageName.WRONG_CLASS));
+                        return;
+                    }
+
                     ItemStack oldMain = player.getInventory().getItemInMainHand();
 
                     getItemDataMap().put(ValueName.WEAPON,clickedItem);
                     player.getInventory().setItemInMainHand(clickedItem);
                     player.getInventory().setItem(slot,oldMain);
-
-                    holder.open(player, getData(),holder.getItemDataMap());
-                }
+                
+                    //ItemUtil.setString(clickedItem, ValueName.ACTION,"WEAPON_SLOT");
+                    TaskUtil.runSyncLater(10L,() -> {
+                        PlayerData.get(player).getStats().updateStats();
+                        holder.open(player, getData(),holder.getItemDataMap());
+                    });
+                   
             }else{
                 return;
             }
@@ -146,6 +176,7 @@ public class StatusGUI extends GUIHolder{
                 break;
             case "WEAPON_SLOT":
                 if (clickType.isRightClick()){
+                    ItemUtil.deleteKey(clickedItem, ValueName.ACTION);
                     holder.getItemDataMap().put(ValueName.WEAPON,new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
                     break;
                 }
@@ -154,8 +185,10 @@ public class StatusGUI extends GUIHolder{
                 return;
         }
         ;
-        holder.open(player, getData(),holder.getItemDataMap());
-        return;
+        TaskUtil.runSyncLater(10L,() -> {
+            holder.open(player, getData(),holder.getItemDataMap());
+        });
+        }
     }
 
     private  Map<String,Object> unEquip(Player player,ItemStack item){
@@ -246,4 +279,47 @@ public class StatusGUI extends GUIHolder{
         }
         return x;
     }
+
+    private ItemStack getItem(Player player, ItemStack itemStack){
+        ItemStack check = null;
+        if (itemStack == null) {
+            check = player.getInventory().getItemInMainHand();
+        }else{
+            check = itemStack;
+        }
+        if (ItemUtil.isCombatItems(check)) {
+            if (ItemUtil.isMMOItem(check)) {
+                NBTItem item = NBTItem.get(check);
+
+                LiveMMOItem mmoItem = new LiveMMOItem(item);
+
+                if (mmoItem.hasData(ItemStats.REQUIRED_CLASS)) {
+                    String classId = PlayerData.get(player).getProfess().getId();
+
+                    var data = (StringListData) mmoItem.getData(ItemStats.REQUIRED_CLASS);
+                    //방식을 변경해야할듯함
+                    for(String s : data.getList()){
+                        if (classId.equals(s)) {
+                            if (mmoItem.hasData(ItemStats.REQUIRED_LEVEL)) {
+                                DoubleStat req_level = (DoubleStat) mmoItem.getData(ItemStats.REQUIRED_LEVEL);
+                                int playerLevel = PlayerData.get(player).getLevel();
+
+                                logger.info(req_level.getId());
+                                logger.info(req_level.getName());
+                            }
+                            return check;
+                        }
+                    }
+                 
+                    return null;
+                }else{
+                    return check;
+                }
+            }else{
+                return check;
+            }
+        }
+        return null;
+    }
 }
+

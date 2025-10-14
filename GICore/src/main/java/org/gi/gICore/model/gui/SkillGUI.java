@@ -1,15 +1,10 @@
 package org.gi.gICore.model.gui;
 
-import io.r2dbc.spi.Result;
 import net.Indyuce.mmocore.api.player.PlayerData;
-import net.Indyuce.mmocore.manager.SkillManager;
-import net.Indyuce.mmocore.skill.ClassSkill;
 import net.kyori.adventure.text.Component;
 import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
-import org.bukkit.inventory.BlastingRecipe;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataType;
@@ -54,7 +49,7 @@ public class SkillGUI extends GUIHolder {
             ConfigurationSection itemSection = section.getConfigurationSection(key);
 
             String itemKey = itemSection.getString("key");
-            List<Integer> slots = itemSection.getIntegerList("slots");
+            List<Integer> slots = itemSection.getIntegerList("slot");
             getData().putIfAbsent(ValueName.SELECT_SKILL,null);
             SkillItem item = (SkillItem) ItemPack.getItem(itemKey);
             if (key.equals("skill_slot")) {
@@ -72,8 +67,10 @@ public class SkillGUI extends GUIHolder {
                 }
             }else if(key.equals("select_slot")){
                 ItemStack icon = item.buildSelectSkillItem(player,getData());
-
-                inventory.setItem(slots.get(0), icon);
+                if (icon != null) {
+                    inventory.setItem(slots.get(0), icon);
+                }
+            
             }
         }
         return inventory;
