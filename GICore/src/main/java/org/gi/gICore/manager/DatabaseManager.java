@@ -2,7 +2,6 @@ package org.gi.gICore.manager;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import org.checkerframework.checker.units.qual.C;
 import org.gi.gICore.GICore;
 import org.gi.gICore.config.ConfigCore;
 import org.gi.gICore.config.DataBaseSetting;

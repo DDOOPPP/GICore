@@ -4,4 +4,10 @@ type: ''
 items:
   skill_slot:
     key: 'skill_item'
-    slot: [0]
+    slot: [14,15,16,17,23,24,25,26,32,33,34,35,41,42,43,44]
+  bind_slot:
+    key: 'bind_slot'
+    slot: [10,11,12,28,29,30]
+  select_slot:
+    key: 'select_skill_view'
+    slot: [13]

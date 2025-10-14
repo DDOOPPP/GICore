@@ -66,6 +66,8 @@ public class ValueName {
     public static final String SKILL_NAME = "skill_name";
     public static final String SKILL_LEVEL = "skill_level";
     public static final String SKILL_ID = "skill_id";
+    public static final String SELECT_SKILL = "select_skill";
+    public static final String SKILL_SLOT_NUMBER = "slot_number";
     public static final String UNLOCK_LEVEL = "unlock_level";
     public static final String COOLDOWN = "cooldown";
     public static final String COUNT = "count";
@@ -146,6 +148,5 @@ public class ValueName {
             Type.OFF_CATALYST,
             Type.MAIN_CATALYST
     );
-
-    public static final String SELECT_SKILL = "select_skill";
+    public static final String NONE_ITEM_KEY = "gi.item.name.none";
 }

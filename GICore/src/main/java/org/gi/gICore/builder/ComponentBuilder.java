@@ -11,6 +11,7 @@ import org.bukkit.entity.Player;
 import org.gi.gICore.GICore;
 import org.gi.gICore.manager.ComponentManager;
 import org.gi.gICore.util.ModuleLogger;
+import org.gi.gICore.value.Color;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,30 +50,55 @@ public class ComponentBuilder {
     /*
     * 서버측 번역
     */
-    public Component translateNamed(OfflinePlayer player, String key, Map<String, Object> placeholders){
-        String replaced;
-        if (!componentManager.hasKey(key)){
-            replaced = replacePlaceholders(key, placeholders);
-        }else{
-            String template = componentManager.getText(player,key);
-            replaced = replacePlaceholders(template, placeholders);
-        }
+    public Component translateNamed(OfflinePlayer player, String key, Map<String, Object> placeholders) {
+        String template = componentManager.hasKey(key)
+                ? componentManager.getText(player, key)
+                : key;
+
+        template = Color.convertLegacyToMiniMessage(template);
+        String replaced = replacePlaceholders(template, placeholders);
         return miniMessage.deserialize(replaced);
     }
 
-    public String replacePlaceholders(String template, Map<String, Object> placeholders){
-        String result = template;
-        for (Map.Entry<String, Object> entry : placeholders.entrySet()){
-            String placeholder = "{" + entry.getKey() + "}";
-            String value;
-            if (entry.getValue() instanceof Component){
-                value = miniMessage.serialize((Component) entry.getValue());
+//    public Component translateNamed(OfflinePlayer player, String key, Map<String, Object> placeholders){
+//        String replaced;
+//        if (!componentManager.hasKey(key)){
+//            replaced = replacePlaceholders(key, placeholders);
+//        }else{
+//            String template = componentManager.getText(player,key);
+//            replaced = replacePlaceholders(template, placeholders);
+//        }
+//        return miniMessage.deserialize(replaced);
+//    }
+
+//    public String replacePlaceholders(String template, Map<String, Object> placeholders){
+//        String result = template;
+//        for (Map.Entry<String, Object> entry : placeholders.entrySet()){
+//            String placeholder = "{" + entry.getKey() + "}";
+//            String value;
+//            if (entry.getValue() instanceof Component){
+//                value = miniMessage.serialize((Component) entry.getValue());
+//            } else {
+//                value = entry.getValue().toString();
+//            }
+//            result = result.replace(placeholder, value);
+//        }
+//        return result;
+//    }
+
+    private String replacePlaceholders(String text, Map<String, Object> placeholders) {
+        for (Map.Entry<String, Object> entry : placeholders.entrySet()) {
+            String key = "{" + entry.getKey() + "}";
+            Object value = entry.getValue();
+
+            if (value instanceof Component comp) {
+                String mm = MiniMessage.miniMessage().serialize(comp);
+                text = text.replace(key, mm);
             } else {
-                value = entry.getValue().toString();
+                text = text.replace(key, String.valueOf(value));
             }
-            result = result.replace(placeholder, value);
         }
-        return result;
+        return text;
     }
 
     public StyleBuilder style(String key){

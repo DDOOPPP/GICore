@@ -1,8 +1,10 @@
 package org.gi.gICore.manager;
 
 import net.Indyuce.mmocore.api.player.PlayerData;
+import net.Indyuce.mmocore.manager.SkillManager;
 import net.Indyuce.mmocore.manager.StatManager;
 import net.Indyuce.mmocore.skill.ClassSkill;
+import net.Indyuce.mmocore.skill.RegisteredSkill;
 import net.Indyuce.mmoitems.stat.data.StringData;
 import net.kyori.adventure.text.Component;
 
@@ -30,6 +32,7 @@ public class DataService {
     private static ComponentBuilder builder = new ComponentBuilder();
     private static DecimalFormat statFormat = new DecimalFormat("#.#");
     private static ModuleLogger logger = new ModuleLogger(GICore.getInstance(),"DataService");
+    private static SkillManager skillManager = new SkillManager();
 
     public static Map<String,String> getEconomyData(EconomyResponse economyResponse) {
         Map<String,String> data = new HashMap<>();
@@ -37,41 +40,21 @@ public class DataService {
         return data;
     }
 
-    public static Map<String,Object> getPlayerData(OfflinePlayer player,Map<String,Object> values) {
+    public static Map<String,Object> getPlayerData(OfflinePlayer player) {
         Map<String,Object> data = new HashMap<>();
         PlayerData playerData = PlayerData.get(player);
+        for (String statKey : ValueName.INFO_LIST){
+            String key = statKey.toLowerCase();
 
-        if (values == null || values.isEmpty()) {
-            for (String statKey : ValueName.INFO_LIST){
-                String key = statKey.toLowerCase();
-
-                data.put(key,getStat(playerData,statKey.toUpperCase(),null));
-                data.put(key+"_base",getBase(playerData,statKey.toUpperCase()));
-                data.put(key+"_extra",getExtra(playerData,statKey.toUpperCase(),null));
-            }
-        }else{
-            for (String statKey : ValueName.INFO_LIST){
-                Double value = null;
-                if (values.get(statKey) instanceof Number) {
-                    value = ((Number) values.get(statKey)).doubleValue(); // ✅ 안전하게 Double 변환
-                }
-                String key = statKey.toLowerCase();
-                data.put(key,getStat(playerData,statKey.toUpperCase(),value));
-                data.put(key+"_base",getBase(playerData,statKey.toUpperCase()));
-                data.put(key+"_extra",getExtra(playerData,statKey.toUpperCase(),value));
-            }
+            data.put(key,getStat(playerData,statKey.toUpperCase()));
+            data.put(key+"_base",getBase(playerData,statKey.toUpperCase()));
+            data.put(key+"_extra",getExtra(playerData,statKey.toUpperCase()));
         }
         return data;
     }
 
-    private static String getStat(PlayerData playerData, String key,Double sub) {
+    private static String getStat(PlayerData playerData, String key) {
         Double stat = playerData.getStats().getStat(key);
-        if (sub != null) {
-            if (sub != 0){
-                stat += sub;
-            }
-        }
-
         return setStatColor(stat,true);
     }
 
@@ -81,16 +64,12 @@ public class DataService {
         return setStatColor(base,false);
     }
 
-    public static String getExtra(PlayerData playerData,String key,Double sub) {
+    public static String getExtra(PlayerData playerData,String key) {
         Double base = playerData.getStats().getBase(key);
         Double main = playerData.getStats().getStat(key);
         Double extra = main-base;
         String value = statFormat.format(Math.abs(extra));
-        if (sub != null) {
-            if (sub != 0){
-                value += sub;
-            }
-        }
+
         if (extra < 0){
             return "<red>-"+value+"</red>";
         }
@@ -192,5 +171,22 @@ public class DataService {
 
     public static List<String> getTranslateName(ClassSkill skill) {
         return skill.getSkill().getLore();
+    }
+
+    public static Map<String ,Object> getSkillName(String key){
+        RegisteredSkill skill = skillManager.getSkill(key);
+        Map<String ,Object> data = new HashMap<>();
+        Component component = builder.translate(skill.getName());
+
+        data.put(ValueName.SKILL_NAME,component);
+        return data;
+    }
+
+    public static RegisteredSkill getSkill(String key) {
+        RegisteredSkill skill = skillManager.getSkill(key);
+        if (skill == null) {
+            return null;
+        }
+        return skill;
     }
 }

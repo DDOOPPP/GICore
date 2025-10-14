@@ -67,14 +67,17 @@ shadowJar {
 }
 tasks.named('build') {
     dependsOn tasks.named('shadowJar')
-    finalizedBy 'copyJarToOut'
+  //finalizedBy 'copyJarToOut'
 }
 
-tasks.register('copyJarToOut', Copy) {
+/*tasks.register('copyJarToOut', Copy) {
     dependsOn tasks.named('shadowJar')
     from tasks.named('shadowJar').get().archiveFile
-    into file("D:/MC/TEST_SERVER/plugins")
-}
+    // 로컬 환경에 맞게 gradle.properties에서 설정 가능
+    // 예: testServerPath=D:/MC/TEST_SERVER/plugins
+    def outputPath = project.hasProperty('testServerPath') ? project.property('testServerPath') : 'build/libs'
+    into file(outputPath)
+}*/
 
 tasks {
     runServer {
@@ -84,7 +87,10 @@ tasks {
         minecraftVersion("1.21")
     }
 }
+tasks.build {
+    dependsOn shadowJar
 
+}
 def targetJavaVersion = 21
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)

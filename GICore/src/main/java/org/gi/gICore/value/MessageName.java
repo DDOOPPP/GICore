@@ -38,4 +38,9 @@ public class MessageName {
 
     //Skill
     public static final String NOT_PROFESSION = "not_profession";
+
+    public static final String SELECT_SKILL = "select_skill";
+    public static final String SELECT_SKILL_ERROR = "select_skill_error";
+    public static final String REMOVE_SKILL = "remove_skill";
+
 }

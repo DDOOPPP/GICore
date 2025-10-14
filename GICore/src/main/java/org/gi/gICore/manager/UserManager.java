@@ -1,7 +1,5 @@
 package org.gi.gICore.manager;
 
-
-import io.lumine.mythic.bukkit.utils.lib.jooq.Log;
 import net.Indyuce.mmocore.api.player.PlayerData;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;

@@ -1,7 +1,11 @@
 package org.gi.gICore.model.item;
 
 import net.Indyuce.mmocore.api.player.PlayerData;
+import net.Indyuce.mmocore.api.player.profess.PlayerClass;
 import net.Indyuce.mmocore.skill.ClassSkill;
+import net.Indyuce.mmocore.skill.RegisteredSkill;
+import net.Indyuce.mmocore.skill.binding.BoundSkillInfo;
+import net.Indyuce.mmocore.skill.binding.SkillSlot;
 import net.kyori.adventure.text.Component;
 import org.apache.commons.lang.Validate;
 import org.bukkit.OfflinePlayer;
@@ -59,7 +63,7 @@ public class SkillItem extends CustomItem{
         List<ItemStack> icons = new ArrayList<>();
 
         for (ClassSkill skill : skills) {
-            ItemStack icon = skill.getSkill().getIcon();
+            ItemStack icon = skill.getSkill().getIcon().clone();
             Map<String,Object> data = DataService.getSkillData(player, skill);
 
             Component display = builder.translateNamed(player,getDisplay(),data);
@@ -79,6 +83,83 @@ public class SkillItem extends CustomItem{
         return icons;
     }
 
+    public List<ItemStack> buildBindSlot(OfflinePlayer player){
+        PlayerData playerData = PlayerData.get(player);
+        List<ItemStack> icons = new ArrayList<>();
+        PlayerClass playerClass = playerData.getProfess();
+
+        List<SkillSlot> slots = playerClass.getSlots();
+        logger.info("Slot Count: " + slots.size());
+        Map<Integer, BoundSkillInfo> boundSkillInfoMap = playerData.getBoundSkills();
+
+        for (SkillSlot slot : slots) {
+            ItemStack icon = getItem().clone();
+            Map<String,Object> data = new HashMap<>();
+            List<Component> components = new ArrayList<>();
+            int num = slot.getSlot();
+            data.put(ValueName.SKILL_SLOT_NUMBER,num);
+
+            BoundSkillInfo info = boundSkillInfoMap.get(num);
+            Component component = null;
+            if (info == null) {
+                component = builder.translate(ValueName.NONE_ITEM_KEY);
+
+                ItemUtil.setString(icon, ValueName.SKILL_ID, null);
+            }else{
+                icon = info.getClassSkill().getSkill().getIcon().clone();
+                String name = info.getClassSkill().getSkill().getName();
+
+                component = builder.translate(name);
+                ItemUtil.setString(icon, ValueName.SKILL_ID, info.getClassSkill().getUnlockNamespacedKey());
+            }
+            data.put(ValueName.SKILL_NAME,component);
+            for (String line : slot.getLore()) {
+                components.add(builder.translate(line));
+            }
+
+            Component display = builder.translateNamed(player,getDisplay(),data);
+
+            icon = ItemUtil.parseItem(icon,display,components);
+
+            icons.add(icon);
+        }
+        return icons;
+    }
+
+    public ItemStack buildSelectSkillItem(OfflinePlayer player,Map<String,Object> data){
+        ItemStack itemStack = getItem().clone();
+        Map<String,Object> values = new HashMap<>();
+        if (!data.containsKey(ValueName.SELECT_SKILL)) {
+            Component component = builder.translate(ValueName.NONE_ITEM_KEY);
+
+            ItemUtil.setString(itemStack, ValueName.SKILL_ID, null);
+            values.put(ValueName.SKILL_NAME, component);
+        }else{
+            String id = data.get(ValueName.SELECT_SKILL).toString();
+
+            RegisteredSkill skill = DataService.getSkill(id);
+
+            if (skill == null) {
+                itemStack = getItem().clone();
+                logger.error("Skill not found");
+                Component component = builder.translate(ValueName.NONE_ITEM_KEY);
+
+                values.put(ValueName.SKILL_NAME, component);
+                ItemUtil.setString(itemStack, ValueName.SKILL_ID, null);
+            }else{
+                values = DataService.getSkillName(id);
+
+                itemStack = skill.getIcon().clone();
+                ItemUtil.setString(itemStack, ValueName.SKILL_ID, id);
+            }
+        }
+        ItemUtil.setString(itemStack,ValueName.ACTION,"VIEW");
+
+        Component display  = builder.translate(getDisplay(),values);
+
+        itemStack = ItemUtil.parseItem(itemStack,display,null);
+        return itemStack;
+    }
     @Override
     public boolean action(Player player, ItemStack item) {
         return false;

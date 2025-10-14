@@ -56,5 +56,21 @@ skill_item:
   namespace: ''
   material: 'BLACK_STAINED_GLASS_PANE'
   action: 'SKILL'
-  type: 'ARMOR_SLOT'
+  type: 'SKILL_ITEM'
+bind_slot:
+  display: "gi.item.gui.bindslot.name"
+  lore:
+    - "gi.item.gui.bindslot.lore1"
+    - "gi.item.gui.bindslot.lore2"
+  namespace: ''
+  material: 'BLACK_STAINED_GLASS_PANE'
+  action: 'SKILL_SLOT'
+  type: 'SKILL_SLOT'
+select_skill_view:
+  display: "gi.item.gui.select_skill.name"
+  lore:
+  namespace: ''
+  material: 'BLACK_STAINED_GLASS_PANE'
+  action: 'SKILL_SLOT'
+  type: 'NONE'
 

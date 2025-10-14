@@ -2,10 +2,7 @@ package org.gi.gICore.util;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import dev.lone.itemsadder.api.CustomStack;
-import io.lumine.mythic.bukkit.utils.nbt.NBT;
 import io.lumine.mythic.lib.api.item.NBTItem;
-import lombok.extern.slf4j.Slf4j;
-import net.Indyuce.mmoitems.ItemStats;
 import net.Indyuce.mmoitems.MMOItems;
 import net.Indyuce.mmoitems.api.Type;
 import net.Indyuce.mmoitems.api.item.mmoitem.LiveMMOItem;
@@ -13,7 +10,6 @@ import net.Indyuce.mmoitems.api.item.mmoitem.MMOItem;
 import net.Indyuce.mmoitems.manager.StatManager;
 import net.Indyuce.mmoitems.manager.TypeManager;
 import net.Indyuce.mmoitems.stat.data.DoubleData;
-import net.Indyuce.mmoitems.stat.data.type.StatData;
 import net.Indyuce.mmoitems.stat.type.ItemStat;
 import net.Indyuce.mmoitems.stat.type.StatHistory;
 import net.kyori.adventure.text.Component;
@@ -30,7 +26,6 @@ import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.persistence.PersistentDataType;
 import org.gi.gICore.GICore;
 import org.gi.gICore.builder.ComponentBuilder;
-import org.gi.gICore.model.item.ListData;
 import org.gi.gICore.value.ValueName;
 
 import java.util.*;
@@ -199,12 +194,6 @@ public class ItemUtil {
         return value != null && value;
     }
 
-    public static void setStringList(ItemStack item, String key, List<String> value){
-        ListData data = new ListData();
-
-        edit(item,key,data,value);
-    }
-
     public static void setString(ItemStack item, String key, String value) {
         edit(item, key, PersistentDataType.STRING, value);
     }
@@ -367,6 +356,7 @@ public class ItemUtil {
                 return 0;
             }
             DoubleData value = (DoubleData) mmoItem.getData(stat);
+            logger.info(stat+": "+value.getValue());
             if (value == null) return 0;
             if (mmoItem.getGemstones().isEmpty()){
                 return value.getValue();
@@ -392,21 +382,40 @@ public class ItemUtil {
                 return 0.0;
             }
             ItemMeta meta = itemStack.getItemMeta();
-            if (meta == null || meta.getAttributeModifiers() == null) return 0;
-            Collection<AttributeModifier> modis = meta.getAttributeModifiers(attribute);
-            if (modis == null) {
-                logger.error("Modifier is Null: %s", key);
-                return 0.0;
-            }
+            if (meta == null) return 0.0;
 
+            // 먼저 실제 AttributeModifiers 확인
+            Collection<AttributeModifier> modifiers = meta.getAttributeModifiers(attribute);
 
-            double value = 0.0;
-            for (AttributeModifier modifier : modis) {
-                if (modifier.getSlot() == EquipmentSlot.HAND) {
-                    value += modifier.getAmount();
+            if (modifiers != null && !modifiers.isEmpty()) {
+                double value = 0.0;
+                for (AttributeModifier modifier : modifiers) {
+                    EquipmentSlot slot = modifier.getSlot();
+                    // null이거나 HAND/MAINHAND인 경우 포함
+                    if (slot == null || slot == EquipmentSlot.HAND || slot == EquipmentSlot.OFF_HAND) {
+                        value += modifier.getAmount();
+                    }
                 }
+                return value;
             }
-            return value;
+
+            // AttributeModifiers가 없으면 새 아이템 생성해서 기본값 확인
+            ItemStack freshItem = new ItemStack(itemStack.getType());
+            ItemMeta freshMeta = freshItem.getItemMeta();
+            if (freshMeta == null) return 0.0;
+
+            Collection<AttributeModifier> defaultModifiers = freshMeta.getAttributeModifiers(attribute);
+            if (defaultModifiers != null && !defaultModifiers.isEmpty()) {
+                double value = 0.0;
+                for (AttributeModifier modifier : defaultModifiers) {
+                    EquipmentSlot slot = modifier.getSlot();
+                    if (slot == null || slot == EquipmentSlot.HAND || slot == EquipmentSlot.OFF_HAND) {
+                        value += modifier.getAmount();
+                    }
+                }
+                return value;
+            }
+            return 0.0;
         }
     }
 }

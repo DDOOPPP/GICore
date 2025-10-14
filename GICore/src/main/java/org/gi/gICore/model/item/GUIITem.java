@@ -45,10 +45,7 @@ public class GUIITem extends CustomItem{
         switch (type){
             case "INFO":
                 icon = getItem(player);
-                if (arg[0] instanceof Map<?,?>){
-                    Map<String,Object> data = (Map<String,Object>) arg[0];
-                    icon = playerData(icon,player, data);
-                }
+                icon = playerData(icon,player);
                 break;
             case "ARMOR_SLOT":
                 icon = armorSlot(icon,player,arg[0].toString());
@@ -79,9 +76,9 @@ public class GUIITem extends CustomItem{
         return ItemUtil.parseItem(icon,display,lore);
     }
 
-    private ItemStack playerData(ItemStack icon, OfflinePlayer player, Map<String,Object> data){
+    private ItemStack playerData(ItemStack icon, OfflinePlayer player){
         List<Component> lore = new ArrayList<>();
-        Map<String ,Object > statusData = DataService.getPlayerData(player,data);
+        Map<String ,Object > statusData = DataService.getPlayerData(player);
 
         Component display = componentBuilder.translate(getDisplay());
 

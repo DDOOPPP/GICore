@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 
 /**
  * TaskUtil
- * - Bukkit 메인 스레드(게임 로직)와 비동기 스레드(I/O, 계산)를 안전하게 오가도록 도와주는 유틸리티.
+ * - Bukkit 메인 스레드(게임 로직)와 비동기 스레드(I/O, 계산)를 안전하게 오가도록 도와주는 유틸리티.ghks
  * - 자주 쓰는 제어기(디바운스/스로틀/싱글플라이트)와 안정성 도구(timeout/retry) 포함.
  *
  * 사용 원칙:

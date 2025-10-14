@@ -34,10 +34,13 @@
   "gi.item.armor.dragonset.leggings": "드래곤의 강철 각반",
   "gi.item.armor.dragonset.boots": "드래곤의 날개 부츠",
 
-  "gi.item.gui.skill.name": "<gold>{skill_name} </gold> <gray>[</gray>{skill_level}<gray>]</gray>",
-  "gi.item.gui.skill.lore1": "<gray>해금 레벨: </gray>{unlock_level}",
+  "gi.item.gui.skill.name": "{skill_name} <gray>[</gray>{skill_level}<gray>]</gray>",
+  "gi.item.gui.select_skill.name": "<white>현재 선택된 스킬: </white> {skill_name}",
+  "gi.item.gui.bindslot.name": "<white>{slot_number}번 슬롯 </white> {skill_name}",
+  "gi.item.gui.bindslot.lore1": "<gray>좌클릭으로 등록할수있습니다.</gray>",
+  "gi.item.gui.bindslot.lore2": "<gray>우클릭으로 해제할수있습니다.</gray>",
 
-  "gi.skill.amber.name": "마나 엠버",
+  "gi.item.gui.skill.lore1": "<gray>해금 레벨: </gray>{unlock_level}",
 
   "gi.skill.amber.lore_1": "마법 공격 시 일정 확률로 <aqua>마나의 결정</aqua>을 생성합니다.",
   "gi.skill.amber.lore_2": "",
@@ -46,7 +49,7 @@
   "gi.skill.amber.lore_5": "",
   "gi.skill.amber.lore_6": "<gray>재사용 대기시간:</gray> <yellow>{cooldown}</yellow>초",
 
-  "gi.skill.fireball.name": "파이어볼",
+  "gi.skill.fireball.name": "§c파이어볼",
   "gi.skill.fireball.lore_1": "치명적인 화염구를 발사하여",
   "gi.skill.fireball.lore_2": "대상에게 <red>{damage}</red>의 피해를 입히고",
   "gi.skill.fireball.lore_3": "<red>{ignite}</red>초 동안 불태웁니다.",

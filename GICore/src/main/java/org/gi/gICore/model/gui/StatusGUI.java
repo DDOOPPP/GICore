@@ -69,17 +69,7 @@ public class StatusGUI extends GUIHolder{
                     }
                 }
             }else{
-                if (key.equals("info")){
-                    for (String s: ValueName.INFO_LIST){
-                        if (!holder.getData().containsKey(s)){
-                            holder.getData().put(s,0);
-                        }
-                    }
-
-                    icon = item.buildItem(player,holder.getData());
-                }else {
                     icon = item.buildItem(player);
-                }
             }
 
             for (int slot : slots){
@@ -110,8 +100,12 @@ public class StatusGUI extends GUIHolder{
                 }
 
                 if (ItemUtil.isCombatItems(clickedItem)){
-                    holder.getItemDataMap().put(ValueName.WEAPON,clickedItem.clone());
-                    holder.setData(calculateStat(clickedItem,holder.getData()));
+                    ItemStack oldMain = player.getInventory().getItemInMainHand();
+
+                    getItemDataMap().put(ValueName.WEAPON,clickedItem);
+                    player.getInventory().setItemInMainHand(clickedItem);
+                    player.getInventory().setItem(slot,oldMain);
+
                     holder.open(player, getData(),holder.getItemDataMap());
                 }
             }else{
@@ -153,31 +147,15 @@ public class StatusGUI extends GUIHolder{
             case "WEAPON_SLOT":
                 if (clickType.isRightClick()){
                     holder.getItemDataMap().put(ValueName.WEAPON,new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
-
-                    holder.setData(calculateStat(null,holder.getData()));
                     break;
                 }
                 return;
             default:
                 return;
         }
+        ;
         holder.open(player, getData(),holder.getItemDataMap());
         return;
-    }
-
-    private Map<String,Object> calculateStat(ItemStack itemStack,Map<String,Object> data){
-        Map<String,Object> map = data;
-
-        if (itemStack == null){
-            for (String s : ValueName.INFO_LIST){
-                map.put(s,0);
-            }
-        }
-        for (String s : ValueName.INFO_LIST){
-            double value = ItemUtil.exportData(itemStack,s);
-            map.put(s,value);
-        }
-        return map;
     }
 
     private  Map<String,Object> unEquip(Player player,ItemStack item){
