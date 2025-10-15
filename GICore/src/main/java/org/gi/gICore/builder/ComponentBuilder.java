@@ -7,10 +7,7 @@ import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.entity.Player;
-import org.gi.gICore.GICore;
 import org.gi.gICore.manager.ComponentManager;
-import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.value.Color;
 
 import java.util.ArrayList;
@@ -20,7 +17,6 @@ import java.util.Map;
 public class ComponentBuilder {
     @Getter
     private ComponentManager componentManager;
-    private ModuleLogger logger = new ModuleLogger(GICore.getInstance(),"ComponentBuilder");
     private MiniMessage miniMessage = MiniMessage.miniMessage();
 
     public ComponentBuilder(){

@@ -15,6 +15,7 @@ import org.bukkit.inventory.ItemStack;
 import org.gi.gICore.GICore;
 import org.gi.gICore.config.ConfigCore;
 import org.gi.gICore.util.ModuleLogger;
+import org.gi.gICore.value.ValueName;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -53,7 +54,9 @@ public abstract class GUIHolder implements InventoryHolder {
     }
 
     public void open(Player player) {
+        getData().put(ValueName.ISFIRST, true);
         inventory = load(inventory, player);
+        getData().put(ValueName.ISFIRST, false);
         player.openInventory(inventory);
     }
 

@@ -1,13 +1,13 @@
 package org.gi.gICore.events;
 
 import net.Indyuce.mmocore.api.event.PlayerChangeClassEvent;
+import net.Indyuce.mmoitems.api.event.item.ItemEquipEvent;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.player.*;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
@@ -15,6 +15,7 @@ import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.gi.gICore.component.adapter.GIPlayer;
 import org.gi.gICore.component.adapter.ItemPack;
+import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.manager.EconomyManager;
 import org.gi.gICore.manager.GUIManager;
 import org.gi.gICore.manager.LogManager;
@@ -26,6 +27,8 @@ import org.gi.gICore.model.log.LOG_TAG;
 import org.gi.gICore.model.log.TransactionLog;
 import org.gi.gICore.util.ItemUtil;
 import org.gi.gICore.util.ModuleLogger;
+import org.gi.gICore.util.PlayerDataUtil;
+import org.gi.gICore.util.Result;
 import org.gi.gICore.value.ValueName;
 
 import java.math.BigDecimal;
@@ -144,5 +147,17 @@ public class PlayerEvents implements Listener {
     public void onChangeProfess(PlayerChangeClassEvent event){
         event.setCancelled(true);
         return;
+    }
+
+    @EventHandler
+    public void onEquipEvent(ItemEquipEvent event){
+        Player player = event.getPlayer();
+        ItemStack itemStack = event.getItem();
+        Result result = PlayerDataUtil.canEquip(player, itemStack);
+        if (!result.isSuccess()) {
+            String message = MessagePack.getMessage(player.getLocale(),result.getMessage());
+            player.sendMessage(message);
+            event.setCancelled(true);
+        }
     }
 }

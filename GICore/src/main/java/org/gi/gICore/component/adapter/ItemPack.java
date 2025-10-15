@@ -7,6 +7,7 @@ import org.gi.gICore.model.item.CustomItem;
 import org.gi.gICore.model.item.GUIITem;
 import org.gi.gICore.model.item.MoneyItem;
 import org.gi.gICore.model.item.SkillItem;
+import org.gi.gICore.model.item.StatusItem;
 import org.gi.gICore.util.ModuleLogger;
 
 import java.io.File;
@@ -44,10 +45,6 @@ public class ItemPack {
 
             ConfigCore config = new ConfigCore(f);
 
-            if (config == null){
-                logger.error("Failed to load config: " + f.getName());
-                continue;
-            }
             int i = 0;
             for (String key : config.getKeys()){
                 if (key == null || key.isEmpty()){
@@ -67,8 +64,9 @@ public class ItemPack {
                 }
                 CustomItem item = switch (action){
                     case "MONEY" -> new MoneyItem(section);
-                    case "NONE", "INFO" -> new GUIITem(section);
-                    case "SKILL","SKILL_SLOT" -> new SkillItem(section);
+                    case "NONE"-> new GUIITem(section);
+                    case "STATUS" -> new StatusItem(section);
+                    case "SKILL" -> new SkillItem(section);
                     default -> null;
                 };
 

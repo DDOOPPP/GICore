@@ -10,7 +10,6 @@ import org.gi.gICore.manager.LogManager;
 import org.gi.gICore.manager.UserManager;
 import org.gi.gICore.model.log.LOG_TAG;
 import org.gi.gICore.model.log.TransactionLog;
-import org.gi.gICore.repository.log.Transaction;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.util.Result;
 import org.gi.gICore.value.MessageName;

@@ -1,25 +1,18 @@
 package org.gi.gICore.component.adapter;
 
-import jdk.jfr.consumer.RecordedStackTrace;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.gi.gICore.util.Result;
-import org.gi.gICore.util.StringUtil;
-import org.gi.gICore.util.TaskUtil;
 import org.gi.gICore.value.MessageName;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
-import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
-
-import static net.Indyuce.mmocore.manager.InventoryManager.list;
-
 public class GIPlayer {
     public void sendMessage(OfflinePlayer player, String msg) {
         if (!player.isOnline()) {
@@ -40,7 +33,7 @@ public class GIPlayer {
         }
     }
 
-    public Result sendItem(OfflinePlayer player, ItemStack item) {
+    public Result sendItem(OfflinePlayer player, ItemStack item, boolean isDrop) {
         if (!player.isOnline()) {
             return Result.FAILURE(MessageName.PLAYER_IS_OFFLINE);
         }
@@ -48,7 +41,15 @@ public class GIPlayer {
         Inventory inventory = player.getPlayer().getInventory();
         HashMap<Integer, ItemStack> over = inventory.addItem(item);
         if (!over.isEmpty()) {
-            return sendMailBox(player,item);
+            if (isDrop) {
+                Location location = player.getLocation();
+                
+                player.getPlayer().getWorld().dropItem(location, item);
+
+                
+            }else{
+                return sendMailBox(player,item);
+            }
         }
         return Result.SUCCESS;
     }

@@ -15,11 +15,18 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.checkerframework.checker.units.qual.C;
+import org.checkerframework.checker.units.qual.s;
 import org.gi.gICore.GICore;
 import org.gi.gICore.builder.ComponentBuilder;
+import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.util.TaskUtil;
+import org.gi.gICore.value.MessageName;
 import org.gi.gICore.value.ValueName;
+
+import com.mojang.brigadier.Message;
+
+import io.lumine.mythic.bukkit.utils.items.nbt.reee;
 
 import java.text.DecimalFormat;
 import java.util.HashMap;
@@ -37,6 +44,21 @@ public class DataService {
     public static Map<String,String> getEconomyData(EconomyResponse economyResponse) {
         Map<String,String> data = new HashMap<>();
         data.put(ValueName.AMOUNT, String.valueOf(economyResponse.amount));
+        return data;
+    }
+
+    public static Map<String,ItemStack> getEquipmentData(OfflinePlayer player) {
+        Map<String,ItemStack> data = new HashMap<>();
+
+        if (!player.isOnline()){
+            return data;
+        }
+        Player online = player.getPlayer();
+        data.put(ValueName.HELMET,online.getEquipment().getHelmet() != null ? online.getEquipment().getHelmet() : null);
+        data.put(ValueName.CHESTPLATE,online.getEquipment().getChestplate() != null ? online.getEquipment().getChestplate() : null);
+        data.put(ValueName.LEGGINGS,online.getEquipment().getLeggings() != null ? online.getEquipment().getLeggings() : null);
+        data.put(ValueName.BOOTS,online.getEquipment().getBoots() != null ? online.getEquipment().getBoots() : null);
+
         return data;
     }
 
@@ -101,10 +123,9 @@ public class DataService {
         }
     }
 
-    public static Map<String,Object> getSkillData(OfflinePlayer player, ClassSkill skill) {
+    public static Map<String,Object> getSkillData(PlayerData playerData, ClassSkill skill) {
         Map<String,Object> data = new HashMap<>();
 
-        PlayerData playerData = PlayerData.get(player);
         Component component = builder.translate(skill.getSkill().getName());
         int player_level = playerData.getLevel();
         data.putIfAbsent(ValueName.SKILL_NAME,component);
@@ -148,22 +169,6 @@ public class DataService {
         return display;
     }
 
-    public static Map<String,ItemStack> getEquipmentData(OfflinePlayer player) {
-        Map<String,ItemStack> data = new HashMap<>();
-
-        if (!player.isOnline()){
-            //오프라인 유저에게서 Player를 받아와서 데이터출력이 가능한지?
-            return data;
-        }
-        Player online = player.getPlayer();
-        data.put(ValueName.HELMET,online.getEquipment().getHelmet() != null ? online.getEquipment().getHelmet() : null);
-        data.put(ValueName.CHESTPLATE,online.getEquipment().getChestplate() != null ? online.getEquipment().getChestplate() : null);
-        data.put(ValueName.LEGGINGS,online.getEquipment().getLeggings() != null ? online.getEquipment().getLeggings() : null);
-        data.put(ValueName.BOOTS,online.getEquipment().getBoots() != null ? online.getEquipment().getBoots() : null);
-
-        return data;
-    }
-
     public static String getTranslateId(ClassSkill skill) {
         if (skill == null) return null;
         String id = skill.getSkill().getHandler().getId().toLowerCase();
@@ -174,23 +179,30 @@ public class DataService {
         return skill.getSkill().getLore();
     }
 
-    public static Map<String ,Object> getSkillName(String key){
-        RegisteredSkill skill = skillManager.getSkill(key);
-        if (skill == null) {
-            logger.debug(key+"is null");
+    public static Map<String ,Object> getSkillName(OfflinePlayer player,String key){
+        PlayerData playerData = PlayerData.get(player);
 
-            r
+        ClassSkill skill = playerData.getProfess().getSkill(key);
+        if (skill == null) {
+            if (!player.isOnline()) {
+                return Map.of();
+            }
+            String message = MessagePack.getMessage(player.getPlayer().getLocale(), MessageName.SKILL_NOT_FOUND);
+
+            player.getPlayer().sendMessage(message);
+            return Map.of();
         }
 
+        RegisteredSkill registeredSkill = skill.getSkill();
         Map<String ,Object> data = new HashMap<>();
-        Component component = builder.translate(skill.getName());
+        Component component = builder.translate(registeredSkill.getName());
 
         data.put(ValueName.SKILL_NAME,component);
         return data;
     }
 
-    public static RegisteredSkill getSkill(String key) {
-        RegisteredSkill skill = skillManager(key);
+    public static ClassSkill getSkill(PlayerData playerData, String key){
+        ClassSkill skill = playerData.getProfess().getSkill(key);
         if (skill == null) {
             return null;
         }

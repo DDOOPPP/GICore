@@ -3,3 +3,4 @@ equip_armor: '{equipment}를 착용했습니다.'
 remove_equip_armor: '{equipment}를 해제했습니다.'
 equip_error: '방어구 착용/해제관련 오류가 발생했습니다'
 wrong_class: '§6해당 직업은 착용할수없는 장비입니다.'
+not_enough_level: "§c레벨이 부족합니다."

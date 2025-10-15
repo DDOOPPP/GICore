@@ -35,13 +35,19 @@ public class MessageName {
     public static final String EQUIP_ARMOR = "equip_armor";
     public static final String REMOVE_EQUIP_ARMOR = "remove_equip_armor";
     public static final String EQUIP_ERROR = "equip_error";
+    public static final String ITEM_DROP = "item_drop";
 
     //Skill
     public static final String NOT_PROFESSION = "not_profession";
 
+    public static final String SKILL_NOT_FOUND = "skill_not_found";
     public static final String SELECT_SKILL = "select_skill";
     public static final String SELECT_SKILL_ERROR = "select_skill_error";
     public static final String REMOVE_SKILL = "remove_skill";
-
+    public static final String BOUND_SKILL = "bound_skill";
+    public static final String UNBOUND_SKILL = "unbound_skill";
     public static final String WRONG_CLASS = "wrong_class";
+    public static final String NOT_ENOUGH_LEVEL = "not_enough_level";
+
+    public static final String NO_BIND_SKILL = "no_bind_skill";
 }

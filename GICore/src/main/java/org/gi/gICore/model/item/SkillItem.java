@@ -31,10 +31,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class SkillItem extends CustomItem{
+public class SkillItem extends CustomItem {
     ComponentManager componentManager = ComponentManager.getInstance();
     ComponentBuilder builder = new ComponentBuilder();
-    ModuleLogger logger = new ModuleLogger(GICore.getInstance(),"SkillItem");
+    ModuleLogger logger = new ModuleLogger(GICore.getInstance(), "SkillItem");
+
     public SkillItem(ConfigurationSection section) {
         super(section);
     }
@@ -65,29 +66,28 @@ public class SkillItem extends CustomItem{
         }
         List<ItemStack> icons = new ArrayList<>();
 
-
         for (ClassSkill skill : skills) {
             ItemStack icon = skill.getSkill().getIcon().clone();
-            Map<String,Object> data = DataService.getSkillData(player, skill);
+            Map<String, Object> data = DataService.getSkillData(playerData, skill);
             data.put(ValueName.MANA_NAME, manaName);
-            Component display = builder.translateNamed(player,getDisplay(),data);
+            Component display = builder.translateNamed(player, getDisplay(), data);
             List<Component> components = new ArrayList<>();
             List<String> lore = skill.getSkill().getLore();
 
             for (String line : lore) {
-                components.add( builder.translateNamed(player,line,data));
+                components.add(builder.translateNamed(player, line, data));
             }
 
-            icon = ItemUtil.parseItem(icon,display,components);
+            icon = ItemUtil.parseItem(icon, display, components);
 
             ItemUtil.setString(icon, ValueName.SKILL_ID, skill.getUnlockNamespacedKey());
-            ItemUtil.setString(icon, ValueName.ACTION, "SKILL");
+            ItemUtil.setString(icon, ValueName.ACTION, getType());
             icons.add(icon);
         }
         return icons;
     }
 
-    public List<ItemStack> buildBindSlot(OfflinePlayer player){
+    public List<ItemStack> buildBindSlot(OfflinePlayer player) {
         PlayerData playerData = PlayerData.get(player);
         List<ItemStack> icons = new ArrayList<>();
         PlayerClass playerClass = playerData.getProfess();
@@ -98,41 +98,43 @@ public class SkillItem extends CustomItem{
 
         for (SkillSlot slot : slots) {
             ItemStack icon = getItem().clone();
-            Map<String,Object> data = new HashMap<>();
+            Map<String, Object> data = new HashMap<>();
             List<Component> components = new ArrayList<>();
             int num = slot.getSlot();
-            data.put(ValueName.SKILL_SLOT_NUMBER,num);
+            data.put(ValueName.SKILL_SLOT_NUMBER, num);
 
             BoundSkillInfo info = boundSkillInfoMap.get(num);
             Component component = null;
             if (info == null) {
                 component = builder.translate(ValueName.NONE_ITEM_KEY);
-            }else{
+                ItemUtil.setString(icon, ValueName.SKILL_ID, "NONE");
+            } else {
                 icon = info.getClassSkill().getSkill().getIcon().clone();
                 String name = info.getClassSkill().getSkill().getName();
 
                 component = builder.translate(name);
                 ItemUtil.setString(icon, ValueName.SKILL_ID, info.getClassSkill().getUnlockNamespacedKey());
             }
-            data.put(ValueName.SKILL_NAME,component);
+            data.put(ValueName.SKILL_NAME, component);
 
             for (String line : getLore()) {
                 components.add(builder.translate(line));
             }
 
-            Component display = builder.translateNamed(player,getDisplay(),data);
+            Component display = builder.translateNamed(player, getDisplay(), data);
 
-            icon = ItemUtil.parseItem(icon,display,components);
-
+            icon = ItemUtil.parseItem(icon, display, components);
+            ItemUtil.setString(icon, ValueName.ACTION, getType());
             icons.add(icon);
         }
         return icons;
     }
 
-    public ItemStack buildSelectSkillItem(OfflinePlayer player,Map<String,Object> data){
+    public ItemStack buildSelectSkillItem(OfflinePlayer player, Map<String, Object> data) {
         ItemStack itemStack = getItem().clone();
-        Map<String,Object> values = new HashMap<>();
-        
+        PlayerData playerData = PlayerData.get(player);
+        Map<String, Object> values = new HashMap<>();
+
         if (data == null) {
             logger.debug("data is Null");
             return itemStack;
@@ -142,9 +144,9 @@ public class SkillItem extends CustomItem{
             Component component = builder.translate(ValueName.NONE_ITEM_KEY);
 
             values.put(ValueName.SKILL_NAME, component);
-        }else{
+        } else {
             String id = obj.toString();
-            RegisteredSkill skill = DataService.getSkill(id);
+            ClassSkill skill = DataService.getSkill(playerData, id);
 
             if (skill == null) {
                 itemStack = getItem().clone();
@@ -152,20 +154,21 @@ public class SkillItem extends CustomItem{
                 Component component = builder.translate(ValueName.NONE_ITEM_KEY);
 
                 values.put(ValueName.SKILL_NAME, component);
-            }else{
-                values = DataService.getSkillName(id);
+            } else {
+                values = DataService.getSkillName(player, id);
 
-                itemStack = skill.getIcon().clone();
+                itemStack = skill.getSkill().getIcon().clone();
                 ItemUtil.setString(itemStack, ValueName.SKILL_ID, id);
             }
         }
-        ItemUtil.setString(itemStack,ValueName.ACTION,"VIEW");
+        ItemUtil.setString(itemStack, ValueName.ACTION, getType());
 
-        Component display  = builder.translateNamed(player,getDisplay(),values);
+        Component display = builder.translateNamed(player, getDisplay(), values);
 
-        itemStack = ItemUtil.parseItem(itemStack,display,null);
+        itemStack = ItemUtil.parseItem(itemStack, display, null);
         return itemStack;
     }
+
     @Override
     public boolean action(Player player, ItemStack item) {
         return false;

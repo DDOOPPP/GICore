@@ -6,25 +6,20 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.gi.gICore.GICore;
 import org.gi.gICore.component.adapter.GIPlayer;
 import org.gi.gICore.component.adapter.ItemPack;
 import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.manager.DataService;
 import org.gi.gICore.manager.EconomyManager;
-import org.gi.gICore.manager.UserManager;
 import org.gi.gICore.model.item.MoneyItem;
 import org.gi.gICore.util.MessageUtil;
-import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.value.MessageName;
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
 public class EconomyCommand {
     private static EconomyManager economyManager = new EconomyManager();
-    private static UserManager userManager = new UserManager();
-    private static ModuleLogger logger = new ModuleLogger(GICore.getInstance(),"Command");
+    //private static UserManager userManager = new UserManager();
     private static GIPlayer giPlayer = new GIPlayer();
 
     public static boolean infoCommand(CommandSender sender, String[] args){
@@ -71,7 +66,7 @@ public class EconomyCommand {
                 return true;
             }
 
-            BigDecimal oldBalance = userManager.getUserWallet(target.getUniqueId());
+            //BigDecimal oldBalance = userManager.getUserWallet(target.getUniqueId());
 
             String message = "";
             var deposit = economyManager.depositPlayer(target, amount);
@@ -134,7 +129,7 @@ public class EconomyCommand {
 
                 if (money == null) giPlayer.sendMessage(player,MessagePack.getMessage(local, MessageName.CALL_MANAGER));
 
-                giPlayer.sendItem(player,money);
+                giPlayer.sendItem(player,money,false);
 
                 return true;
             } else {

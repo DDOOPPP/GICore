@@ -1,6 +1,7 @@
 package org.gi.gICore.model.gui;
 
 import net.Indyuce.mmocore.api.player.PlayerData;
+import net.Indyuce.mmocore.skill.ClassSkill;
 import net.kyori.adventure.text.Component;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
@@ -21,6 +22,9 @@ import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.util.StringUtil;
 import org.gi.gICore.value.MessageName;
 import org.gi.gICore.value.ValueName;
+
+import io.lumine.mythic.bukkit.metrics.bStats;
+import io.lumine.mythic.bukkit.utils.items.nbt.reee;
 
 import java.util.List;
 
@@ -99,11 +103,12 @@ public class SkillGUI extends GUIHolder {
         player.sendMessage(ItemUtil.getString(clickedItem,ValueName.ACTION));
 
         String action = ItemUtil.getString(clickedItem,ValueName.ACTION);
+        PlayerData playerData = PlayerData.get(player);
         switch (action){
             case "SKILL":
             case "VIEW":
                 if (clickType.isLeftClick()){
-                    if (action == "VIEW"){
+                    if (action.equals("VIEW")){
                         return;
                     }
                     String id = selectSKill(clickedItem);
@@ -113,7 +118,7 @@ public class SkillGUI extends GUIHolder {
                     }
                     getData().put(ValueName.SELECT_SKILL,id);
 
-                    var data = DataService.getSkillName(id);
+                    var data = DataService.getSkillName(player,id);
 
                     Component message = builder.translateNamed(player,MessagePack.getMessage(local, MessageName.SELECT_SKILL),data);
                     player.sendMessage(message);
@@ -122,13 +127,43 @@ public class SkillGUI extends GUIHolder {
                         return;
                     }
                     String id = selectSKill(clickedItem);
-                    var data = DataService.getSkillName(id);
+                    var data = DataService.getSkillName(player,id);
                     getData().put(ValueName.SELECT_SKILL,null);
 
                     Component message = builder.translateNamed(player,MessagePack.getMessage(local, MessageName.REMOVE_SKILL),data);
                     player.sendMessage(message);
                 }
                 break;
+            case "BIND_SLOT":
+                if (clickType.isLeftClick()) {
+                    int bind_slot = getSlotNumber(clickedItem);
+                    String skill_id = getSkillID(clickedItem);
+                    if (skill_id.equals("NONE")) {
+                        String message = MessagePack.getMessage(local, MessageName.NO_BIND_SKILL);
+                        player.sendMessage(message);
+                        return;
+                    }
+                    ClassSkill skill = DataService.getSkill(playerData, skill_id);
+                    if (skill == null) {
+                        String message = MessagePack.getMessage(local, MessageName.SKILL_NOT_FOUND);
+                        player.sendMessage(message);
+                        return;
+                    }
+                    bind(playerData, skill, bind_slot);
+
+                    String message = MessagePack.getMessage(local, MessageName.BOUND_SKILL);
+                    player.sendMessage(message);
+                    return;
+                }
+                if (clickType.isRightClick()) {
+                    int bind_slot = getSlotNumber(clickedItem);
+
+                    unBind(playerData, bind_slot);
+                    String message = MessagePack.getMessage(local, MessageName.UNBOUND_SKILL);
+                    player.sendMessage(message);
+                    return;
+                }
+                break;    
         }
         open(player,getData(),getItemDataMap());
         return;
@@ -136,5 +171,21 @@ public class SkillGUI extends GUIHolder {
 
     private String selectSKill(ItemStack item){
         return ItemUtil.getString(item,ValueName.SKILL_ID);
+    }
+
+    private String getSkillID(ItemStack item){
+        return ItemUtil.getString(item, ValueName.SKILL_ID);
+    }
+
+    private int getSlotNumber(ItemStack item){
+        return ItemUtil.getInt(item, ValueName.SKILL_SLOT_NUMBER);
+    }
+
+    private void bind(PlayerData playerData, ClassSkill skill, int bindSlot){
+        playerData.bindSkill(bindSlot, skill);
+    }
+
+    private void unBind(PlayerData playerData, int bindSlot){
+        playerData.unbindSkill(bindSlot);
     }
 }

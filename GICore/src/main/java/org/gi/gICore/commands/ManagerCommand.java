@@ -1,23 +1,14 @@
 package org.gi.gICore.commands;
 
 import me.clip.placeholderapi.PlaceholderAPI;
-import net.Indyuce.mmocore.api.player.PlayerData;
-import net.Indyuce.mmocore.manager.SkillManager;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.attribute.Attribute;
-import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.checkerframework.checker.units.qual.A;
 import org.gi.gICore.GICore;
 import org.gi.gICore.component.adapter.GIPlayer;
 import org.gi.gICore.component.adapter.ItemPack;
@@ -34,10 +25,8 @@ import java.io.*;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,7 +36,7 @@ public class ManagerCommand {
     private static ModuleLogger logger = new ModuleLogger(GICore.getInstance(),"Command");
     private static UserManager userManager = new UserManager();
     private static GIPlayer giPlayer = new GIPlayer();
-    private static EconomyManager economyManager = new EconomyManager();
+    //private static EconomyManager economyManager = new EconomyManager();
     private static Transaction transaction = new Transaction();
     private static ComponentManager componentManager = new ComponentManager();
 
