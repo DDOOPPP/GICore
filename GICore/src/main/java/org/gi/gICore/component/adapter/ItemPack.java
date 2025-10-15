@@ -16,6 +16,8 @@ import java.util.Map;
 
 public class ItemPack {
     private static final Map<String, CustomItem> ITEM_MAP = new HashMap<>();
+    private static final Map<String, String> SKILL_ITEM = new HashMap<>();
+
     private static ModuleLogger logger;
 
     public static void initializer(){
@@ -23,6 +25,7 @@ public class ItemPack {
             logger = new ModuleLogger(GICore.getInstance(),"ItemPack");
         }
         register();
+        loadSKILLItem();
     }
 
     private static void register(){
@@ -77,6 +80,28 @@ public class ItemPack {
         }
     }
 
+    private static void loadSKILLItem(){
+        File file = new File(GICore.getInstance().getDataFolder(), "skill/skill.yml");
+        if (!file.exists()) {
+            GICore.getInstance().saveResource("skill/skill.yml", false);
+        }
+        ConfigCore configCore = new ConfigCore(file);
+
+        for(String key : configCore.getKeys()){
+              if (key == null || key.isEmpty()) {
+                    continue;
+                }
+                
+                String value = configCore.getString(key);
+                logger.info(key+":"+value);
+                SKILL_ITEM.put(key, value);
+        }
+    }
+
+    public static String getTexture(String key){
+        return SKILL_ITEM.get(key);
+    }
+
     public static CustomItem getItem(String key){
         return ITEM_MAP.getOrDefault(key,null);
     }
@@ -87,6 +112,8 @@ public class ItemPack {
 
     public static void reload(){
         ITEM_MAP.clear();
+        SKILL_ITEM.clear();
         register();
+        loadSKILLItem();
     }
 }

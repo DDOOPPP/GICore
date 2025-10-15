@@ -13,3 +13,5 @@ balance_set_ok: "§eSet %player_name%'s balance to {amount} gold."
 balance_set_fail: "§cFailed to set the player's balance."
 
 not_profession: "§eYou currently have no profession."
+
+item_drop: "§eYour inventory is full. The item has been dropped on the ground."

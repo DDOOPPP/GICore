@@ -2,6 +2,7 @@ package org.gi.gICore.model.item;
 
 
 import dev.lone.itemsadder.api.CustomStack;
+import io.lumine.mythic.bukkit.utils.items.nbt.reee;
 import lombok.Getter;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
@@ -39,7 +40,11 @@ public abstract class CustomItem {
         if (namespace == null || namespace.isEmpty()) {
             return new ItemStack(material);
         } else {
-            return CustomStack.getInstance(namespace).getItemStack();
+            ItemStack itemStack = ItemUtil.getCustomItem(namespace);
+            if (itemStack == null) {
+                return new ItemStack(material);
+            }
+            return itemStack;
         }
     }
 

@@ -19,12 +19,8 @@ import org.gi.gICore.manager.DataService;
 import org.gi.gICore.model.item.SkillItem;
 import org.gi.gICore.util.ItemUtil;
 import org.gi.gICore.util.ModuleLogger;
-import org.gi.gICore.util.StringUtil;
 import org.gi.gICore.value.MessageName;
 import org.gi.gICore.value.ValueName;
-
-import io.lumine.mythic.bukkit.metrics.bStats;
-import io.lumine.mythic.bukkit.utils.items.nbt.reee;
 
 import java.util.List;
 
@@ -111,11 +107,14 @@ public class SkillGUI extends GUIHolder {
                     if (action.equals("VIEW")){
                         return;
                     }
-                    String id = selectSKill(clickedItem);
+                    String id = getSkillID(clickedItem);
+                    
                     if (id == null){
+                        logger.error("ID is Null");
                         player.sendMessage(MessagePack.getMessage(local,MessageName.SELECT_SKILL_ERROR));
                         return;
                     }
+                    logger.info(id);
                     getData().put(ValueName.SELECT_SKILL,id);
 
                     var data = DataService.getSkillName(player,id);
@@ -126,7 +125,7 @@ public class SkillGUI extends GUIHolder {
                     if (getData().get(ValueName.SELECT_SKILL) == null){
                         return;
                     }
-                    String id = selectSKill(clickedItem);
+                    String id = getSkillID(clickedItem);
                     var data = DataService.getSkillName(player,id);
                     getData().put(ValueName.SELECT_SKILL,null);
 
@@ -137,12 +136,15 @@ public class SkillGUI extends GUIHolder {
             case "BIND_SLOT":
                 if (clickType.isLeftClick()) {
                     int bind_slot = getSlotNumber(clickedItem);
-                    String skill_id = getSkillID(clickedItem);
-                    if (skill_id.equals("NONE")) {
+                    Object obj = getData().get(ValueName.SELECT_SKILL);
+                    if (obj == null) {
                         String message = MessagePack.getMessage(local, MessageName.NO_BIND_SKILL);
                         player.sendMessage(message);
                         return;
                     }
+
+                    String skill_id = obj.toString();
+
                     ClassSkill skill = DataService.getSkill(playerData, skill_id);
                     if (skill == null) {
                         String message = MessagePack.getMessage(local, MessageName.SKILL_NOT_FOUND);
@@ -153,7 +155,7 @@ public class SkillGUI extends GUIHolder {
 
                     String message = MessagePack.getMessage(local, MessageName.BOUND_SKILL);
                     player.sendMessage(message);
-                    return;
+                    break;
                 }
                 if (clickType.isRightClick()) {
                     int bind_slot = getSlotNumber(clickedItem);
@@ -161,16 +163,12 @@ public class SkillGUI extends GUIHolder {
                     unBind(playerData, bind_slot);
                     String message = MessagePack.getMessage(local, MessageName.UNBOUND_SKILL);
                     player.sendMessage(message);
-                    return;
+                    break;
                 }
                 break;    
         }
         open(player,getData(),getItemDataMap());
         return;
-    }
-
-    private String selectSKill(ItemStack item){
-        return ItemUtil.getString(item,ValueName.SKILL_ID);
     }
 
     private String getSkillID(ItemStack item){

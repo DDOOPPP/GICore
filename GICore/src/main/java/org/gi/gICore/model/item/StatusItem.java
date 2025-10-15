@@ -98,7 +98,8 @@ public class StatusItem extends CustomItem {
         return ItemUtil.parseItem(icon, display, lore);
     }
 
-    public ItemStack buildWeaponSlot(OfflinePlayer player, ItemStack icon) {
+    public ItemStack buildWeaponSlot(OfflinePlayer player, ItemStack item) {
+        ItemStack icon = item.clone();
         if (icon != null && !icon.getType().equals(Material.BLACK_STAINED_GLASS_PANE)) {
             ItemUtil.setString(icon, ValueName.ACTION, getType());
             return icon;

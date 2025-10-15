@@ -15,6 +15,7 @@ import org.bukkit.inventory.ItemStack;
 import org.gi.gICore.GICore;
 import org.gi.gICore.config.ConfigCore;
 import org.gi.gICore.util.ModuleLogger;
+import org.gi.gICore.util.TaskUtil;
 import org.gi.gICore.value.ValueName;
 import org.jetbrains.annotations.NotNull;
 
@@ -33,22 +34,22 @@ public abstract class GUIHolder implements InventoryHolder {
     private ModuleLogger logger;
 
     public GUIHolder(ConfigCore configCore) {
-        logger = new ModuleLogger(GICore.getInstance(),"GUIHolder");
+        logger = new ModuleLogger(GICore.getInstance(), "GUIHolder");
         Component title = Component.translatable(configCore.getString("title"));
         int size = configCore.getInt("size");
         String typeS = configCore.getString("type");
-        if (size <= 0){
+        if (size <= 0) {
             InventoryType type = InventoryType.valueOf(typeS.toUpperCase());
-            if (type == null){
-               type = InventoryType.CHEST;
+            if (type == null) {
+                type = InventoryType.CHEST;
             }
             inventory = Bukkit.createInventory(this, type, title);
-        }else {
-            if (!(size % 9 == 0)){
-                logger.error("Config is Not Valid: %s",size);
+        } else {
+            if (!(size % 9 == 0)) {
+                logger.error("Config is Not Valid: %s", size);
                 size = 9;
             }
-            this.inventory = Bukkit.createInventory(this,size,title);
+            this.inventory = Bukkit.createInventory(this, size, title);
         }
 
     }
@@ -60,14 +61,23 @@ public abstract class GUIHolder implements InventoryHolder {
         player.openInventory(inventory);
     }
 
-    public void open(Player player,Map<String, Object> data, Map<String, ItemStack> itemDataMap) {
+    public void open(Player player, Map<String, Object> data, Map<String, ItemStack> itemDataMap) {
         this.data = data;
         this.itemDataMap = itemDataMap;
         inventory = load(inventory, player);
         player.openInventory(inventory);
     }
 
-    public abstract Inventory load(Inventory inventory,Player player);
+    public void delayOpen(Player player, Map<String, Object> data, Map<String, ItemStack> itemDataMap) {
+        TaskUtil.runSyncLater(8L, () -> {
+            this.data = data;
+            this.itemDataMap = itemDataMap;
+            inventory = load(inventory, player);
+            player.openInventory(inventory);
+        });
+    }
+
+    public abstract Inventory load(Inventory inventory, Player player);
 
     public abstract void onClick(Player player, int slot, ItemStack clickedItem, ClickType clickType);
 

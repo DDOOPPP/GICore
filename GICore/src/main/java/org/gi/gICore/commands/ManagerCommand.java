@@ -86,11 +86,11 @@ public class ManagerCommand {
         player.sendMessage(message);
         logger.info("Reload Complete: %s",duration.toMillis());
 
-        List<Player> onlinePlayers = Bukkit.getOnlinePlayers().stream().map(temp -> temp.isOnline() ? temp : null).collect(Collectors.toList());
+        // List<Player> onlinePlayers = Bukkit.getOnlinePlayers().stream().map(temp -> temp.isOnline() ? temp : null).collect(Collectors.toList());
 
-        for (Player onlinePlayer : onlinePlayers){
-            ResourcePackManager.downloadResourcePack(onlinePlayer);
-        }
+        // for (Player onlinePlayer : onlinePlayers){
+        //     ResourcePackManager.downloadResourcePack(onlinePlayer);
+        // }
         return true;
     }
 

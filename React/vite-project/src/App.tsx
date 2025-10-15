@@ -13,7 +13,7 @@ const navItems: NavItem[] = [
   { label: "홈", path: "/", icon: <FaHome /> },
   { label: "소개", path: "/about", icon: <FaInfoCircle /> },
   { label: "설정", path: "/settings", icon: <FaCog /> },
-  { label: "GitHub", path: "https://github.com/", external: true },
+  { label: "GitHub", path: "https://github.com/DDOOPPP/GICore", external: true },
 ];
 
 const sideItems: NavItem[] = [

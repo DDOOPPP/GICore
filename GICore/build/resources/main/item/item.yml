@@ -21,6 +21,7 @@ skill:
   material: 'BOOK'
   action: 'NONE'
   type: 'SKILL'
+
 info:
   display: 'gi.item.status.info.name'
   lore:
@@ -30,8 +31,9 @@ info:
   - 'gi.item.status.info.lore4'
   namespace: ''
   material: 'PLAYER_HEAD'
-  action: 'NONE'
+  action: 'STATUS'
   type: 'INFO'
+  
 armor_slot:
   display: 'gi.item.main.armor_slot.name'
   lore:
@@ -39,7 +41,7 @@ armor_slot:
   - 'gi.item.main.armor_slot.lore2'
   namespace: ''
   material: 'BLACK_STAINED_GLASS_PANE'
-  action: 'NONE'
+  action: 'STATUS'
   type: 'ARMOR_SLOT'
 weapon_slot:
   display: 'gi.item.main.weapon_slot.name'
@@ -48,15 +50,16 @@ weapon_slot:
   - 'gi.item.main.armor_slot.lore2'
   namespace: ''
   material: 'BLACK_STAINED_GLASS_PANE'
-  action: 'NONE'
+  action: 'STATUS'
   type: 'WEAPON_SLOT'
+
 skill_item:
   display: "gi.item.gui.skill.name"
   lore:
   namespace: ''
   material: 'BLACK_STAINED_GLASS_PANE'
   action: 'SKILL'
-  type: 'SKILL_ITEM'
+  type: 'SKILL'
 bind_slot:
   display: "gi.item.gui.bindslot.name"
   lore:
@@ -64,12 +67,12 @@ bind_slot:
   - "gi.item.gui.bindslot.lore2"
   namespace: ''
   material: 'BLACK_STAINED_GLASS_PANE'
-  action: 'SKILL_SLOT'
-  type: 'SKILL_SLOT'
+  action: 'SKILL'
+  type: 'BIND_SLOT'
 select_skill_view:
   display: "gi.item.gui.select_skill.name"
   lore:
   namespace: ''
   material: 'BLACK_STAINED_GLASS_PANE'
-  action: 'SKILL_SLOT'
-  type: 'NONE'
+  action: 'SKILL'
+  type: 'VIEW'

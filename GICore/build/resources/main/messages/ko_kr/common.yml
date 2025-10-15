@@ -13,3 +13,7 @@ balance_set_ok: "§e%player_name%님의 소지금액을 {amount}골드로 설정
 balance_set_fail: "§c해당유저의 금액설정을 실패했습니다."
 
 not_profession: '§e현재 직업이 없습니다.'
+skill_not_found: '§c해당 스킬을 찾을 수 없습니다.'
+
+item_drop: "§e인벤토리에 공간이 부족하여 아이템을 떨어뜨립니다."
+

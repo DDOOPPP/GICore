@@ -2,29 +2,21 @@ package org.gi.gICore.manager;
 
 import net.Indyuce.mmocore.api.player.PlayerData;
 import net.Indyuce.mmocore.manager.SkillManager;
-import net.Indyuce.mmocore.manager.StatManager;
 import net.Indyuce.mmocore.skill.ClassSkill;
 import net.Indyuce.mmocore.skill.RegisteredSkill;
-import net.Indyuce.mmoitems.stat.data.StringData;
 import net.kyori.adventure.text.Component;
-
-import net.kyori.adventure.text.format.NamedTextColor;
-import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.checkerframework.checker.units.qual.C;
+import org.checkerframework.checker.units.qual.min;
 import org.checkerframework.checker.units.qual.s;
 import org.gi.gICore.GICore;
 import org.gi.gICore.builder.ComponentBuilder;
 import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.util.ModuleLogger;
-import org.gi.gICore.util.TaskUtil;
 import org.gi.gICore.value.MessageName;
 import org.gi.gICore.value.ValueName;
-
-import com.mojang.brigadier.Message;
 
 import io.lumine.mythic.bukkit.utils.items.nbt.reee;
 
@@ -65,6 +57,8 @@ public class DataService {
     public static Map<String,Object> getPlayerData(OfflinePlayer player) {
         Map<String,Object> data = new HashMap<>();
         PlayerData playerData = PlayerData.get(player);
+
+        playerData.getStats().updateStats();
         for (String statKey : ValueName.INFO_LIST){
             String key = statKey.toLowerCase();
 
@@ -147,7 +141,7 @@ public class DataService {
                 continue;
             }
             data.put(key,value);
-            logger.info(key+": %s".format(value));
+        
         }
         return data;
     }
@@ -165,7 +159,6 @@ public class DataService {
         if (display == null) {
             return null;
         }
-        logger.info(display);
         return display;
     }
 
@@ -181,8 +174,8 @@ public class DataService {
 
     public static Map<String ,Object> getSkillName(OfflinePlayer player,String key){
         PlayerData playerData = PlayerData.get(player);
-
-        ClassSkill skill = playerData.getProfess().getSkill(key);
+        String id = reBuildkey(key);
+        ClassSkill skill = playerData.getProfess().getSkill(id);
         if (skill == null) {
             if (!player.isOnline()) {
                 return Map.of();
@@ -194,6 +187,7 @@ public class DataService {
         }
 
         RegisteredSkill registeredSkill = skill.getSkill();
+
         Map<String ,Object> data = new HashMap<>();
         Component component = builder.translate(registeredSkill.getName());
 
@@ -202,10 +196,14 @@ public class DataService {
     }
 
     public static ClassSkill getSkill(PlayerData playerData, String key){
-        ClassSkill skill = playerData.getProfess().getSkill(key);
-        if (skill == null) {
-            return null;
-        }
+        String temp = reBuildkey(key);
+
+        ClassSkill skill = playerData.getProfess().getSkill(temp);
+
         return skill;
+    }
+
+    public static String reBuildkey(String key){
+        return key.replace("skill:", "").toUpperCase();
     }
 }

@@ -16,15 +16,17 @@ import org.gi.gICore.component.adapter.ItemPack;
 import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.config.ConfigCore;
 import org.gi.gICore.manager.DataService;
-import org.gi.gICore.model.item.GUIITem;
 import org.gi.gICore.model.item.StatusItem;
 import org.gi.gICore.util.ItemUtil;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.util.PlayerDataUtil;
 import org.gi.gICore.util.Result;
 import org.gi.gICore.util.StringUtil;
+import org.gi.gICore.util.TaskUtil;
 import org.gi.gICore.value.MessageName;
 import org.gi.gICore.value.ValueName;
+
+import io.lumine.mythic.bukkit.utils.items.nbt.reee;
 import lombok.Getter;
 import java.util.HashMap;
 import java.util.List;
@@ -85,11 +87,13 @@ public class StatusGUI extends GUIHolder {
 
                 if (isFirst) {
                     ItemStack mainHand = player.getInventory().getItemInMainHand();
+                    if (mainHand == null || mainHand.getType().equals(Material.AIR)) {
+                        icon = getItemDataMap().get(ValueName.WEAPON);
+                    }
                     if (PlayerDataUtil.canEquip(player, mainHand).isSuccess()) {
                         icon = mainHand;
                     }
-                }
-                else {
+                } else {
                     icon = getItemDataMap().get(ValueName.WEAPON);
                 }
                 icon = item.buildWeaponSlot(player, icon);
@@ -106,11 +110,10 @@ public class StatusGUI extends GUIHolder {
         Map<String, Object> placeholder = new HashMap<>();
         String local = player.getLocale();
         String message = "";
-
+        PlayerData playerData = PlayerData.get(player);
         // GUI 내부 클릭 (ValueName.ACTION 존재)
         if (ItemUtil.hasKey(clickedItem, ValueName.ACTION, PersistentDataType.STRING)) {
             String action = ItemUtil.getString(clickedItem, ValueName.ACTION);
-            PlayerData playerData = PlayerData.get(player);
 
             switch (action) {
                 case StatusAction.INFO -> {
@@ -136,18 +139,24 @@ public class StatusGUI extends GUIHolder {
                             MessagePack.getMessage(local, MessageName.REMOVE_EQUIP_ARMOR),
                             placeholder);
                     player.sendMessage(component);
+
+                    open(player, getData(), getItemDataMap());
+
+                    return;
                 }
 
                 case StatusAction.WEAPON_SLOT -> {
                     if (clickType.isRightClick()) {
                         ItemStack mainHand = player.getInventory().getItemInMainHand();
-              
-                        giPlayer.sendItem(player, mainHand,true);
+
+                        giPlayer.sendItem(player, mainHand, true);
 
                         player.getInventory().setItemInMainHand(null);
 
                         ItemUtil.deleteKey(clickedItem, ValueName.ACTION);
                         getItemDataMap().put(ValueName.WEAPON, new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
+
+                        playerData.getStats().updateStats();
                         break;
                     }
                     return;
@@ -158,16 +167,13 @@ public class StatusGUI extends GUIHolder {
                 }
             }
 
-            // GUI 새로고침
-            open(player, getData(), getItemDataMap());
+            delayOpen(player, placeholder, getItemDataMap());
             return;
         }
 
-        // 일반 아이템 클릭 (GUI 외부)
         if (!clickType.isLeftClick())
             return;
 
-        // --- 방어구 아이템 클릭 ---
         if (ItemUtil.isArmor(clickedItem)) {
             Result result = PlayerDataUtil.canEquip(player, clickedItem);
             if (!result.isSuccess()) {
@@ -189,14 +195,27 @@ public class StatusGUI extends GUIHolder {
                     MessagePack.getMessage(local, MessageName.EQUIP_ARMOR),
                     placeholder);
             player.sendMessage(component);
+            open(player, getData(), getItemDataMap());
             return;
         }
 
-        // --- 전투 아이템 클릭 ---
         if (ItemUtil.isCombatItems(clickedItem)) {
-            // TODO: 전투 아이템 장착 로직
-            return;
+            Result result = PlayerDataUtil.canEquip(player, clickedItem);
+            if (!result.isSuccess()) {
+                message = MessagePack.getMessage(local, result.getMessage());
+                player.sendMessage(message);
+                return;
+            }
+            playerData.getStats().updateStats();
+            
+            ItemStack oldMain = player.getInventory().getItemInMainHand();
+
+            player.getInventory().setItem(slot, oldMain);
+
+            player.getInventory().setItemInMainHand(clickedItem);
+            getItemDataMap().put(ValueName.WEAPON, clickedItem);
         }
+        delayOpen(player, placeholder, getItemDataMap());
     }
 
     private Map<String, Object> unEquip(Player player, ItemStack item) {
@@ -228,7 +247,7 @@ public class StatusGUI extends GUIHolder {
             ItemUtil.deleteKey(equip, ValueName.ACTION);
         }
         data.put(ValueName.EQUIPMENT, component);
-        giPlayer.sendItem(player, equip,true);
+        giPlayer.sendItem(player, equip, true);
         return data;
     }
 

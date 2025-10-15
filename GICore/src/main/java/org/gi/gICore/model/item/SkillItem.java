@@ -3,28 +3,23 @@ package org.gi.gICore.model.item;
 import net.Indyuce.mmocore.api.player.PlayerData;
 import net.Indyuce.mmocore.api.player.profess.PlayerClass;
 import net.Indyuce.mmocore.skill.ClassSkill;
-import net.Indyuce.mmocore.skill.RegisteredSkill;
 import net.Indyuce.mmocore.skill.binding.BoundSkillInfo;
 import net.Indyuce.mmocore.skill.binding.SkillSlot;
 import net.kyori.adventure.text.Component;
-import org.apache.commons.lang.Validate;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.checkerframework.checker.units.qual.s;
 import org.gi.gICore.GICore;
 import org.gi.gICore.builder.ComponentBuilder;
+import org.gi.gICore.component.adapter.ItemPack;
 import org.gi.gICore.manager.ComponentManager;
 import org.gi.gICore.manager.DataService;
 import org.gi.gICore.util.ItemUtil;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.util.Result;
 import org.gi.gICore.value.ValueName;
-
-import io.lumine.mythic.bukkit.utils.items.nbt.reee;
-
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -67,7 +62,8 @@ public class SkillItem extends CustomItem {
         List<ItemStack> icons = new ArrayList<>();
 
         for (ClassSkill skill : skills) {
-            ItemStack icon = skill.getSkill().getIcon().clone();
+            ItemStack icon = getIcon(DataService.reBuildkey(skill.getUnlockNamespacedKey()),skill);
+     
             Map<String, Object> data = DataService.getSkillData(playerData, skill);
             data.put(ValueName.MANA_NAME, manaName);
             Component display = builder.translateNamed(player, getDisplay(), data);
@@ -109,10 +105,13 @@ public class SkillItem extends CustomItem {
                 component = builder.translate(ValueName.NONE_ITEM_KEY);
                 ItemUtil.setString(icon, ValueName.SKILL_ID, "NONE");
             } else {
-                icon = info.getClassSkill().getSkill().getIcon().clone();
+                ClassSkill skill = info.getClassSkill();
+
+                icon = getIcon(DataService.reBuildkey(skill.getUnlockNamespacedKey()),skill);
                 String name = info.getClassSkill().getSkill().getName();
 
                 component = builder.translate(name);
+
                 ItemUtil.setString(icon, ValueName.SKILL_ID, info.getClassSkill().getUnlockNamespacedKey());
             }
             data.put(ValueName.SKILL_NAME, component);
@@ -122,7 +121,7 @@ public class SkillItem extends CustomItem {
             }
 
             Component display = builder.translateNamed(player, getDisplay(), data);
-
+            ItemUtil.setInteger(icon, ValueName.SKILL_SLOT_NUMBER, num);
             icon = ItemUtil.parseItem(icon, display, components);
             ItemUtil.setString(icon, ValueName.ACTION, getType());
             icons.add(icon);
@@ -157,7 +156,7 @@ public class SkillItem extends CustomItem {
             } else {
                 values = DataService.getSkillName(player, id);
 
-                itemStack = skill.getSkill().getIcon().clone();
+                itemStack = getIcon(DataService.reBuildkey(skill.getUnlockNamespacedKey()),skill);
                 ItemUtil.setString(itemStack, ValueName.SKILL_ID, id);
             }
         }
@@ -172,5 +171,25 @@ public class SkillItem extends CustomItem {
     @Override
     public boolean action(Player player, ItemStack item) {
         return false;
+    }
+
+    private ItemStack getIcon(String unlock, ClassSkill skill) {
+        String key = DataService.reBuildkey(skill.getUnlockNamespacedKey());
+        logger.info(key);
+        String textureKey = key.toLowerCase();
+        logger.info(textureKey);
+        ItemStack icon = null;
+        if (ItemPack.getTexture(textureKey) == null) {
+            return icon = skill.getSkill().getIcon().clone();
+        } else {
+            String texture = ItemPack.getTexture(textureKey);
+            if (ItemUtil.isCustom(texture)) {
+            
+                logger.info(texture);
+                return icon = ItemUtil.getCustomItem(texture);
+            } else {
+                return icon = skill.getSkill().getIcon().clone();
+            }
+        }
     }
 }

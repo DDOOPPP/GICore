@@ -13,3 +13,5 @@ balance_set_ok: "§e%player_name%の所持金を{amount}ゴールドに設定し
 balance_set_fail: "§cプレイヤーの金額設定に失敗しました。"
 
 not_profession: "§e現在、職業がありません。"
+
+item_drop: "§eインベントリに空きがないため、アイテムを地面にドロップしました。"
