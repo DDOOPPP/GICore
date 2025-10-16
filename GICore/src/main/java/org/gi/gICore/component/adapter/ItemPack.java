@@ -70,7 +70,7 @@ public class ItemPack {
                     case "NONE"-> new GUIITem(section);
                     case "STATUS" -> new StatusItem(section);
                     case "SKILL" -> new SkillItem(section);
-                    default -> null;
+                    default -> new GUIITem(section);
                 };
 
                 ITEM_MAP.put(key, item);

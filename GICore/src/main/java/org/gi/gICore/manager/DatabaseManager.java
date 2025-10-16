@@ -5,6 +5,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import org.gi.gICore.GICore;
 import org.gi.gICore.config.ConfigCore;
 import org.gi.gICore.config.DataBaseSetting;
+import org.gi.gICore.model.table.GuildTables;
 import org.gi.gICore.model.table.LogTables;
 import org.gi.gICore.model.table.UserTables;
 import org.gi.gICore.util.ModuleLogger;
@@ -17,13 +18,13 @@ public class DatabaseManager {
     private static HikariDataSource dataSource;
     private static ModuleLogger logger;
 
-    public static void initialize(ConfigCore config){
+    public static void initialize(ConfigCore config) {
         logger = new ModuleLogger(GICore.getInstance(), "DatabaseManager");
         DataBaseSetting setting = new DataBaseSetting(config);
 
         HikariConfig hikariConfig = setting.toHikariConfig();
         dataSource = new HikariDataSource(hikariConfig);
-        if (dataSource.isRunning()){
+        if (dataSource.isRunning()) {
             logger.info("Database is running");
         }
         createTable();
@@ -53,24 +54,35 @@ public class DatabaseManager {
                 conn.commit();
                 return out;
             } catch (Exception e) {
-                try { conn.rollback(); } catch (SQLException ignored) {}
+                try {
+                    conn.rollback();
+                } catch (SQLException ignored) {
+                }
                 throw new RuntimeException(e);
             } finally {
-                try { conn.setAutoCommit(true); } catch (SQLException ignored) {}
+                try {
+                    conn.setAutoCommit(true);
+                } catch (SQLException ignored) {
+                }
             }
         } catch (SQLException e) {
             throw new RuntimeException("DB connection error", e);
         }
     }
 
-    private static void createTable(){
-        try(Connection connection = getconnection();
-        Statement statement = connection.createStatement()) {
+    private static void createTable() {
+        try (Connection connection = getconnection();
+                Statement statement = connection.createStatement()) {
             statement.execute(UserTables.CREATE_USER_TABLE);
             statement.execute(UserTables.CREATE_WALLET);
 
             statement.execute(LogTables.CREATE_TRANSACTION_LOG);
 
+            statement.execute(GuildTables.CREATE_GUILD_TABLE);
+            statement.execute(GuildTables.CREATE_GUILD_FUNDS_TABLE);
+            statement.execute(GuildTables.CREATE_GUILD_MEMBER_TABLE);
+            statement.execute(GuildTables.CREATE_GUILD_LOG_TABLE);
+            statement.execute(GuildTables.CREATE_GUILD_FUND_LOG_TABLE);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (Exception e) {

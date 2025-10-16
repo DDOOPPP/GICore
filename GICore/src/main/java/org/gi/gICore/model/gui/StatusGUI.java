@@ -16,6 +16,9 @@ import org.gi.gICore.component.adapter.ItemPack;
 import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.config.ConfigCore;
 import org.gi.gICore.manager.DataService;
+import org.gi.gICore.manager.GUIManager;
+import org.gi.gICore.model.item.CustomItem;
+import org.gi.gICore.model.item.GUIITem;
 import org.gi.gICore.model.item.StatusItem;
 import org.gi.gICore.util.ItemUtil;
 import org.gi.gICore.util.ModuleLogger;
@@ -67,9 +70,12 @@ public class StatusGUI extends GUIHolder {
                 continue;
             }
             ItemStack icon = new ItemStack(Material.AIR);
-
-            StatusItem item = (StatusItem) ItemPack.getItem(item_key);
-
+            CustomItem temp = ItemPack.getItem(item_key);
+            StatusItem item = null;
+            if (temp instanceof StatusItem) {
+                item = (StatusItem)temp;
+            }
+        
             if (key.equals("info")) {
                 icon = item.buildPlayerInfo(player);
 
@@ -98,6 +104,10 @@ public class StatusGUI extends GUIHolder {
                 }
                 icon = item.buildWeaponSlot(player, icon);
             }
+            else if (key.equals("back")){
+                GUIITem guiItem = (GUIITem) temp;
+                icon = guiItem.buildItem(player);
+            }
             for (int slot : slots) {
                 inventory.setItem(slot, icon);
             }
@@ -111,7 +121,6 @@ public class StatusGUI extends GUIHolder {
         String local = player.getLocale();
         String message = "";
         PlayerData playerData = PlayerData.get(player);
-        // GUI 내부 클릭 (ValueName.ACTION 존재)
         if (ItemUtil.hasKey(clickedItem, ValueName.ACTION, PersistentDataType.STRING)) {
             String action = ItemUtil.getString(clickedItem, ValueName.ACTION);
 
@@ -159,6 +168,10 @@ public class StatusGUI extends GUIHolder {
                         playerData.getStats().updateStats();
                         break;
                     }
+                    return;
+                }
+                case "BACK" -> {
+                    GUIManager.getMainMenu().open(player);
                     return;
                 }
 

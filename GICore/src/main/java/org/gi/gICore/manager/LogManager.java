@@ -1,6 +1,5 @@
 package org.gi.gICore.manager;
 
-import io.lumine.mythic.bukkit.utils.lib.jooq.impl.QOM;
 import org.gi.gICore.GICore;
 import org.gi.gICore.model.LOG;
 import org.gi.gICore.model.log.LOG_TAG;
@@ -9,9 +8,6 @@ import org.gi.gICore.repository.log.Transaction;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.util.Result;
 import org.gi.gICore.util.TaskUtil;
-
-import java.math.BigDecimal;
-import java.security.interfaces.RSAKey;
 import java.sql.Connection;
 import java.sql.SQLException;
 

@@ -16,13 +16,20 @@ import org.gi.gICore.component.adapter.ItemPack;
 import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.config.ConfigCore;
 import org.gi.gICore.manager.DataService;
+import org.gi.gICore.manager.GUIManager;
+import org.gi.gICore.model.item.CustomItem;
+import org.gi.gICore.model.item.GUIITem;
 import org.gi.gICore.model.item.SkillItem;
 import org.gi.gICore.util.ItemUtil;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.value.MessageName;
 import org.gi.gICore.value.ValueName;
 
+import io.lumine.mythic.bukkit.utils.items.nbt.reee;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SkillGUI extends GUIHolder {
     private ConfigCore configCore;
@@ -51,7 +58,11 @@ public class SkillGUI extends GUIHolder {
             String itemKey = itemSection.getString("key");
             List<Integer> slots = itemSection.getIntegerList("slot");
             getData().putIfAbsent(ValueName.SELECT_SKILL,null);
-            SkillItem item = (SkillItem) ItemPack.getItem(itemKey);
+            CustomItem tempItem = ItemPack.getItem(itemKey);
+            SkillItem item = null;
+            if (tempItem instanceof SkillItem) {
+                item = (SkillItem) tempItem;
+            }
             if (key.equals("skill_slot")) {
 
                 List<ItemStack> skills = item.buildSkillItem(player);
@@ -70,7 +81,10 @@ public class SkillGUI extends GUIHolder {
                 if (icon != null) {
                     inventory.setItem(slots.get(0), icon);
                 }
-            
+            }else if (key.equals("back")){
+                GUIITem guiItem = (GUIITem) tempItem;
+                ItemStack icon = guiItem.buildItem(player);
+                inventory.setItem(slots.get(0), icon);
             }
         }
         return inventory;
@@ -152,20 +166,25 @@ public class SkillGUI extends GUIHolder {
                         return;
                     }
                     bind(playerData, skill, bind_slot);
-
-                    String message = MessagePack.getMessage(local, MessageName.BOUND_SKILL);
+                    var data = DataService.getSkillName(player, skill_id);
+                    data.put(ValueName.SKILL_SLOT_NUMBER,bind_slot);
+                    Component message = builder.translateNamed(player,MessagePack.getMessage(local, MessageName.BOUND_SKILL),data);
                     player.sendMessage(message);
                     break;
                 }
                 if (clickType.isRightClick()) {
                     int bind_slot = getSlotNumber(clickedItem);
-
+                    Map<String,Object> data =  new HashMap<>();
                     unBind(playerData, bind_slot);
-                    String message = MessagePack.getMessage(local, MessageName.UNBOUND_SKILL);
+
+                    data.put(ValueName.SKILL_SLOT_NUMBER,bind_slot);
+                    Component message = builder.translateNamed(player,MessagePack.getMessage(local, MessageName.UNBOUND_SKILL),data);
                     player.sendMessage(message);
                     break;
                 }
-                break;    
+                break;
+            case "BACK" : GUIManager.getMainMenu().open(player); return;
+                
         }
         open(player,getData(),getItemDataMap());
         return;
