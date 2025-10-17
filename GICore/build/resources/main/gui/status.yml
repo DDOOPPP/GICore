@@ -20,6 +20,3 @@ items:
   weapon_slot:
     key: 'weapon_slot'
     slots: [ 29 ]
-  back: 
-    key: "back_icon"
-    slot: [48]  

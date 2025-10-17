@@ -76,11 +76,3 @@ select_skill_view:
   material: 'BLACK_STAINED_GLASS_PANE'
   action: 'SKILL'
   type: 'VIEW'
-back_icon:
-  display: "gi.item.gui.back_icon.name"
-  lore:
-   - "gi.item.gui.back_icon.lore"
-  namespace: ''
-  material: 'BOOK'
-  action: 'ALL'
-  type: 'BACK'

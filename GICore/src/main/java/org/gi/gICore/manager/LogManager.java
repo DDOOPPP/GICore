@@ -26,7 +26,7 @@ public class LogManager {
 
                 try{
                     switch (tag){
-                        case GUILD :
+                        case GUILD_FUND:
                             break;
                         case TRANSACTION :
                             TransactionLog t_log = (TransactionLog) log;

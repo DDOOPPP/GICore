@@ -11,6 +11,3 @@ items:
   select_slot:
     key: 'select_skill_view'
     slot: [13]
-  back: 
-    key: "back_icon"
-    slot: [48]
