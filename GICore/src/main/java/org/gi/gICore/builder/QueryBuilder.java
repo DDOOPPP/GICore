@@ -102,6 +102,7 @@ public class QueryBuilder {
         }
 
         public SelectBuilder where(String condition) {
+            condition = condition + " = ?";
             conditions.add(condition);
             return this;
         }
@@ -213,6 +214,8 @@ public class QueryBuilder {
         }
 
         public DeleteBuilder where(String condition) {
+            condition = condition + " = ?";
+
             conditions.add(condition);
             return this;
         }

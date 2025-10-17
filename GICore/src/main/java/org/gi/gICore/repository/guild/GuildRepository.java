@@ -75,10 +75,10 @@ public class GuildRepository {
         }
     }
 
-    public Result deleteGuild(Connection connection,UUID guildID){
+    public Result deleteGuild(Connection connection, UUID guildID) {
         String query = queryBuilder.delete().where("guild_id").build();
 
-        try(PreparedStatement statement = connection.prepareStatement(query)){
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, guildID.toString());
 
             return statement.executeUpdate() > 0 ? Result.SUCCESS : Result.ERROR("Guild Delete Fail");
@@ -86,23 +86,26 @@ public class GuildRepository {
             logger.error("Guild Delete Fail");
             return Result.EXCEPTION(e);
         }
-    } 
+    }
 
-    public Guild getGuildByID(Connection connection, UUID guildID){
+    public Guild getGuildByID(Connection connection, UUID guildID) {
         String query = queryBuilder.selectAll().where("guild_id = ?").build();
         Guild guild = null;
-        try(PreparedStatement statement = connection.prepareStatement(query)){
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, guildID.toString());
 
-            try(ResultSet resultSet = statement.executeQuery()){
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (!resultSet.next()) {
+                    return null;
+                }
+
                 guild = new Guild(
-                    guildID,
-                    resultSet.getString("guild_name"),
-                    UUID.fromString(resultSet.getString("owner_id")),
-                    resultSet.getInt("level"),
-                    resultSet.getBigDecimal("exp"),
-                    resultSet.getString("emblem")
-                );
+                        guildID,
+                        resultSet.getString("guild_name"),
+                        UUID.fromString(resultSet.getString("owner_id")),
+                        resultSet.getInt("level"),
+                        resultSet.getBigDecimal("exp"),
+                        resultSet.getString("emblem"));
             }
 
             return guild;
@@ -114,24 +117,25 @@ public class GuildRepository {
         }
     }
 
-    public List<Guild> getALLGuilds(Connection connection){
+    public List<Guild> getALLGuilds(Connection connection) {
         String query = queryBuilder.selectAll().build();
 
         List<Guild> guilds = new ArrayList();
-        try(PreparedStatement statement = connection.prepareStatement(query)){
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
             Guild guild = null;
 
-            try(ResultSet resultSet = statement.executeQuery()){
-                guild = new Guild(
-                    UUID.fromString(resultSet.getString("guild_id")),
-                    resultSet.getString("guild_name"),
-                    UUID.fromString(resultSet.getString("owner_id")),
-                    resultSet.getInt("level"),
-                    resultSet.getBigDecimal("exp"),
-                    resultSet.getString("emblem")
-                );
+            try (ResultSet resultSet = statement.executeQuery()) {
 
-                guilds.add(guild);
+                while (resultSet.next()) {
+                    guild = new Guild(
+                            UUID.fromString(resultSet.getString("guild_id")),
+                            resultSet.getString("guild_name"),
+                            UUID.fromString(resultSet.getString("owner_id")),
+                            resultSet.getInt("level"),
+                            resultSet.getBigDecimal("exp"),
+                            resultSet.getString("emblem"));
+                    guilds.add(guild);
+                }
             }
 
             return guilds;

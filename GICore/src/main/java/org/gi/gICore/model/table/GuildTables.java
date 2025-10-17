@@ -24,6 +24,7 @@ public class GuildTables {
     public static final String CREATE_GUILD_FUNDS_TABLE = String.format(
         "CREATE TABLE IF NOT EXISTS %s (" +
         "guild_id CHAR(36) PRIMARY KEY, " +
+        "guild_name VARCHAR(50) UNIQUE NOT NULL, " +
         "fund BIGINT DEFAULT 100000, " +
         "updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
         "FOREIGN KEY (guild_id) REFERENCES %s(guild_id) ON DELETE CASCADE" +
