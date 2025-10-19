@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Read(//c/Project/git/WEB/**)"
+      "Read(//c/Project/git/WEB/**)",
+      "Read(//d/MMOCoreCode/MMOCore-API/src/main/java/net/Indyuce/mmocore/skill/**)",
+      "Read(//d/MMOCoreCode/MMOCore-API/src/main/java/net/Indyuce/mmocore/command/rpg/admin/**)"
     ],
     "deny": [],
     "ask": []

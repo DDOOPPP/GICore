@@ -36,6 +36,8 @@ import org.gi.gICore.manager.LogManager;
 import org.gi.gICore.manager.ResourcePackManager;
 import org.gi.gICore.manager.UserManager;
 import org.gi.gICore.model.gui.GUIHolder;
+import org.gi.gICore.model.hud.HUD;
+import org.gi.gICore.model.hud.SkillHUD;
 import org.gi.gICore.model.item.CustomItem;
 import org.gi.gICore.model.item.MoneyItem;
 import org.gi.gICore.model.log.LOG_TAG;
@@ -203,25 +205,33 @@ public class PlayerEvents implements Listener {
             event.setCancelled(true);
         }
     }
+    
+    @EventHandler
+    public void skillCast(SkillCastEvent event){
+        
+    }
 
     @EventHandler
     public void test(PlayerSwapHandItemsEvent event) {
         Player player = event.getPlayer();
-
-        if (player.getOpenInventory().getType() != InventoryType.CRAFTING) {
+        
+        if (player.getOpenInventory().getType() != InventoryType.CRAFTING || player.isSneaking()) {
             return;
         }
 
         event.setCancelled(true);
         UUID uuid = player.getUniqueId();
-        boolean isCasting = UserManager.getCasting(uuid);
-        UserManager.setCast(uuid, !isCasting);
+        boolean isCasting = UserManager.getCasting(uuid); 
+        UserManager.setCast(uuid, !isCasting); 
         if (!isCasting) {
             player.sendMessage("스킬모드 진입");
+            new SkillHUD().start();
         }else{
             player.sendMessage("스킬모드 해제");
         }
     }
+
+
 
     @EventHandler
     public void onHotbarKey(PlayerItemHeldEvent event) {

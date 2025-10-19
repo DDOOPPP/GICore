@@ -4,6 +4,7 @@ import net.Indyuce.mmocore.api.player.PlayerData;
 import net.Indyuce.mmocore.manager.SkillManager;
 import net.Indyuce.mmocore.skill.ClassSkill;
 import net.Indyuce.mmocore.skill.RegisteredSkill;
+import net.Indyuce.mmocore.skill.binding.BoundSkillInfo;
 import net.kyori.adventure.text.Component;
 import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.OfflinePlayer;
@@ -15,6 +16,9 @@ import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.value.MessageName;
 import org.gi.gICore.value.ValueName;
+
+import io.lumine.mythic.bukkit.utils.items.nbt.reee;
+
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
@@ -196,6 +200,10 @@ public class DataService {
         ClassSkill skill = playerData.getProfess().getSkill(temp);
 
         return skill;
+    }
+
+    public Map<Integer, BoundSkillInfo> getBoundSkillList(PlayerData playerData){
+       return playerData.getBoundSkills();
     }
 
     public static String reBuildkey(String key){
