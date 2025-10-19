@@ -56,7 +56,7 @@ public class DataService {
     public static Map<String,Object> getPlayerData(OfflinePlayer player) {
         Map<String,Object> data = new HashMap<>();
         PlayerData playerData = PlayerData.get(player);
-
+        
         playerData.getStats().updateStats();
         for (String statKey : ValueName.INFO_LIST){
             String key = statKey.toLowerCase();
