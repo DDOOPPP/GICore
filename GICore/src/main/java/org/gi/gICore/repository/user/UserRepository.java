@@ -36,6 +36,9 @@ public class UserRepository {
                 "fishing_level",
                 "tutorial_done"
                 );
+
+        logger.info("Insert User: [%s]".formatted(userdata.toString()));
+        logger.info(query);
         try(PreparedStatement statement = connection.prepareStatement(query)){
             statement.setString(1,userdata.getPlayerId().toString());
             statement.setString(2,userdata.getPlayerName());
@@ -106,7 +109,7 @@ public class UserRepository {
     }
 
     public Userdata getUser(UUID player_id, Connection connection) {
-        String query = queryBuilder.selectAll().where("player_id = ?").build();
+        String query = queryBuilder.selectAll().where("player_id").build();
         Userdata userdata = null;
 
         try(PreparedStatement statement = connection.prepareStatement(query)) {

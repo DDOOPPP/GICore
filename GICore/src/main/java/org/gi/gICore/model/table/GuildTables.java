@@ -17,8 +17,8 @@ public class GuildTables {
         "exp BIGINT DEFAULT 0, " +
         "emblem VARCHAR(64) DEFAULT 'NONE', " +
         "create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
-        "FOREIGN KEY (owner_id) REFERENCES users(player_id)" +
-        ")", GUILD_TABLE
+        "FOREIGN KEY (owner_id) REFERENCES %s (player_id)" +
+        ")", GUILD_TABLE, UserTables.USERS_TABLE
     );
 
     public static final String CREATE_GUILD_FUNDS_TABLE = String.format(
@@ -38,10 +38,10 @@ public class GuildTables {
         "guild_id CHAR(36) NOT NULL, " +
         "role VARCHAR(20) NOT NULL, " +
         "join_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
-        "FOREIGN KEY (guild_id) REFERENCES %s(guild_id) ON DELETE CASCADE, " +
-        "FOREIGN KEY (member_id) REFERENCES users(player_id) ON DELETE CASCADE, " +
+        "FOREIGN KEY (guild_id) REFERENCES %s (guild_id) ON DELETE CASCADE, " +
+        "FOREIGN KEY (member_id) REFERENCES  %s (player_id) ON DELETE CASCADE, " +
         "INDEX idx_guild_id (guild_id)" +
-        ")", GUILD_MEMBERS, GUILD_TABLE
+        ")", GUILD_MEMBERS, GUILD_TABLE, UserTables.USERS_TABLE
     );
 
     public static final String CREATE_GUILD_FUND_LOG_TABLE = String.format(

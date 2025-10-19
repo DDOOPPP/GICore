@@ -186,6 +186,7 @@ public class QueryBuilder {
         }
 
         public UpdateBuilder where(String condition) {
+            condition = condition + " = ?";
             conditions.add(condition);
             return this;
         }

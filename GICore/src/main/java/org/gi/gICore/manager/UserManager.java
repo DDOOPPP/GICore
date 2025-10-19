@@ -3,8 +3,8 @@ package org.gi.gICore.manager;
 import net.Indyuce.mmocore.api.player.PlayerData;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
+import org.checkerframework.checker.units.qual.m;
 import org.gi.gICore.GICore;
-import org.gi.gICore.model.log.LOG_TAG;
 import org.gi.gICore.model.log.TransactionLog;
 import org.gi.gICore.model.user.UserWallet;
 import org.gi.gICore.model.user.Userdata;
@@ -15,9 +15,14 @@ import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.util.Result;
 import org.gi.gICore.util.TaskUtil;
 
+import io.lumine.mythic.bukkit.metrics.bStats;
+import io.lumine.mythic.bukkit.utils.items.nbt.reee;
+
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
@@ -26,6 +31,8 @@ public class UserManager {
     private WalletRepository walletRepository;
     private ModuleLogger logger;
     private Transaction transaction;
+
+    private static Map<UUID,Boolean> playerCastState = new HashMap<>();
 
     public UserManager() {
         this.userRepository = new UserRepository();
@@ -257,5 +264,17 @@ public class UserManager {
             logger.error("Connection acquisition failed", e);
             return BigDecimal.valueOf(-99999);
         }
+    }
+
+    public static boolean getCasting(UUID uuid){
+        return playerCastState.get(uuid);
+    }
+
+    public static void setCast(UUID uuid,boolean mode){
+        playerCastState.put(uuid, mode);
+    }
+
+    public static void remove(UUID uuid){
+        playerCastState.remove(uuid);
     }
 }

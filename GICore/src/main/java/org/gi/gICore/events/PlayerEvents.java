@@ -1,7 +1,15 @@
 package org.gi.gICore.events;
 
 import net.Indyuce.mmocore.api.event.PlayerChangeClassEvent;
+import net.Indyuce.mmocore.api.event.PlayerDataLoadEvent;
+import net.Indyuce.mmocore.api.event.PlayerEnterCastingModeEvent;
+import net.Indyuce.mmocore.api.player.PlayerData;
+import net.Indyuce.mmocore.skill.CastableSkill;
+import net.Indyuce.mmocore.skill.ClassSkill;
+import net.Indyuce.mmocore.skill.RegisteredSkill;
+import net.Indyuce.mmocore.skill.binding.BoundSkillInfo;
 import net.Indyuce.mmoitems.api.event.item.ItemEquipEvent;
+import net.kyori.adventure.text.Component;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -10,11 +18,14 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.*;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.checkerframework.checker.units.qual.s;
+import org.checkerframework.checker.units.qual.t;
 import org.gi.gICore.GICore;
 import org.gi.gICore.component.adapter.GIPlayer;
 import org.gi.gICore.component.adapter.ItemPack;
@@ -23,16 +34,23 @@ import org.gi.gICore.manager.EconomyManager;
 import org.gi.gICore.manager.GUIManager;
 import org.gi.gICore.manager.LogManager;
 import org.gi.gICore.manager.ResourcePackManager;
+import org.gi.gICore.manager.UserManager;
 import org.gi.gICore.model.gui.GUIHolder;
 import org.gi.gICore.model.item.CustomItem;
 import org.gi.gICore.model.item.MoneyItem;
 import org.gi.gICore.model.log.LOG_TAG;
 import org.gi.gICore.model.log.TransactionLog;
+import org.gi.gICore.model.user.Userdata;
 import org.gi.gICore.util.ItemUtil;
 import org.gi.gICore.util.ModuleLogger;
 import org.gi.gICore.util.PlayerDataUtil;
 import org.gi.gICore.util.Result;
 import org.gi.gICore.value.ValueName;
+import org.w3c.dom.UserDataHandler;
+
+import io.lumine.mythic.bukkit.utils.items.nbt.reee;
+import io.lumine.mythic.lib.api.event.skill.SkillCastEvent;
+import io.lumine.mythic.lib.skill.Skill;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
@@ -52,7 +70,6 @@ public class PlayerEvents implements Listener {
             logger = new ModuleLogger(plugin, "PlayerEvents");
         }
         this.giPlayer = new GIPlayer();
-
     }
 
     @EventHandler
@@ -78,45 +95,51 @@ public class PlayerEvents implements Listener {
             logManager.logInsert(log, LOG_TAG.TRANSACTION);
         }
         logger.info("%s Connected".formatted(player.getName()));
+        UserManager.setCast(event.getPlayer().getUniqueId(),false);
+    }
+    @EventHandler
+    public void onQuit(PlayerQuitEvent event){
+        UserManager.remove(event.getPlayer().getUniqueId());
     }
 
     // @EventHandler
     // public void onResourcePack(PlayerResourcePackStatusEvent event) {
-    //     Player player = event.getPlayer();
-    //     UUID uuid = player.getUniqueId();
-    //     PlayerResourcePackStatusEvent.Status status = event.getStatus();
+    // Player player = event.getPlayer();
+    // UUID uuid = player.getUniqueId();
+    // PlayerResourcePackStatusEvent.Status status = event.getStatus();
 
-    //     if (waitingForGIResourcePack.contains(uuid)) {
-    //         switch (status) {
-    //             case SUCCESSFULLY_LOADED -> {
-                
-    //                 logger.info("ItemsAdder pack loaded for " + player.getName());
+    // if (waitingForGIResourcePack.contains(uuid)) {
+    // switch (status) {
+    // case SUCCESSFULLY_LOADED -> {
 
-    
-    //                 Bukkit.getScheduler().runTaskLater(GICore.getInstance(), () -> {
-    //                     ResourcePackManager.downloadResourcePack(player);
-    //                     logger.info("Sent GICore pack after ItemsAdder for " + player.getName());
-    //                 }, 40L); 
+    // logger.info("ItemsAdder pack loaded for " + player.getName());
 
-    //                 waitingForGIResourcePack.remove(uuid);
-    //             }
-    //             case DECLINED, FAILED_DOWNLOAD -> {
-    //                 logger.warn("ItemsAdder pack not loaded properly: " + player.getName());
-    //                 waitingForGIResourcePack.remove(uuid);
-    //             }
-    //             default -> {
-    //             }
-    //         }
-    //     } else {
-    //         // 3️⃣ GICore 리소스팩 결과 로그 처리
-    //         switch (status) {
-    //             case SUCCESSFULLY_LOADED -> logger.info("GICore pack loaded: " + player.getName());
-    //             case DECLINED -> player.kickPlayer("You must accept GICore resource pack");
-    //             case FAILED_DOWNLOAD -> player.kickPlayer("GICore resource pack download failed");
-    //             default -> {
-    //             }
-    //         }
-    //     }
+    // Bukkit.getScheduler().runTaskLater(GICore.getInstance(), () -> {
+    // ResourcePackManager.downloadResourcePack(player);
+    // logger.info("Sent GICore pack after ItemsAdder for " + player.getName());
+    // }, 40L);
+
+    // waitingForGIResourcePack.remove(uuid);
+    // }
+    // case DECLINED, FAILED_DOWNLOAD -> {
+    // logger.warn("ItemsAdder pack not loaded properly: " + player.getName());
+    // waitingForGIResourcePack.remove(uuid);
+    // }
+    // default -> {
+    // }
+    // }
+    // } else {
+    // // 3️⃣ GICore 리소스팩 결과 로그 처리
+    // switch (status) {
+    // case SUCCESSFULLY_LOADED -> logger.info("GICore pack loaded: " +
+    // player.getName());
+    // case DECLINED -> player.kickPlayer("You must accept GICore resource pack");
+    // case FAILED_DOWNLOAD -> player.kickPlayer("GICore resource pack download
+    // failed");
+    // default -> {
+    // }
+    // }
+    // }
     // }
 
     @EventHandler
@@ -179,5 +202,63 @@ public class PlayerEvents implements Listener {
             player.getInventory().addItem(itemStack);
             event.setCancelled(true);
         }
+    }
+
+    @EventHandler
+    public void test(PlayerSwapHandItemsEvent event) {
+        Player player = event.getPlayer();
+
+        if (player.getOpenInventory().getType() != InventoryType.CRAFTING) {
+            return;
+        }
+
+        event.setCancelled(true);
+        UUID uuid = player.getUniqueId();
+        boolean isCasting = UserManager.getCasting(uuid);
+        UserManager.setCast(uuid, !isCasting);
+        if (!isCasting) {
+            player.sendMessage("스킬모드 진입");
+        }else{
+            player.sendMessage("스킬모드 해제");
+        }
+    }
+
+    @EventHandler
+    public void onHotbarKey(PlayerItemHeldEvent event) {
+        Player player = event.getPlayer();
+        PlayerData playerData = PlayerData.get(player);
+        
+        // 캐스팅 모드가 아니면 무시
+        if (!UserManager.getCasting(player.getUniqueId())) {
+            return;
+        }
+
+        int slot = event.getNewSlot()+1; // 0-8 (핫바 슬롯 번호)
+        player.sendMessage("Press Key "+slot);
+        // 해당 슬롯에 바인딩된 스킬 가져오기
+        if (!playerData.hasSkillBound(slot)) {
+            return;
+        }
+        var boundSkill = playerData.getBoundSkill(slot);
+        if (boundSkill == null) {
+            player.sendMessage("§c해당 슬롯에 스킬이 없습니다.");
+            event.setCancelled(true);
+            return;
+        }
+
+        // 스킬 사용
+        try {
+            CastableSkill castSkill = boundSkill.toCastable(playerData);
+
+            var result = castSkill.cast(playerData);
+            if (result.isSuccessful()) {
+                player.sendMessage("§a스킬 사용: " + boundSkill.getSkill().getName());
+            }
+        } catch (Exception e) {
+            player.sendMessage("§c스킬 사용 실패: " + e.getMessage());
+            logger.error("Failed to cast skill: " + boundSkill.getSkill().getName(), e);
+        }
+
+        event.setCancelled(true); // 핫바 슬롯 변경 취소
     }
 }

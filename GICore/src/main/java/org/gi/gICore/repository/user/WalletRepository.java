@@ -49,7 +49,7 @@ public class WalletRepository {
     }
 
     public Result update(UUID player_id, BigDecimal balance, Connection connection) {
-        String query = builder.update().set("balance").where("player_id = ?").build();
+        String query = builder.update().set("balance").where("player_id").build();
 
         try(PreparedStatement statement = connection.prepareStatement(query)){
             statement.setBigDecimal(1, balance);
@@ -63,7 +63,7 @@ public class WalletRepository {
     }
 
     public BigDecimal getBalance(UUID player_id, Connection connection) {
-        String query = builder.selectAll().where("player_id = ?").build();
+        String query = builder.selectAll().where("player_id").build();
         BigDecimal balance = BigDecimal.ZERO;
 
         try(PreparedStatement statement = connection.prepareStatement(query)){

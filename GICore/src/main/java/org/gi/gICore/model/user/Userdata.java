@@ -3,6 +3,7 @@ package org.gi.gICore.model.user;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
+import lombok.ToString;
 import net.Indyuce.mmocore.api.player.PlayerData;
 import org.bukkit.OfflinePlayer;
 
@@ -10,6 +11,7 @@ import java.util.UUID;
 
 @Getter
 @AllArgsConstructor
+@ToString
 public class Userdata {
     private UUID playerId;
     private String playerName;
