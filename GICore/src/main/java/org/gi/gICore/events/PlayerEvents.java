@@ -24,8 +24,6 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.checkerframework.checker.units.qual.s;
-import org.checkerframework.checker.units.qual.t;
 import org.gi.gICore.GICore;
 import org.gi.gICore.component.adapter.GIPlayer;
 import org.gi.gICore.component.adapter.ItemPack;
