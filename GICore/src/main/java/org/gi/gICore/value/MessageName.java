@@ -50,4 +50,19 @@ public class MessageName {
     public static final String NOT_ENOUGH_LEVEL = "not_enough_level";
 
     public static final String NO_BIND_SKILL = "no_bind_skill";
+
+    public static final String PARTY_CREATED_FAIL = "party_created_fail";
+
+    public static final String PARTY_CREATED = "party_created";
+    public static final String PARTY_JOINED = "party_joined";
+    public static final String PARTY_LEFT = "party_left";
+    public static final String DISMISS_PARTY = "dismiss_party";
+
+    public static final String PARTY_KICKED = "party_kicked";
+    public static final String PARTY_KICKED_ERROR = "party_kicked_error";
+    public static final String PARTY_KICK = "party_kick";
+
+    public static final String NOT_JOIN_PARTY = "not_join_party";
+    public static final String NOT_FOUND_PARTY = "not_found_party";
+    public static final String NOT_PARTY_LEADER = "not_party_leader";
 }

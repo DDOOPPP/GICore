@@ -21,7 +21,14 @@ skill:
   material: 'BOOK'
   action: 'NONE'
   type: 'SKILL'
-
+party:
+  display: 'gi.item.main.party.name'
+  lore:
+    - 'gi.item.main.party.lore'
+  namespace: ''
+  material: 'BOOK'
+  action: 'NONE'
+  type: 'PARTY'
 info:
   display: 'gi.item.status.info.name'
   lore:
@@ -84,3 +91,4 @@ back_icon:
   material: 'BOOK'
   action: 'ALL'
   type: 'BACK'
+

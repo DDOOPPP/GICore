@@ -7,6 +7,15 @@
   "gi.item.main.skill.name": "§f스킬창",
   "gi.item.main.skill.lore": "§7스킬창으로 이동합니다",
 
+  "gi.item.main.party.name": "§f파티",
+  "gi.item.main.party.lore": "§7파티로 이동합니다",
+
+
+  "gi.item.party.create.name":"§f파티 생성",
+  "gi.item.party.create.lore":"§7파티를 생성합니다",
+
+  "gi.item.party.online.name": "§f온라인 파티 목록",
+
   "gi.profess.newbie.name": "모험가",
   "gi.profess.mage.name": "마법사",
   "gi.profess.warrior.name": "전사",
@@ -33,6 +42,9 @@
   "gi.item.armor.dragonset.chestplate": "드래곤의 비늘 갑옷",
   "gi.item.armor.dragonset.leggings": "드래곤의 강철 각반",
   "gi.item.armor.dragonset.boots": "드래곤의 날개 부츠",
+
+
+
 
   "gi.item.gui.skill.name": "{skill_name} <gray>[</gray>{skill_level}<gray>]</gray>",
   "gi.item.gui.select_skill.name": "<white>현재 선택된 스킬: </white> {skill_name}",
@@ -61,5 +73,7 @@
   "gi.skill.fireball.lore_7": "<red>{ratio}%</red>의 초기 피해를 입힙니다.",
   "gi.skill.fireball.lore_8": "",
   "gi.skill.fireball.lore_9": "<gray>재사용 대기시간:</gray> <yellow>{cooldown}</yellow>초",
-  "gi.skill.fireball.lore_10": "<gray>소모:</gray> <aqua>{mana}</aqua> {mana_name}"
+  "gi.skill.fireball.lore_10": "<gray>소모:</gray> <aqua>{mana}</aqua> {mana_name}",
+
+
 }

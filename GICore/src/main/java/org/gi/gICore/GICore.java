@@ -1,13 +1,12 @@
 package org.gi.gICore;
 
+import com.alessiodp.parties.api.Parties;
+import com.alessiodp.parties.api.interfaces.PartiesAPI;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.gi.gICore.component.adapter.ItemPack;
 import org.gi.gICore.component.adapter.MessagePack;
 import org.gi.gICore.config.ConfigCore;
-import org.gi.gICore.loader.CommandLoader;
-import org.gi.gICore.loader.EventLoader;
-import org.gi.gICore.loader.PlaceHolderLoader;
-import org.gi.gICore.loader.VaultLoader;
+import org.gi.gICore.loader.*;
 import org.gi.gICore.manager.ComponentManager;
 import org.gi.gICore.manager.ConfigManager;
 import org.gi.gICore.manager.DatabaseManager;
@@ -24,6 +23,8 @@ import java.util.jar.JarFile;
 
 public final class GICore extends JavaPlugin {
     private static GICore instance;
+    private static PartiesAPI partiesAPI;
+
     @Override
     public void onEnable(){
         instance = this;
@@ -43,6 +44,12 @@ public final class GICore extends JavaPlugin {
             return;
         }
 
+        if (!PartiesLoader.load(this)){
+            this.getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+
+        partiesAPI = Parties.getApi();
         MessagePack.loadPack(this);
         EventLoader.loadEvent(this);
         CommandLoader.loadCommand(this);
@@ -63,7 +70,6 @@ public final class GICore extends JavaPlugin {
                 JarEntry entry = entries.nextElement();
                 String name = entry.getName();
 
-                // 해당 폴더의 파일인지 확인
                 if (name.startsWith(folderName + "/") && !entry.isDirectory()) {
                     String fileName = name.substring(folderName.length() + 1);
 
@@ -87,5 +93,9 @@ public final class GICore extends JavaPlugin {
 
     public static GICore getInstance() {
         return instance;
+    }
+
+    public static PartiesAPI getPartiesAPI() {
+        return partiesAPI;
     }
 }
